@@ -1,0 +1,8 @@
+# Drop your loading-screen images in this folder.
+# They are served at:  /api/plugins/cute-loader/assets/<filename>
+# Reference them in ../skin.css, e.g.:
+#   content: url("/api/plugins/cute-loader/assets/logo.png");
+#
+# This file just keeps the folder present on git-based installs
+# (git doesn't track empty directories). Safe to delete once you
+# add real images here.

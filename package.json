@@ -1,0 +1,8 @@
+{
+  "name": "cute-loader",
+  "version": "1.0.0",
+  "type": "commonjs",
+  "main": "index.js",
+  "private": true,
+  "description": "Reskins the SillyTavern loading screen, self-healing across updates."
+}
