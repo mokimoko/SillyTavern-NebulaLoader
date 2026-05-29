@@ -1,8 +1,8 @@
 /* ============================================================
    PHOSPHOR ICON SKIN for SillyTavern  (Regular weight)
    ------------------------------------------------------------
-   Served by cute-loader at:
-     /api/plugins/cute-loader/assets/phosphor-icons.css
+   Served by nebula-loader at:
+     /api/plugins/nebula-loader/assets/phosphor-icons.css
    Loaded + toggled by UI Bedazzler's "Phosphor Icons" switch
    (src/cuteLoader.js), gated on body.phosphor-on.
 
@@ -22,7 +22,7 @@
 /* ---- 1. Load the font -------------------------------------- */
 @font-face {
     font-family: "Phosphor";
-    src: url("/api/plugins/cute-loader/assets/Phosphor.woff2") format("woff2");
+    src: url("/api/plugins/nebula-loader/assets/Phosphor.woff2") format("woff2");
     font-weight: 400;
     font-style: normal;
     font-display: block;

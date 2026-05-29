@@ -1,11 +1,11 @@
 /* ============================================================
-   Cute Loader — "Nebula Dark" loading screen
+   Nebula Loader — "Nebula Dark" loading screen
    Matches the Nebula Dark theme: charcoal surfaces, periwinkle
    accent, bone text, sharp edges, sleek minimal motion.
 
    Tweak the three colors below to reskin everything at once.
    Images live in assets/ and are served at:
-       /api/plugins/cute-loader/assets/<file>
+       /api/plugins/nebula-loader/assets/<file>
    ============================================================ */
 
 :root {
@@ -30,7 +30,7 @@
 /* (3) LOGO — your logo.png, swapped in via `content`.
    Subtle breathe (reduced-motion friendly), cool drop-shadow. */
 .splash-logo {
-    content: url("/api/plugins/cute-loader/assets/logo.png") !important;
+    content: url("/api/plugins/nebula-loader/assets/logo.png") !important;
     width: min(150px, 42%) !important;
     height: auto !important;
     filter: drop-shadow(0 0 18px rgba(151, 167, 198, 0.35)) !important;

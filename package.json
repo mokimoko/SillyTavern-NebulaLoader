@@ -1,8 +1,8 @@
 {
-  "name": "cute-loader",
-  "version": "1.0.0",
+  "name": "sillytavern-nebula-loader",
+  "version": "1.1.0",
   "type": "commonjs",
   "main": "index.js",
   "private": true,
-  "description": "Reskins the SillyTavern loading screen, self-healing across updates."
+  "description": "SillyTavern server plugin: reskins the loading screen, serves shared static assets (Phosphor icon font, logos, favicons) for companion UI extensions, and exposes per-user endpoints for the Nebula Engine integration toggle. Self-healing across SillyTavern updates."
 }

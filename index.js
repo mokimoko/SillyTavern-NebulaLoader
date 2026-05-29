@@ -1,9 +1,15 @@
 'use strict';
 
 /**
- * Cute Loader — a SillyTavern server plugin that reskins the loading screen,
- * serves custom assets for companion UI extensions, and exposes per-user
- * endpoints for swapping the default Assistant character card.
+ * Nebula Loader — a SillyTavern server plugin that reskins the loading
+ * screen, serves shared static assets (Phosphor icon font, logos, favicons)
+ * for companion UI extensions, and exposes per-user endpoints for swapping
+ * the default Assistant character card.
+ *
+ * Folder name and PLUGIN_ID are both nebula-themed; routes mount at
+ * /api/plugins/nebula-loader/. Was previously named "cute-loader" — see
+ * the LEGACY_MARK_* constants below for the one-time migration that strips
+ * the old CSS block from loader.css on first boot after upgrade.
  *
  * Loader-skin pipeline: on every server start, this plugin injects the CSS
  * from skin.css into ST's public/css/loader.css, wrapped in marker comments.
@@ -21,11 +27,17 @@
 const fs = require('fs');
 const path = require('path');
 
-const PLUGIN_ID = 'cute-loader';
+const PLUGIN_ID = 'nebula-loader';
 const PLUGIN_VERSION = '1.1.0';
 const ASSISTANT_FILENAME = 'default_Assistant.png';
-const MARK_START = '/* === CUTE-LOADER SKIN START (auto-managed: edit skin.css, not this) === */';
-const MARK_END = '/* === CUTE-LOADER SKIN END === */';
+const MARK_START = '/* === NEBULA-LOADER SKIN START (auto-managed: edit skin.css, not this) === */';
+const MARK_END = '/* === NEBULA-LOADER SKIN END === */';
+
+// Legacy markers from when this plugin was called "cute-loader". Used by
+// applySkin() during one-time migration so existing installs cleanly swap
+// the old skin block for the new one instead of leaving an orphan behind.
+const LEGACY_MARK_START = '/* === CUTE-LOADER SKIN START (auto-managed: edit skin.css, not this) === */';
+const LEGACY_MARK_END = '/* === CUTE-LOADER SKIN END === */';
 
 const ASSETS_DIR = path.join(__dirname, 'assets');
 const SKIN_FILE = path.join(__dirname, 'skin.css');
@@ -82,13 +94,13 @@ function findDataDir() {
 // Loader skin injection
 // ============================================================
 
-/** Remove our managed block from a CSS string, if present. */
-function stripBlock(css) {
-    const s = css.indexOf(MARK_START);
-    const e = css.indexOf(MARK_END);
+/** Remove a marker-wrapped block from a CSS string, if present. */
+function stripBlock(css, start = MARK_START, end = MARK_END) {
+    const s = css.indexOf(start);
+    const e = css.indexOf(end);
     if (s !== -1 && e !== -1 && e > s) {
         const before = css.slice(0, s).replace(/\s*$/, '');
-        const after = css.slice(e + MARK_END.length).replace(/^\s*/, '');
+        const after = css.slice(e + end.length).replace(/^\s*/, '');
         return (before + '\n' + after).trim() + '\n';
     }
     return css;
@@ -112,24 +124,35 @@ function applySkin() {
 
     const css = fs.readFileSync(loaderCss, 'utf8');
 
+    // One-time migration: if a CUTE-LOADER block from the prior plugin name
+    // is still in loader.css, strip it so the new NEBULA-LOADER block
+    // replaces it cleanly instead of being appended alongside the orphan.
+    const migrated = stripBlock(css, LEGACY_MARK_START, LEGACY_MARK_END);
+    let workingCss = css;
+    if (migrated !== css) {
+        fs.writeFileSync(loaderCss, migrated, 'utf8');
+        workingCss = migrated;
+        console.log(`[${PLUGIN_ID}] migrated: removed legacy CUTE-LOADER block from loader.css.`);
+    }
+
     const backup = loaderCss + '.cute-backup';
     if (!fs.existsSync(backup)) {
-        fs.writeFileSync(backup, stripBlock(css), 'utf8');
+        fs.writeFileSync(backup, stripBlock(workingCss), 'utf8');
         console.log(`[${PLUGIN_ID}] backed up original loader.css -> ${path.basename(backup)}`);
     }
 
     const block = `${MARK_START}\n${skin.trim()}\n${MARK_END}`;
-    const s = css.indexOf(MARK_START);
-    const e = css.indexOf(MARK_END);
+    const s = workingCss.indexOf(MARK_START);
+    const e = workingCss.indexOf(MARK_END);
 
     let next;
     if (s !== -1 && e !== -1 && e > s) {
-        next = css.slice(0, s) + block + css.slice(e + MARK_END.length);
+        next = workingCss.slice(0, s) + block + workingCss.slice(e + MARK_END.length);
     } else {
-        next = css.replace(/\s*$/, '') + '\n\n' + block + '\n';
+        next = workingCss.replace(/\s*$/, '') + '\n\n' + block + '\n';
     }
 
-    if (next !== css) {
+    if (next !== workingCss) {
         fs.writeFileSync(loaderCss, next, 'utf8');
         console.log(`[${PLUGIN_ID}] loading-screen skin applied.`);
     } else {
@@ -305,7 +328,7 @@ function cleanupLegacyFaviconArtifacts() {
 // ============================================================
 
 /**
- * Plugin init. Receives an Express router mounted at /api/plugins/cute-loader/.
+ * Plugin init. Receives an Express router mounted at /api/plugins/nebula-loader/.
  * @param {import('express').Router} router
  */
 async function init(router) {
@@ -324,7 +347,7 @@ async function init(router) {
     });
 
     // Serve images/css from this plugin's assets/ folder.
-    // e.g. /api/plugins/cute-loader/assets/logo.png
+    // e.g. /api/plugins/nebula-loader/assets/logo.png
     router.get('/assets/:name', (req, res) => {
         const name = path.basename(req.params.name); // block path traversal
         const file = path.join(ASSETS_DIR, name);
@@ -397,7 +420,7 @@ module.exports = {
     exit,
     info: {
         id: PLUGIN_ID,
-        name: 'Cute Loader',
+        name: 'Nebula Loader',
         description: 'Reskins the SillyTavern loading screen, serves custom assets for companion UI extensions, and exposes per-user endpoints for the Nebula Engine integration toggle.',
     },
 };
