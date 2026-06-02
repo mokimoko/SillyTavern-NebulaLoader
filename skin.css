@@ -108,3 +108,40 @@
     color: rgba(207, 203, 197, 0.55);
 }
 */
+
+
+/* ============================================================
+   (6) HANDOFF CLOAK — bridges the gap between the loading screen
+   tearing down and the real destination (ST shell, or a landing-page
+   extension) actually painting. Without it you get a brief flash of
+   bare ST UI in that gap.
+
+   The cloak is a full-viewport overlay created at first paint by an
+   inline script (see index.js). It paints the SAME background as the
+   loader (#preloader charcoal + the splash periwinkle glow), so the
+   loader -> cloak -> content sequence reads as one continuous screen.
+
+   It lifts (fades out, then removes itself) when the destination is
+   painted: LandingPageRedux lifts it as it sets .lp-loaded; if no
+   landing page is involved, the inline script's failsafe lifts it.
+   pointer-events stay off the whole time so it never eats clicks.
+   ============================================================ */
+#nebula-cloak {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;            /* above ST shell (#top-bar 3005, LP container 9000); below LP menus (10000) + modals */
+    pointer-events: none;     /* never intercept input, even mid-fade */
+    opacity: 1;
+    transition: opacity 450ms ease;
+    background-color: var(--cl-bg);
+    backdrop-filter: blur(16px);
+    /* same faint periwinkle glow the splash screen uses */
+    background-image: radial-gradient(ellipse 60% 50% at center,
+        rgba(151, 167, 198, 0.10), transparent 70%);
+}
+
+/* Lift: fade to transparent. The element removes itself on transitionend
+   (with a timeout backup), so this class is only ever briefly present. */
+#nebula-cloak.nebula-cloak-lift {
+    opacity: 0;
+}

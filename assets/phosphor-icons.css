@@ -201,7 +201,15 @@ body.phosphor-on .fa-discord::before,
 body.phosphor-on .fa-grip-vertical::before,
 body.phosphor-on .fa-box-archive::before,
 body.phosphor-on .fa-network-wired::before,
-body.phosphor-on .fa-box-open::before {
+body.phosphor-on .fa-box-open::before,
+body.phosphor-on .fa-brain::before,
+body.phosphor-on .fa-wrench::before,
+body.phosphor-on .fa-book-open::before,
+body.phosphor-on .fa-robot::before,
+body.phosphor-on .fa-headphones-simple::before,
+body.phosphor-on .fa-toggle-off::before,
+body.phosphor-on .fa-code-compare::before,
+body.phosphor-on .fa-people-group::before {
     font-family: "Phosphor" !important;
     font-weight: 400 !important;
     font-style: normal !important;
@@ -386,6 +394,14 @@ body.phosphor-on .fa-discord::before         { content: "\e61a"; }  /* discord-l
 body.phosphor-on .fa-box-archive::before     { content: "\e00c"; }  /* archive */
 body.phosphor-on .fa-network-wired::before   { content: "\edde"; }  /* network */
 body.phosphor-on .fa-box-open::before        { content: "\e390"; }  /* package (no open-box in v2.1.2) */
+body.phosphor-on .fa-brain::before            { content: "\e74e"; }  /* brain */
+body.phosphor-on .fa-wrench::before           { content: "\e5d4"; }  /* wrench */
+body.phosphor-on .fa-book-open::before        { content: "\e8f2"; }  /* book-open-text (book-open used by fa-book-atlas) */
+body.phosphor-on .fa-robot::before            { content: "\e762"; }  /* robot */
+body.phosphor-on .fa-headphones-simple::before { content: "\e2a6"; }  /* headphones (no -simple variant) */
+body.phosphor-on .fa-toggle-off::before       { content: "\e674"; }  /* toggle-left */
+body.phosphor-on .fa-code-compare::before     { content: "\e27c"; }  /* git-diff */
+body.phosphor-on .fa-people-group::before     { content: "\e68c"; }  /* users-four */
 
 /* ============================================================
    End of mapping table. ~150 FA classes covered.

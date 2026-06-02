@@ -4,13 +4,6 @@ A SillyTavern **server plugin**. Reskins the loading screen, serves custom
 static assets for companion UI extensions, and exposes per-user endpoints for
 the Nebula Engine integration toggle.
 
-> **Naming history:** This plugin was originally called `cute-loader`. The
-> folder, plugin ID, and route URLs all use the `nebula-loader` name now.
-> Existing installs migrate cleanly — `applySkin()` strips any leftover
-> `CUTE-LOADER` block from `loader.css` on first boot after the rename.
-
----
-
 ## What It Does
 
 ### Loading Screen Skin
@@ -34,10 +27,7 @@ for the Phosphor icon font, favicon, and logo swaps.
 Replaces Font Awesome glyphs with Phosphor Regular icons (v2.1.2) via CSS
 `content:` overrides scoped to `body.phosphor-on`.
 
-- `assets/Phosphor.woff2` — Phosphor Regular font
-- `assets/phosphor-icons.css` — ~170 FA class → Phosphor codepoint mappings
-
-The toggle and persistence live in **UI Bedazzler** (`src/cuteLoader.js`).
+The toggle and persistence live in **UI Bedazzler**.
 This plugin just hosts the assets and serves the CSS.
 
 ### Per-User Assistant Card Swap
@@ -49,20 +39,6 @@ Scoped to `req.user.directories` so each user controls their own state.
 | `/assistant/status` | GET | Is the swap applied for this user? |
 | `/assistant/apply` | POST | Apply the custom card |
 | `/assistant/restore` | POST | Restore the original from backup |
-
----
-
-## Files
-
-| File | Purpose |
-|---|---|
-| `index.js` | Plugin entry point, Express routes, all server logic |
-| `skin.css` | Loading screen CSS (injected into ST's loader.css on boot) |
-| `assets/Phosphor.woff2` | Phosphor Regular v2.1.2 font |
-| `assets/phosphor-icons.css` | FA → Phosphor icon mappings (~170 classes) |
-| `assets/logo.png` / `logo2.png` | Custom logos served to Bedazzler |
-| `assets/favicon*.png` / `.ico` | Favicon assets served to Bedazzler |
-| `assets/default_Assistant.png` | Replacement Assistant card image |
 
 ---
 

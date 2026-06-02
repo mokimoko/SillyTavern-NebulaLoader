@@ -39,6 +39,23 @@ const MARK_END = '/* === NEBULA-LOADER SKIN END === */';
 const LEGACY_MARK_START = '/* === CUTE-LOADER SKIN START (auto-managed: edit skin.css, not this) === */';
 const LEGACY_MARK_END = '/* === CUTE-LOADER SKIN END === */';
 
+// HTML markers wrapping the handoff-cloak inline script injected into
+// public/index.html. Same managed-block idea as the CSS markers: idempotent
+// inject/refresh on each boot, and removable to cleanly restore index.html.
+const HTML_MARK_START = '<!-- === NEBULA-LOADER CLOAK START (auto-managed) === -->';
+const HTML_MARK_END = '<!-- === NEBULA-LOADER CLOAK END === -->';
+
+// How long (ms) the cloak waits before lifting itself if nothing else does.
+// Pure insurance for the "no landing-page extension present" path — short so a
+// plain ST boot isn't held back. LandingPageRedux claims the boot (cancelling
+// this) when it's going to render, then lifts the cloak once its page paints.
+const CLOAK_FAILSAFE_MS = 1500;
+
+// Absolute backstop (ms). Only fires if the boot was claimed but the explicit
+// lift never arrived (crashed/hung render). Generous — must exceed the slowest
+// realistic landing-page render so it never pre-empts a healthy (if slow) boot.
+const CLOAK_HARD_STOP_MS = 30000;
+
 const ASSETS_DIR = path.join(__dirname, 'assets');
 const SKIN_FILE = path.join(__dirname, 'skin.css');
 
@@ -161,6 +178,142 @@ function applySkin() {
 }
 
 // ============================================================
+// Handoff cloak injection (index.html inline script)
+// ============================================================
+//
+// The cloak is a full-viewport overlay that covers the gap between the loading
+// screen tearing down and the real destination (ST shell, or a landing-page
+// extension) painting — eliminating the brief flash of bare ST UI in that gap.
+// Styling lives in skin.css (#nebula-cloak); this injects the tiny inline
+// script that creates the element at first paint and arms a failsafe lift.
+//
+// Why inline + first-child-of-body: it must exist before ST's modules load and
+// before the shell paints, so it can't be a normal extension (those load late).
+// Why a failsafe only: LandingPageRedux lifts the cloak precisely when its page
+// is painted; the timeout is just insurance for boots where no landing page is
+// involved, so a plain ST start isn't held back longer than necessary.
+
+/** Build the inline cloak script. Self-contained; no external dependencies. */
+function buildCloakScript() {
+    // Kept deliberately small and dependency-free. Exposes window.__nebulaLiftCloak
+    // so LandingPageRedux (or anything else) can lift the cloak at the exact
+    // moment its destination is painted. Lifting is idempotent.
+    return `${HTML_MARK_START}
+<script>
+(function () {
+    var T0 = performance.now();
+    var log = function (msg) { console.log('[nebula-cloak +' + Math.round(performance.now() - T0) + 'ms] ' + msg); };
+    var FAILSAFE_MS = ${CLOAK_FAILSAFE_MS};
+    var HARD_STOP_MS = ${CLOAK_HARD_STOP_MS};
+    var cloak = document.createElement('div');
+    cloak.id = 'nebula-cloak';
+    // Insert as early as possible so it covers everything from first paint.
+    (document.body || document.documentElement).prepend(cloak);
+    log('created + inserted');
+
+    var lifted = false;
+    function lift(reason) {
+        if (lifted) { log('lift ignored (already lifted), reason=' + reason); return; }
+        lifted = true;
+        log('lifting, reason=' + reason);
+        cloak.classList.add('nebula-cloak-lift');
+        var done = function (how) { if (cloak && cloak.parentNode) { cloak.remove(); log('removed via ' + how); } };
+        cloak.addEventListener('transitionend', function () { done('transitionend'); }, { once: true });
+        // Backup removal in case transitionend doesn't fire (interrupted, etc.).
+        setTimeout(function () { done('timeout-backup'); }, 700);
+    }
+
+    // Short failsafe: lifts the cloak if nobody claims the boot — i.e. there's
+    // no landing-page extension that's going to paint, so the plain ST shell is
+    // the destination and should be revealed promptly. A destination owner that
+    // takes time to render (e.g. LandingPageRedux) calls claim() to cancel this,
+    // then calls the lift hook itself once its page is actually painted.
+    var failsafeId = setTimeout(function () { lift('failsafe-timer'); }, FAILSAFE_MS);
+
+    // Hard stop: absolute last-resort backstop so a claimed-but-never-lifted
+    // boot (crashed/hung render) can't leave the cloak up forever. Much longer
+    // than any healthy render; only fires if the explicit lift never arrives.
+    setTimeout(function () { lift('hard-stop'); }, HARD_STOP_MS);
+
+    // Public hooks for destination owners (e.g. LandingPageRedux):
+    //   claim() — "I'm going to render; don't lift on the short failsafe."
+    //   lift()  — "my page is painted now; fade the cloak."
+    window.__nebulaClaimCloak = function () {
+        if (failsafeId) { clearTimeout(failsafeId); failsafeId = null; log('claimed — short failsafe cancelled'); }
+    };
+    window.__nebulaLiftCloak = function () { lift('external-hook'); };
+})();
+</script>
+${HTML_MARK_END}`;
+}
+
+/** Remove the marker-wrapped cloak block from an HTML string, if present. */
+function stripHtmlBlock(html) {
+    const s = html.indexOf(HTML_MARK_START);
+    const e = html.indexOf(HTML_MARK_END);
+    if (s !== -1 && e !== -1 && e > s) {
+        const before = html.slice(0, s).replace(/\s*$/, '');
+        const after = html.slice(e + HTML_MARK_END.length).replace(/^\s*/, '');
+        return before + '\n    ' + after;
+    }
+    return html;
+}
+
+/**
+ * Inject (or refresh) the cloak inline script into public/index.html, placed
+ * immediately after <div id="preloader"></div> so it runs at first paint.
+ * Idempotent: re-applied each boot, survives ST updates that overwrite the file.
+ */
+function injectCloakScript() {
+    const pub = findPublicDir();
+    if (!pub) {
+        console.warn(`[${PLUGIN_ID}] could not locate public/; cloak not injected.`);
+        return;
+    }
+    const indexHtml = path.join(pub, 'index.html');
+    if (!fs.existsSync(indexHtml)) {
+        console.warn(`[${PLUGIN_ID}] public/index.html missing; cloak not injected.`);
+        return;
+    }
+
+    const html = fs.readFileSync(indexHtml, 'utf8');
+
+    // Back up the pristine file (cloak-stripped) once, before first injection.
+    const backup = indexHtml + '.cloak-backup';
+    if (!fs.existsSync(backup)) {
+        fs.writeFileSync(backup, stripHtmlBlock(html), 'utf8');
+        console.log(`[${PLUGIN_ID}] backed up original index.html -> ${path.basename(backup)}`);
+    }
+
+    const block = buildCloakScript();
+
+    // Refresh path: a block already exists — replace it in place.
+    const s = html.indexOf(HTML_MARK_START);
+    const e = html.indexOf(HTML_MARK_END);
+    let next;
+    if (s !== -1 && e !== -1 && e > s) {
+        next = html.slice(0, s) + block + html.slice(e + HTML_MARK_END.length);
+    } else {
+        // First inject: anchor right after the preloader div.
+        const anchor = '<div id="preloader"></div>';
+        const idx = html.indexOf(anchor);
+        if (idx === -1) {
+            console.warn(`[${PLUGIN_ID}] could not find preloader anchor in index.html; cloak not injected.`);
+            return;
+        }
+        const insertAt = idx + anchor.length;
+        next = html.slice(0, insertAt) + '\n    ' + block + html.slice(insertAt);
+    }
+
+    if (next !== html) {
+        fs.writeFileSync(indexHtml, next, 'utf8');
+        console.log(`[${PLUGIN_ID}] handoff cloak injected into index.html.`);
+    } else {
+        console.log(`[${PLUGIN_ID}] cloak already up to date.`);
+    }
+}
+
+// ============================================================
 // Per-user Assistant card swap
 // ============================================================
 //
@@ -171,6 +324,26 @@ function applySkin() {
 /** True when our replacement asset is shipped and ready to apply. */
 function hasReplacementAsset() {
     return fs.existsSync(path.join(ASSETS_DIR, ASSISTANT_FILENAME));
+}
+
+/**
+ * A cache-busting tag that changes only when assets actually change.
+ * Returns the newest mtime (ms) across everything in assets/, as a string.
+ * Companion extensions append this as ?v=<tag> so the browser caches each
+ * asset normally and only re-fetches after a real file update — instead of
+ * re-downloading on every page load. Falls back to '0' if assets/ is unreadable.
+ */
+function getAssetsVersion() {
+    try {
+        let newest = 0;
+        for (const name of fs.readdirSync(ASSETS_DIR)) {
+            const { mtimeMs } = fs.statSync(path.join(ASSETS_DIR, name));
+            if (mtimeMs > newest) newest = mtimeMs;
+        }
+        return String(Math.floor(newest));
+    } catch {
+        return '0';
+    }
 }
 
 /**
@@ -338,6 +511,7 @@ async function init(router) {
         res.json({
             id: PLUGIN_ID,
             version: PLUGIN_VERSION,
+            assetsVersion: getAssetsVersion(),
             features: {
                 loaderSkin: true,
                 assetServing: true,
@@ -357,7 +531,12 @@ async function init(router) {
         }
         const type = MIME[path.extname(name).toLowerCase()] || 'application/octet-stream';
         res.setHeader('Content-Type', type);
-        res.setHeader('Cache-Control', 'no-cache');
+        // Companions request assets with a ?v=<assetsVersion> tag that changes
+        // only when a file in assets/ changes, so it's safe to cache for a long
+        // time. A real file update bumps the tag, which makes the URL change and
+        // the browser fetch fresh. Long max-age = no re-fetch (and no blank-logo
+        // flash) on every page load.
+        res.setHeader('Cache-Control', 'public, max-age=31536000');
         fs.createReadStream(file).pipe(res);
     });
 
@@ -389,12 +568,17 @@ async function init(router) {
         }
     });
 
-    // Boot-time tasks: apply the loader skin, then opportunistic cleanup of
-    // anything left over from older plugin versions.
+    // Boot-time tasks: apply the loader skin, inject the handoff cloak, then
+    // opportunistic cleanup of anything left over from older plugin versions.
     try {
         applySkin();
     } catch (err) {
         console.error(`[${PLUGIN_ID}] failed to apply skin:`, err);
+    }
+    try {
+        injectCloakScript();
+    } catch (err) {
+        console.error(`[${PLUGIN_ID}] failed to inject cloak:`, err);
     }
     try {
         migrateRestoreLegacyAssistantSwaps();
