@@ -28,7 +28,27 @@ const fs = require('fs');
 const path = require('path');
 
 const PLUGIN_ID = 'nebula-loader';
-const PLUGIN_VERSION = '1.1.0';
+const PLUGIN_VERSION = '1.3.0';
+
+// Debug logging. Off by default so a healthy boot stays quiet. Enable by
+// starting ST with NEBULA_DEBUG=1 (or 'true') in the environment. Gates the
+// browser-side cloak timing logs and the redundant "nothing changed" server
+// logs; warnings and errors are always printed regardless.
+const DEBUG = /^(1|true)$/i.test(process.env.NEBULA_DEBUG || '');
+const dlog = DEBUG
+    ? (...args) => console.log(`[${PLUGIN_ID}]`, ...args)
+    : () => {};
+
+// Audio upload (companion feature for Dynamic Audio Redux): which file
+// extensions are accepted, and a per-request cap so a runaway client can't
+// try to write thousands of files in one call. Kept in sync with DAR's own
+// AUDIO_EXTENSIONS list in src/folderImport.js.
+const AUDIO_UPLOAD_EXTENSIONS = ['.mp3', '.wav', '.ogg', '.flac', '.m4a', '.aac', '.opus'];
+const AUDIO_UPLOAD_MAX_FILES = 200;
+// Per-path-segment safe-character rule. Mirrors core's validateAssetFileName
+// charset, but applied segment-by-segment so '/' can separate real subfolders
+// without ever allowing it *inside* a segment. '..' is rejected separately.
+const SAFE_SEGMENT_RE = /^[a-zA-Z0-9_\-.]+$/;
 const ASSISTANT_FILENAME = 'default_Assistant.png';
 const MARK_START = '/* === NEBULA-LOADER SKIN START (auto-managed: edit skin.css, not this) === */';
 const MARK_END = '/* === NEBULA-LOADER SKIN END === */';
@@ -46,10 +66,16 @@ const HTML_MARK_START = '<!-- === NEBULA-LOADER CLOAK START (auto-managed) === -
 const HTML_MARK_END = '<!-- === NEBULA-LOADER CLOAK END === -->';
 
 // How long (ms) the cloak waits before lifting itself if nothing else does.
-// Pure insurance for the "no landing-page extension present" path — short so a
-// plain ST boot isn't held back. LandingPageRedux claims the boot (cancelling
-// this) when it's going to render, then lifts the cloak once its page paints.
-const CLOAK_FAILSAFE_MS = 1500;
+// Insurance for the "no landing-page extension installed" path. Set high (15s)
+// because on setups with many/slow extensions, LandingPageRedux's module isn't
+// evaluated until several seconds into boot — a short failsafe would lift the
+// cloak before the extension can even claim it, flashing the bare ST shell.
+//
+// This being long only costs a plain ST boot (landing page NOT installed) some
+// extra dark time. When the landing page IS installed, it resolves the cloak
+// early regardless of this value: claiming it when enabled, or lifting it
+// immediately when disabled — so this timeout is a rarely-hit backstop.
+const CLOAK_FAILSAFE_MS = 15000;
 
 // Absolute backstop (ms). Only fires if the boot was claimed but the explicit
 // lift never arrived (crashed/hung render). Generous — must exceed the slowest
@@ -171,9 +197,9 @@ function applySkin() {
 
     if (next !== workingCss) {
         fs.writeFileSync(loaderCss, next, 'utf8');
-        console.log(`[${PLUGIN_ID}] loading-screen skin applied.`);
+        dlog('loading-screen skin applied.');
     } else {
-        console.log(`[${PLUGIN_ID}] skin already up to date.`);
+        dlog('skin already up to date.');
     }
 }
 
@@ -202,7 +228,10 @@ function buildCloakScript() {
 <script>
 (function () {
     var T0 = performance.now();
-    var log = function (msg) { console.log('[nebula-cloak +' + Math.round(performance.now() - T0) + 'ms] ' + msg); };
+    var DEBUG = ${DEBUG};
+    var log = DEBUG
+        ? function (msg) { console.log('[nebula-cloak +' + Math.round(performance.now() - T0) + 'ms] ' + msg); }
+        : function () {};
     var FAILSAFE_MS = ${CLOAK_FAILSAFE_MS};
     var HARD_STOP_MS = ${CLOAK_HARD_STOP_MS};
     var cloak = document.createElement('div');
@@ -307,9 +336,9 @@ function injectCloakScript() {
 
     if (next !== html) {
         fs.writeFileSync(indexHtml, next, 'utf8');
-        console.log(`[${PLUGIN_ID}] handoff cloak injected into index.html.`);
+        dlog('handoff cloak injected into index.html.');
     } else {
-        console.log(`[${PLUGIN_ID}] cloak already up to date.`);
+        dlog('cloak already up to date.');
     }
 }
 
@@ -497,6 +526,154 @@ function cleanupLegacyFaviconArtifacts() {
 }
 
 // ============================================================
+// Audio upload (Dynamic Audio Redux companion)
+// ============================================================
+//
+// Core's POST /api/files/upload writes into user/files/ but rejects any name
+// containing '/', so it can't create the subfolders DAR organizes audio into.
+// These endpoints fill that gap: they validate a relative path segment-by-
+// segment, confirm the resolved target stays inside the user's files/ dir,
+// create intermediate directories, and write the decoded bytes. Audio only.
+
+/**
+ * Validate a client-supplied relative path (e.g. "Battle/boss-theme.mp3").
+ * Returns { ok: true, segments } or { ok: false, reason }.
+ *
+ * Rules (all must hold):
+ *   - non-empty, not absolute, no backslashes
+ *   - every segment matches SAFE_SEGMENT_RE (core's charset, per segment)
+ *   - no segment is '.' or '..' (no traversal, even though the charset would
+ *     technically permit "..", we reject it explicitly for clarity)
+ *   - final segment carries an accepted audio extension
+ */
+function validateAudioRelPath(relPath) {
+    if (typeof relPath !== 'string' || relPath.length === 0) {
+        return { ok: false, reason: 'empty path' };
+    }
+    if (relPath.includes('\\')) {
+        return { ok: false, reason: 'backslashes not allowed' };
+    }
+    if (relPath.startsWith('/')) {
+        return { ok: false, reason: 'absolute paths not allowed' };
+    }
+    const segments = relPath.split('/');
+    for (const seg of segments) {
+        if (seg === '' || seg === '.' || seg === '..') {
+            return { ok: false, reason: `illegal path segment: "${seg}"` };
+        }
+        if (!SAFE_SEGMENT_RE.test(seg)) {
+            return { ok: false, reason: `illegal characters in "${seg}" (only alphanumeric, _, -, . allowed)` };
+        }
+    }
+    const ext = path.extname(segments[segments.length - 1]).toLowerCase();
+    if (!AUDIO_UPLOAD_EXTENSIONS.includes(ext)) {
+        return { ok: false, reason: `unsupported extension "${ext}"` };
+    }
+    return { ok: true, segments };
+}
+
+/**
+ * Write one base64-encoded audio file to user/files/<relPath>, creating any
+ * intermediate folders. filesDir must be req.user.directories.files (absolute).
+ * Returns a per-file result object (never throws for expected failures).
+ */
+function writeAudioFile(filesDir, relPath, base64Data) {
+    const v = validateAudioRelPath(relPath);
+    if (!v.ok) return { name: relPath, ok: false, reason: v.reason };
+
+    if (typeof base64Data !== 'string' || base64Data.length === 0) {
+        return { name: relPath, ok: false, reason: 'no data' };
+    }
+
+    // Resolve and re-check containment: even though every segment is validated,
+    // confirm the final absolute path still sits inside filesDir before any
+    // write. Same defense core's /delete uses. path.resolve normalizes away any
+    // residual oddities so the startsWith check is meaningful.
+    const target = path.resolve(filesDir, ...v.segments);
+    const root = path.resolve(filesDir);
+    if (target !== root && !target.startsWith(root + path.sep)) {
+        return { name: relPath, ok: false, reason: 'resolved path escapes files directory' };
+    }
+
+    let buf;
+    try {
+        buf = Buffer.from(base64Data, 'base64');
+    } catch {
+        return { name: relPath, ok: false, reason: 'invalid base64 data' };
+    }
+    if (buf.length === 0) {
+        return { name: relPath, ok: false, reason: 'decoded to zero bytes' };
+    }
+
+    try {
+        fs.mkdirSync(path.dirname(target), { recursive: true });
+        fs.writeFileSync(target, buf);
+    } catch (err) {
+        return { name: relPath, ok: false, reason: err.message };
+    }
+
+    return { name: relPath, ok: true, bytes: buf.length };
+}
+
+/**
+ * Write one base64-encoded audio file FLAT into the user's global BGM folder
+ * (assets/bgm/). Unlike writeAudioFile, no subfolders are allowed here: ST's
+ * /api/assets/get only scans bgm/ one level deep, so nested files would be
+ * invisible to the library. assetsDir must be req.user.directories.assets.
+ *
+ * fileName must be a bare filename (no '/'), audio extension, safe charset.
+ * Returns a per-file result object (never throws for expected failures).
+ */
+function writeBgmFile(assetsDir, fileName, base64Data) {
+    if (typeof fileName !== 'string' || fileName.length === 0) {
+        return { name: fileName, ok: false, reason: 'empty filename' };
+    }
+    // Reject any path structure outright — global BGM is flat.
+    if (fileName.includes('/') || fileName.includes('\\')) {
+        return { name: fileName, ok: false, reason: 'subfolders not allowed in global BGM' };
+    }
+    if (fileName === '.' || fileName === '..' || fileName.startsWith('.')) {
+        return { name: fileName, ok: false, reason: 'illegal filename' };
+    }
+    if (!SAFE_SEGMENT_RE.test(fileName)) {
+        return { name: fileName, ok: false, reason: 'illegal characters (only alphanumeric, _, -, . allowed)' };
+    }
+    const ext = path.extname(fileName).toLowerCase();
+    if (!AUDIO_UPLOAD_EXTENSIONS.includes(ext)) {
+        return { name: fileName, ok: false, reason: `unsupported extension "${ext}"` };
+    }
+    if (typeof base64Data !== 'string' || base64Data.length === 0) {
+        return { name: fileName, ok: false, reason: 'no data' };
+    }
+
+    const bgmDir = path.resolve(assetsDir, 'bgm');
+    const target = path.resolve(bgmDir, fileName);
+    // Containment check: target must sit directly inside bgm/.
+    if (path.dirname(target) !== bgmDir) {
+        return { name: fileName, ok: false, reason: 'resolved path escapes bgm directory' };
+    }
+
+    let buf;
+    try {
+        buf = Buffer.from(base64Data, 'base64');
+    } catch {
+        return { name: fileName, ok: false, reason: 'invalid base64 data' };
+    }
+    if (buf.length === 0) {
+        return { name: fileName, ok: false, reason: 'decoded to zero bytes' };
+    }
+
+    try {
+        fs.mkdirSync(bgmDir, { recursive: true });
+        fs.writeFileSync(target, buf);
+    } catch (err) {
+        return { name: fileName, ok: false, reason: err.message };
+    }
+
+    return { name: fileName, ok: true, bytes: buf.length };
+}
+
+// ============================================================
 // Plugin entry point
 // ============================================================
 
@@ -516,6 +693,8 @@ async function init(router) {
                 loaderSkin: true,
                 assetServing: true,
                 assistantSwap: hasReplacementAsset(),
+                audioUpload: true,
+                bgmUpload: true,
             },
         });
     });
@@ -566,6 +745,66 @@ async function init(router) {
         } catch (err) {
             res.status(500).json({ error: err.message });
         }
+    });
+
+    // Audio upload for Dynamic Audio Redux. Accepts a batch of base64 files and
+    // writes them into user/files/<relativePath>, creating real subfolders that
+    // core's /api/files/upload can't. Body: { files: [{ name, data }, ...] }
+    // where name is a relative path like "Combat/boss.mp3" and data is base64.
+    // Responds { ok, written, failed, results:[{name, ok, bytes?, reason?}] }.
+    router.post('/audio/upload', (req, res) => {
+        const userDir = req.user?.directories;
+        if (!userDir) return res.status(401).json({ error: 'no authenticated user' });
+
+        const files = req.body?.files;
+        if (!Array.isArray(files) || files.length === 0) {
+            return res.status(400).json({ error: 'no files provided' });
+        }
+        if (files.length > AUDIO_UPLOAD_MAX_FILES) {
+            return res.status(400).json({
+                error: `too many files in one request (max ${AUDIO_UPLOAD_MAX_FILES})`,
+            });
+        }
+
+        const results = files.map(f => writeAudioFile(userDir.files, f?.name, f?.data));
+        const written = results.filter(r => r.ok).length;
+        const failed = results.length - written;
+
+        if (written > 0) {
+            dlog(`audio upload: ${written} written, ${failed} failed for ${req.user.profile?.handle ?? 'user'}`);
+        }
+        // 200 even on partial failure — the per-file results carry the detail,
+        // so the client can surface exactly which files didn't make it.
+        res.json({ ok: failed === 0, written, failed, results });
+    });
+
+    // Global BGM upload for Dynamic Audio Redux. Writes flat into the user's
+    // assets/bgm/ folder — the global library ST's /api/assets/get scans. No
+    // subfolders (that scan is one level deep). Body: { files: [{ name, data }] }
+    // where name is a bare filename like "boss.mp3" and data is base64.
+    // Responds { ok, written, failed, results:[{name, ok, bytes?, reason?}] }.
+    router.post('/bgm/upload', (req, res) => {
+        const userDir = req.user?.directories;
+        if (!userDir) return res.status(401).json({ error: 'no authenticated user' });
+
+        const files = req.body?.files;
+        if (!Array.isArray(files) || files.length === 0) {
+            return res.status(400).json({ error: 'no files provided' });
+        }
+        if (files.length > AUDIO_UPLOAD_MAX_FILES) {
+            return res.status(400).json({
+                error: `too many files in one request (max ${AUDIO_UPLOAD_MAX_FILES})`,
+            });
+        }
+
+        const results = files.map(f => writeBgmFile(userDir.assets, f?.name, f?.data));
+        const written = results.filter(r => r.ok).length;
+        const failed = results.length - written;
+
+        if (written > 0) {
+            dlog(`bgm upload: ${written} written, ${failed} failed for ${req.user.profile?.handle ?? 'user'}`);
+        }
+        res.json({ ok: failed === 0, written, failed, results });
     });
 
     // Boot-time tasks: apply the loader skin, inject the handoff cloak, then
