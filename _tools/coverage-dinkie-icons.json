@@ -1,0 +1,1805 @@
+{
+  "prefix": "dinkie-icons",
+  "minScore": 0.34,
+  "matched": [
+    {
+      "fa": [
+        "fa-circle-info",
+        "fa-info-circle"
+      ],
+      "phosphor": "info",
+      "proposed": "circle",
+      "confidence": 0.625,
+      "alternates": [
+        "circle-filled",
+        "accept-circle"
+      ]
+    },
+    {
+      "fa": [
+        "fa-circle-question",
+        "fa-question-circle"
+      ],
+      "phosphor": "question",
+      "proposed": "circle",
+      "confidence": 0.625,
+      "alternates": [
+        "circle-filled",
+        "accept-circle"
+      ]
+    },
+    {
+      "fa": [
+        "fa-key"
+      ],
+      "phosphor": "key",
+      "proposed": "option-key",
+      "confidence": 0.875,
+      "alternates": []
+    },
+    {
+      "fa": [
+        "fa-circle-chevron-down"
+      ],
+      "phosphor": "caret-circle-down",
+      "proposed": "right-then-curving-down-arrow",
+      "confidence": 0.713,
+      "alternates": [
+        "right-then-curving-down-arrow-filled",
+        "right-then-curving-down-arrow-small"
+      ]
+    },
+    {
+      "fa": [
+        "fa-circle-chevron-up"
+      ],
+      "phosphor": "caret-circle-up",
+      "proposed": "right-then-curving-up-arrow",
+      "confidence": 0.713,
+      "alternates": [
+        "right-then-curving-up-arrow-filled",
+        "right-then-curving-up-arrow-small"
+      ]
+    },
+    {
+      "fa": [
+        "fa-maximize"
+      ],
+      "phosphor": "arrows-out",
+      "proposed": "arrows-maximize",
+      "confidence": 0.75,
+      "alternates": [
+        "arrows-minimize",
+        "shuffle-arrows"
+      ]
+    },
+    {
+      "fa": [
+        "fa-minimize"
+      ],
+      "phosphor": "arrows-in",
+      "proposed": "arrows-minimize",
+      "confidence": 0.75,
+      "alternates": [
+        "arrows-maximize",
+        "shuffle-arrows"
+      ]
+    },
+    {
+      "fa": [
+        "fa-file-import"
+      ],
+      "phosphor": "file-arrow-down",
+      "proposed": "right-then-curving-down-arrow",
+      "confidence": 0.475,
+      "alternates": [
+        "right-then-curving-down-arrow-filled",
+        "right-then-curving-down-arrow-small"
+      ]
+    },
+    {
+      "fa": [
+        "fa-file-export",
+        "fa-file-arrow-up"
+      ],
+      "phosphor": "file-arrow-up",
+      "proposed": "right-then-curving-up-arrow",
+      "confidence": 0.475,
+      "alternates": [
+        "right-then-curving-up-arrow-filled",
+        "right-then-curving-up-arrow-small"
+      ]
+    },
+    {
+      "fa": [
+        "fa-pencil"
+      ],
+      "phosphor": "pencil-simple",
+      "proposed": "pencil",
+      "confidence": 1,
+      "alternates": [
+        "pencil-small",
+        "text-edit"
+      ]
+    },
+    {
+      "fa": [
+        "fa-pen-to-square",
+        "fa-edit"
+      ],
+      "phosphor": "note-pencil",
+      "proposed": "pencil",
+      "confidence": 0.75,
+      "alternates": [
+        "text-edit",
+        "text-edit-small"
+      ]
+    },
+    {
+      "fa": [
+        "fa-user-pen"
+      ],
+      "phosphor": "user-circle-gear",
+      "proposed": "circle",
+      "confidence": 0.438,
+      "alternates": [
+        "circle-filled",
+        "gear"
+      ]
+    },
+    {
+      "fa": [
+        "fa-save"
+      ],
+      "phosphor": "floppy-disk",
+      "proposed": "floppy-disk",
+      "confidence": 0.75,
+      "alternates": [
+        "floppy-disk-filled",
+        "floppy-disk-small"
+      ]
+    },
+    {
+      "fa": [
+        "fa-clock-rotate-left"
+      ],
+      "phosphor": "clock-counter-clockwise",
+      "proposed": "clock",
+      "confidence": 0.4,
+      "alternates": [
+        "clock-filled",
+        "alarm-clock"
+      ]
+    },
+    {
+      "fa": [
+        "fa-file-circle-plus"
+      ],
+      "phosphor": "file-plus",
+      "proposed": "circle",
+      "confidence": 0.5,
+      "alternates": [
+        "circle-filled",
+        "accept-circle"
+      ]
+    },
+    {
+      "fa": [
+        "fa-plus"
+      ],
+      "phosphor": "plus",
+      "proposed": "new-moon-symbol",
+      "confidence": 0.875,
+      "alternates": []
+    },
+    {
+      "fa": [
+        "fa-circle-xmark"
+      ],
+      "phosphor": "x-circle",
+      "proposed": "circle",
+      "confidence": 0.5,
+      "alternates": [
+        "circle-filled",
+        "accept-circle"
+      ]
+    },
+    {
+      "fa": [
+        "fa-xmark",
+        "fa-times",
+        "fa-close"
+      ],
+      "phosphor": "x",
+      "proposed": "diagonal-cross",
+      "confidence": 0.625,
+      "alternates": [
+        "black-cross-square",
+        "black-cross-square-filled"
+      ]
+    },
+    {
+      "fa": [
+        "fa-lock"
+      ],
+      "phosphor": "lock",
+      "proposed": "lock",
+      "confidence": 1,
+      "alternates": [
+        "lock-filled",
+        "lock-small-filled"
+      ]
+    },
+    {
+      "fa": [
+        "fa-unlock",
+        "fa-lock-open"
+      ],
+      "phosphor": "lock-open",
+      "proposed": "open-lock",
+      "confidence": 1.125,
+      "alternates": [
+        "open-lock-filled",
+        "open-lock-small-filled"
+      ]
+    },
+    {
+      "fa": [
+        "fa-circle-exclamation"
+      ],
+      "phosphor": "warning-circle",
+      "proposed": "circle",
+      "confidence": 0.5,
+      "alternates": [
+        "circle-filled",
+        "accept-circle"
+      ]
+    },
+    {
+      "fa": [
+        "fa-chevron-up"
+      ],
+      "phosphor": "caret-up",
+      "proposed": "right-then-curving-up-arrow",
+      "confidence": 0.9,
+      "alternates": [
+        "right-then-curving-up-arrow-filled",
+        "right-then-curving-up-arrow-small"
+      ]
+    },
+    {
+      "fa": [
+        "fa-chevron-down"
+      ],
+      "phosphor": "caret-down",
+      "proposed": "right-then-curving-down-arrow",
+      "confidence": 0.9,
+      "alternates": [
+        "right-then-curving-down-arrow-filled",
+        "right-then-curving-down-arrow-small"
+      ]
+    },
+    {
+      "fa": [
+        "fa-chevron-left"
+      ],
+      "phosphor": "caret-left",
+      "proposed": "left-arrow-circled",
+      "confidence": 1,
+      "alternates": [
+        "left-arrow-circled-filled",
+        "left-hook-arrow"
+      ]
+    },
+    {
+      "fa": [
+        "fa-chevron-right"
+      ],
+      "phosphor": "caret-right",
+      "proposed": "right-arrow-circled",
+      "confidence": 1,
+      "alternates": [
+        "right-arrow-circled-filled",
+        "right-hook-arrow"
+      ]
+    },
+    {
+      "fa": [
+        "fa-link"
+      ],
+      "phosphor": "link",
+      "proposed": "link-symbol",
+      "confidence": 1,
+      "alternates": [
+        "link-symbol-small"
+      ]
+    },
+    {
+      "fa": [
+        "fa-link-slash"
+      ],
+      "phosphor": "link-break",
+      "proposed": "link-symbol",
+      "confidence": 0.5,
+      "alternates": [
+        "link-symbol-small"
+      ]
+    },
+    {
+      "fa": [
+        "fa-images",
+        "fa-photo-film"
+      ],
+      "phosphor": "images",
+      "proposed": "film-frames",
+      "confidence": 0.375,
+      "alternates": [
+        "movie-camera",
+        "video-game"
+      ]
+    },
+    {
+      "fa": [
+        "fa-lightbulb"
+      ],
+      "phosphor": "lightbulb",
+      "proposed": "electric-light-bulb",
+      "confidence": 0.875,
+      "alternates": [
+        "electric-light-bulb-filled",
+        "electric-light-bulb-small"
+      ]
+    },
+    {
+      "fa": [
+        "fa-globe"
+      ],
+      "phosphor": "globe",
+      "proposed": "globe-meridians",
+      "confidence": 0.875,
+      "alternates": [
+        "globe-meridians-small",
+        "earth-globe-asia-australia"
+      ]
+    },
+    {
+      "fa": [
+        "fa-eye"
+      ],
+      "phosphor": "eye",
+      "proposed": "eye",
+      "confidence": 1,
+      "alternates": [
+        "eye-small",
+        "view-grid"
+      ]
+    },
+    {
+      "fa": [
+        "fa-eye-slash"
+      ],
+      "phosphor": "eye-slash",
+      "proposed": "eye",
+      "confidence": 0.625,
+      "alternates": [
+        "eye-small",
+        "view-grid"
+      ]
+    },
+    {
+      "fa": [
+        "fa-star"
+      ],
+      "phosphor": "star",
+      "proposed": "glowing-star",
+      "confidence": 0.875,
+      "alternates": [
+        "white-medium-star",
+        "white-medium-star-filled"
+      ]
+    },
+    {
+      "fa": [
+        "fa-flask"
+      ],
+      "phosphor": "flask",
+      "proposed": "flask",
+      "confidence": 1,
+      "alternates": [
+        "flask-filled"
+      ]
+    },
+    {
+      "fa": [
+        "fa-desktop"
+      ],
+      "phosphor": "desktop",
+      "proposed": "desktop-computer",
+      "confidence": 0.875,
+      "alternates": [
+        "desktop-computer-filled",
+        "personal-computer"
+      ]
+    },
+    {
+      "fa": [
+        "fa-cloud-arrow-down"
+      ],
+      "phosphor": "cloud-arrow-down",
+      "proposed": "right-then-curving-down-arrow",
+      "confidence": 0.6,
+      "alternates": [
+        "right-then-curving-down-arrow-filled",
+        "right-then-curving-down-arrow-small"
+      ]
+    },
+    {
+      "fa": [
+        "fa-face-smile"
+      ],
+      "phosphor": "smiley",
+      "proposed": "astonished-face",
+      "confidence": 0.375,
+      "alternates": [
+        "bye-face",
+        "cat-face"
+      ]
+    },
+    {
+      "fa": [
+        "fa-skull"
+      ],
+      "phosphor": "skull",
+      "proposed": "skull",
+      "confidence": 1,
+      "alternates": []
+    },
+    {
+      "fa": [
+        "fa-left-long",
+        "fa-arrow-left"
+      ],
+      "phosphor": "arrow-left",
+      "proposed": "left-arrow-circled",
+      "confidence": 0.667,
+      "alternates": [
+        "left-arrow-circled-filled",
+        "left-hook-arrow"
+      ]
+    },
+    {
+      "fa": [
+        "fa-check"
+      ],
+      "phosphor": "check",
+      "proposed": "ballot-box-with-check",
+      "confidence": 0.813,
+      "alternates": [
+        "ballot-box-with-check-filled",
+        "white-heavy-check-mark"
+      ]
+    },
+    {
+      "fa": [
+        "fa-copy",
+        "fa-clone"
+      ],
+      "phosphor": "copy",
+      "proposed": "duplicate",
+      "confidence": 0.625,
+      "alternates": [
+        "duplicate-filled",
+        "duplicate-small"
+      ]
+    },
+    {
+      "fa": [
+        "fa-paste"
+      ],
+      "phosphor": "clipboard-text",
+      "proposed": "clipboard",
+      "confidence": 1,
+      "alternates": [
+        "clipboard-filled",
+        "clipboard-small"
+      ]
+    },
+    {
+      "fa": [
+        "fa-magnifying-glass",
+        "fa-search"
+      ],
+      "phosphor": "magnifying-glass",
+      "proposed": "left-magnifying-glass",
+      "confidence": 0.667,
+      "alternates": [
+        "left-magnifying-glass-filled",
+        "right-magnifying-glass"
+      ]
+    },
+    {
+      "fa": [
+        "fa-window-maximize"
+      ],
+      "phosphor": "browser",
+      "proposed": "window-browser",
+      "confidence": 0.75,
+      "alternates": [
+        "window-browser-small",
+        "arrows-maximize"
+      ]
+    },
+    {
+      "fa": [
+        "fa-window-restore"
+      ],
+      "phosphor": "browsers",
+      "proposed": "window-browser",
+      "confidence": 0.375,
+      "alternates": [
+        "window-browser-small"
+      ]
+    },
+    {
+      "fa": [
+        "fa-film"
+      ],
+      "phosphor": "film-strip",
+      "proposed": "film-frames",
+      "confidence": 0.5,
+      "alternates": [
+        "movie-camera",
+        "video-game"
+      ]
+    },
+    {
+      "fa": [
+        "fa-music"
+      ],
+      "phosphor": "music-notes",
+      "proposed": "musical-note",
+      "confidence": 0.5,
+      "alternates": [
+        "netease-music",
+        "multiple-musical-notes"
+      ]
+    },
+    {
+      "fa": [
+        "fa-repeat"
+      ],
+      "phosphor": "repeat",
+      "proposed": "repeat-arrow",
+      "confidence": 0.875,
+      "alternates": [
+        "repeat-arrow-filled"
+      ]
+    },
+    {
+      "fa": [
+        "fa-download"
+      ],
+      "phosphor": "download-simple",
+      "proposed": "download",
+      "confidence": 1,
+      "alternates": [
+        "download-small"
+      ]
+    },
+    {
+      "fa": [
+        "fa-folder-plus"
+      ],
+      "phosphor": "folder-plus",
+      "proposed": "file-folder",
+      "confidence": 0.5,
+      "alternates": [
+        "file-folder-filled",
+        "new-moon-symbol"
+      ]
+    },
+    {
+      "fa": [
+        "fa-folder"
+      ],
+      "phosphor": "folder",
+      "proposed": "file-folder",
+      "confidence": 0.875,
+      "alternates": [
+        "file-folder-filled",
+        "file-folder-small"
+      ]
+    },
+    {
+      "fa": [
+        "fa-folder-open"
+      ],
+      "phosphor": "folder-open",
+      "proposed": "file-folder",
+      "confidence": 0.5,
+      "alternates": [
+        "file-folder-filled",
+        "open-book"
+      ]
+    },
+    {
+      "fa": [
+        "fa-folder-minus"
+      ],
+      "phosphor": "folder-minus",
+      "proposed": "file-folder",
+      "confidence": 0.5,
+      "alternates": [
+        "file-folder-filled",
+        "file-folder-small"
+      ]
+    },
+    {
+      "fa": [
+        "fa-folder-tree"
+      ],
+      "phosphor": "tree-structure",
+      "proposed": "christmas-tree",
+      "confidence": 0.375,
+      "alternates": [
+        "deciduous-tree",
+        "evergreen-tree"
+      ]
+    },
+    {
+      "fa": [
+        "fa-paintbrush"
+      ],
+      "phosphor": "paint-brush",
+      "proposed": "brush",
+      "confidence": 1,
+      "alternates": []
+    },
+    {
+      "fa": [
+        "fa-palette"
+      ],
+      "phosphor": "palette",
+      "proposed": "artist-palette",
+      "confidence": 0.875,
+      "alternates": []
+    },
+    {
+      "fa": [
+        "fa-cubes"
+      ],
+      "phosphor": "cube",
+      "proposed": "cube",
+      "confidence": 1.25,
+      "alternates": [
+        "cube-small",
+        "cool-box"
+      ]
+    },
+    {
+      "fa": [
+        "fa-ranking-star"
+      ],
+      "phosphor": "ranking",
+      "proposed": "glowing-star",
+      "confidence": 0.5,
+      "alternates": [
+        "white-medium-star",
+        "white-medium-star-filled"
+      ]
+    },
+    {
+      "fa": [
+        "fa-tags",
+        "fa-tag"
+      ],
+      "phosphor": "tag",
+      "proposed": "label",
+      "confidence": 0.625,
+      "alternates": [
+        "label-filled",
+        "label-small"
+      ]
+    },
+    {
+      "fa": [
+        "fa-flag"
+      ],
+      "phosphor": "flag",
+      "proposed": "closed-mailbox-lowered-flag",
+      "confidence": 0.813,
+      "alternates": [
+        "closed-mailbox-raised-flag",
+        "open-mailbox-lowered-flag"
+      ]
+    },
+    {
+      "fa": [
+        "fa-flag-checkered"
+      ],
+      "phosphor": "flag-checkered",
+      "proposed": "closed-mailbox-lowered-flag",
+      "confidence": 0.438,
+      "alternates": [
+        "closed-mailbox-raised-flag",
+        "open-mailbox-lowered-flag"
+      ]
+    },
+    {
+      "fa": [
+        "fa-file-alt",
+        "fa-file-lines"
+      ],
+      "phosphor": "file-text",
+      "proposed": "cursor-text",
+      "confidence": 0.375,
+      "alternates": [
+        "file-cabinet",
+        "file-folder"
+      ]
+    },
+    {
+      "fa": [
+        "fa-envelope-open-text"
+      ],
+      "phosphor": "envelope-open",
+      "proposed": "envelope",
+      "confidence": 0.5,
+      "alternates": [
+        "envelope-filled",
+        "cursor-text"
+      ]
+    },
+    {
+      "fa": [
+        "fa-stop"
+      ],
+      "phosphor": "stop",
+      "proposed": "black-square-for-stop",
+      "confidence": 0.813,
+      "alternates": [
+        "black-square-for-stop-filled"
+      ]
+    },
+    {
+      "fa": [
+        "fa-circle-stop"
+      ],
+      "phosphor": "stop-circle",
+      "proposed": "circle",
+      "confidence": 0.625,
+      "alternates": [
+        "circle-filled",
+        "accept-circle"
+      ]
+    },
+    {
+      "fa": [
+        "fa-arrow-right"
+      ],
+      "phosphor": "arrow-right",
+      "proposed": "right-arrow-circled",
+      "confidence": 0.917,
+      "alternates": [
+        "right-arrow-circled-filled",
+        "right-hook-arrow"
+      ]
+    },
+    {
+      "fa": [
+        "fa-arrow-down-9-1"
+      ],
+      "phosphor": "sort-descending",
+      "proposed": "right-then-curving-down-arrow",
+      "confidence": 0.35,
+      "alternates": [
+        "right-then-curving-down-arrow-filled",
+        "right-then-curving-down-arrow-small"
+      ]
+    },
+    {
+      "fa": [
+        "fa-sliders"
+      ],
+      "phosphor": "sliders-horizontal",
+      "proposed": "filter",
+      "confidence": 0.625,
+      "alternates": [
+        "filter-small"
+      ]
+    },
+    {
+      "fa": [
+        "fa-cog",
+        "fa-gear"
+      ],
+      "phosphor": "gear-six",
+      "proposed": "gear",
+      "confidence": 1,
+      "alternates": [
+        "gear-filled",
+        "keycap-digit-six"
+      ]
+    },
+    {
+      "fa": [
+        "fa-up-right-from-square"
+      ],
+      "phosphor": "arrow-square-out",
+      "proposed": "right-then-curving-up-arrow",
+      "confidence": 0.525,
+      "alternates": [
+        "right-then-curving-up-arrow-filled",
+        "right-then-curving-up-arrow-small"
+      ]
+    },
+    {
+      "fa": [
+        "fa-circle-check"
+      ],
+      "phosphor": "check-circle",
+      "proposed": "circle",
+      "confidence": 0.625,
+      "alternates": [
+        "circle-filled",
+        "accept-circle"
+      ]
+    },
+    {
+      "fa": [
+        "fa-plug",
+        "fa-plug-circle-exclamation"
+      ],
+      "phosphor": "plug",
+      "proposed": "circle",
+      "confidence": 0.5,
+      "alternates": [
+        "circle-filled",
+        "accept-circle"
+      ]
+    },
+    {
+      "fa": [
+        "fa-font"
+      ],
+      "phosphor": "text-aa",
+      "proposed": "cursor-text",
+      "confidence": 0.375,
+      "alternates": [
+        "file-font",
+        "file-font-filled"
+      ]
+    },
+    {
+      "fa": [
+        "fa-book-atlas"
+      ],
+      "phosphor": "book-open",
+      "proposed": "open-book",
+      "confidence": 0.75,
+      "alternates": [
+        "open-book-small",
+        "address-book"
+      ]
+    },
+    {
+      "fa": [
+        "fa-book"
+      ],
+      "phosphor": "book",
+      "proposed": "address-book",
+      "confidence": 0.875,
+      "alternates": [
+        "address-book-filled",
+        "closed-book"
+      ]
+    },
+    {
+      "fa": [
+        "fa-expand"
+      ],
+      "phosphor": "arrows-out-simple",
+      "proposed": "arrows-maximize",
+      "confidence": 0.375,
+      "alternates": [
+        "arrows-minimize",
+        "shuffle-arrows"
+      ]
+    },
+    {
+      "fa": [
+        "fa-compress"
+      ],
+      "phosphor": "arrows-in-simple",
+      "proposed": "arrows-maximize",
+      "confidence": 0.375,
+      "alternates": [
+        "arrows-minimize",
+        "shuffle-arrows"
+      ]
+    },
+    {
+      "fa": [
+        "fa-user-cog"
+      ],
+      "phosphor": "user-gear",
+      "proposed": "gear",
+      "confidence": 1,
+      "alternates": [
+        "gear-filled",
+        "information-desk-person"
+      ]
+    },
+    {
+      "fa": [
+        "fa-user-shield",
+        "fa-person-circle-question"
+      ],
+      "phosphor": "user-circle",
+      "proposed": "information-desk-person",
+      "confidence": 0.467,
+      "alternates": [
+        "happy-person-raising-one-hand",
+        "person-with-folded-hands"
+      ]
+    },
+    {
+      "fa": [
+        "fa-user-tie",
+        "fa-user"
+      ],
+      "phosphor": "user",
+      "proposed": "information-desk-person",
+      "confidence": 0.458,
+      "alternates": [
+        "happy-person-raising-one-hand",
+        "person-with-folded-hands"
+      ]
+    },
+    {
+      "fa": [
+        "fa-markdown"
+      ],
+      "phosphor": "markdown-logo",
+      "proposed": "pear-logo",
+      "confidence": 0.5,
+      "alternates": [
+        "pear-logo-filled",
+        "pear-logo-small"
+      ]
+    },
+    {
+      "fa": [
+        "fa-wand-magic",
+        "fa-wand-magic-sparkles"
+      ],
+      "phosphor": "magic-wand",
+      "proposed": "sparkles",
+      "confidence": 1,
+      "alternates": [
+        "magic-wand"
+      ]
+    },
+    {
+      "fa": [
+        "fa-crown"
+      ],
+      "phosphor": "crown",
+      "proposed": "crown",
+      "confidence": 1,
+      "alternates": []
+    },
+    {
+      "fa": [
+        "fa-list-ul"
+      ],
+      "phosphor": "list-bullets",
+      "proposed": "view-list",
+      "confidence": 0.375,
+      "alternates": [
+        "view-list-small"
+      ]
+    },
+    {
+      "fa": [
+        "fa-user-check"
+      ],
+      "phosphor": "user-check",
+      "proposed": "information-desk-person",
+      "confidence": 0.458,
+      "alternates": [
+        "ballot-box-with-check",
+        "ballot-box-with-check-filled"
+      ]
+    },
+    {
+      "fa": [
+        "fa-user-plus"
+      ],
+      "phosphor": "user-plus",
+      "proposed": "new-moon-symbol",
+      "confidence": 0.5,
+      "alternates": [
+        "information-desk-person",
+        "happy-person-raising-one-hand"
+      ]
+    },
+    {
+      "fa": [
+        "fa-users-gear"
+      ],
+      "phosphor": "users-three",
+      "proposed": "gear",
+      "confidence": 0.5,
+      "alternates": [
+        "gear-filled",
+        "keycap-digit-three"
+      ]
+    },
+    {
+      "fa": [
+        "fa-toggle-on"
+      ],
+      "phosphor": "toggle-right",
+      "proposed": "nintendo-switch",
+      "confidence": 0.375,
+      "alternates": [
+        "right-arrow-circled",
+        "right-arrow-circled-filled"
+      ]
+    },
+    {
+      "fa": [
+        "fa-right-left"
+      ],
+      "phosphor": "arrows-left-right",
+      "proposed": "arrows-maximize",
+      "confidence": 0.375,
+      "alternates": [
+        "arrows-minimize",
+        "shuffle-arrows"
+      ]
+    },
+    {
+      "fa": [
+        "fa-undo"
+      ],
+      "phosphor": "arrow-counter-clockwise",
+      "proposed": "revert",
+      "confidence": 0.438,
+      "alternates": [
+        "back-mahjong",
+        "back-mahjong-filled"
+      ]
+    },
+    {
+      "fa": [
+        "fa-redo"
+      ],
+      "phosphor": "arrow-clockwise",
+      "proposed": "bow-and-arrow",
+      "confidence": 0.375,
+      "alternates": [
+        "cursor-arrow",
+        "cursor-arrow-filled"
+      ]
+    },
+    {
+      "fa": [
+        "fa-ghost"
+      ],
+      "phosphor": "ghost",
+      "proposed": "ghost",
+      "confidence": 1,
+      "alternates": []
+    },
+    {
+      "fa": [
+        "fa-language"
+      ],
+      "phosphor": "translate",
+      "proposed": "translate-arabic-latin",
+      "confidence": 0.917,
+      "alternates": [
+        "translate-cyrillic-latin",
+        "translate-greek-latin"
+      ]
+    },
+    {
+      "fa": [
+        "fa-paperclip"
+      ],
+      "phosphor": "paperclip",
+      "proposed": "paperclip",
+      "confidence": 1,
+      "alternates": [
+        "paperclip-small"
+      ]
+    },
+    {
+      "fa": [
+        "fa-code-branch"
+      ],
+      "phosphor": "git-branch",
+      "proposed": "code",
+      "confidence": 0.5,
+      "alternates": [
+        "code-filled",
+        "code-small"
+      ]
+    },
+    {
+      "fa": [
+        "fa-volume-high"
+      ],
+      "phosphor": "speaker-high",
+      "proposed": "speaker",
+      "confidence": 1,
+      "alternates": [
+        "speaker-with-cancellation-stroke",
+        "speaker-with-one-sound-wave"
+      ]
+    },
+    {
+      "fa": [
+        "fa-bars"
+      ],
+      "phosphor": "list",
+      "proposed": "view-list",
+      "confidence": 1,
+      "alternates": [
+        "view-list-small",
+        "hamburger"
+      ]
+    },
+    {
+      "fa": [
+        "fa-note-sticky"
+      ],
+      "phosphor": "note",
+      "proposed": "musical-note",
+      "confidence": 0.5,
+      "alternates": [
+        "musical-note-small"
+      ]
+    },
+    {
+      "fa": [
+        "fa-scale-balanced"
+      ],
+      "phosphor": "scales",
+      "proposed": "scales",
+      "confidence": 0.5,
+      "alternates": []
+    },
+    {
+      "fa": [
+        "fa-people-arrows"
+      ],
+      "phosphor": "users",
+      "proposed": "arrows-maximize",
+      "confidence": 0.375,
+      "alternates": [
+        "arrows-minimize",
+        "shuffle-arrows"
+      ]
+    },
+    {
+      "fa": [
+        "fa-address-book"
+      ],
+      "phosphor": "address-book",
+      "proposed": "address-book",
+      "confidence": 1,
+      "alternates": [
+        "address-book-filled",
+        "address-book-small"
+      ]
+    },
+    {
+      "fa": [
+        "fa-pen"
+      ],
+      "phosphor": "pencil-simple",
+      "proposed": "pencil",
+      "confidence": 1.25,
+      "alternates": [
+        "pencil-small",
+        "text-edit"
+      ]
+    },
+    {
+      "fa": [
+        "fa-truck-arrow-right"
+      ],
+      "phosphor": "truck",
+      "proposed": "right-arrow-circled",
+      "confidence": 0.667,
+      "alternates": [
+        "right-arrow-circled-filled",
+        "right-hook-arrow"
+      ]
+    },
+    {
+      "fa": [
+        "fa-cut"
+      ],
+      "phosphor": "scissors",
+      "proposed": "black-scissors",
+      "confidence": 0.5,
+      "alternates": [
+        "black-scissors-filled"
+      ]
+    },
+    {
+      "fa": [
+        "fa-message"
+      ],
+      "phosphor": "chat-circle",
+      "proposed": "circle",
+      "confidence": 0.5,
+      "alternates": [
+        "circle-filled",
+        "accept-circle"
+      ]
+    },
+    {
+      "fa": [
+        "fa-filter-circle-xmark"
+      ],
+      "phosphor": "funnel-x",
+      "proposed": "circle",
+      "confidence": 0.4,
+      "alternates": [
+        "circle-filled",
+        "filter"
+      ]
+    },
+    {
+      "fa": [
+        "fa-scissors",
+        "fa-cut"
+      ],
+      "phosphor": "scissors",
+      "proposed": "black-scissors",
+      "confidence": 0.5,
+      "alternates": [
+        "black-scissors-filled"
+      ]
+    },
+    {
+      "fa": [
+        "fa-thumbtack"
+      ],
+      "phosphor": "push-pin",
+      "proposed": "location-pin",
+      "confidence": 0.75,
+      "alternates": [
+        "location-pin-filled",
+        "location-pin-small"
+      ]
+    },
+    {
+      "fa": [
+        "fa-comment-dots"
+      ],
+      "phosphor": "chat-circle-dots",
+      "proposed": "circle",
+      "confidence": 0.438,
+      "alternates": [
+        "circle-filled",
+        "accept-circle"
+      ]
+    },
+    {
+      "fa": [
+        "fa-github"
+      ],
+      "phosphor": "github-logo",
+      "proposed": "github",
+      "confidence": 0.625,
+      "alternates": [
+        "github-small",
+        "pear-logo"
+      ]
+    },
+    {
+      "fa": [
+        "fa-discord"
+      ],
+      "phosphor": "discord-logo",
+      "proposed": "pear-logo",
+      "confidence": 0.5,
+      "alternates": [
+        "pear-logo-filled",
+        "pear-logo-small"
+      ]
+    },
+    {
+      "fa": [
+        "fa-box-archive"
+      ],
+      "phosphor": "archive",
+      "proposed": "cool-box",
+      "confidence": 1,
+      "alternates": [
+        "cool-box-filled",
+        "ok-box"
+      ]
+    },
+    {
+      "fa": [
+        "fa-box-open"
+      ],
+      "phosphor": "package",
+      "proposed": "cool-box",
+      "confidence": 0.375,
+      "alternates": [
+        "cool-box-filled",
+        "milk-package"
+      ]
+    },
+    {
+      "fa": [
+        "fa-wrench"
+      ],
+      "phosphor": "wrench",
+      "proposed": "wrench",
+      "confidence": 1,
+      "alternates": [
+        "wrench-filled",
+        "wrench-small-filled"
+      ]
+    },
+    {
+      "fa": [
+        "fa-book-open"
+      ],
+      "phosphor": "book-open-text",
+      "proposed": "open-book",
+      "confidence": 0.75,
+      "alternates": [
+        "open-book-small",
+        "address-book"
+      ]
+    },
+    {
+      "fa": [
+        "fa-robot"
+      ],
+      "phosphor": "robot",
+      "proposed": "android",
+      "confidence": 1,
+      "alternates": [
+        "robot",
+        "robot-filled"
+      ]
+    },
+    {
+      "fa": [
+        "fa-toggle-off"
+      ],
+      "phosphor": "toggle-left",
+      "proposed": "nintendo-switch",
+      "confidence": 0.375,
+      "alternates": [
+        "left-arrow-circled",
+        "left-arrow-circled-filled"
+      ]
+    },
+    {
+      "fa": [
+        "fa-code-compare"
+      ],
+      "phosphor": "git-diff",
+      "proposed": "code",
+      "confidence": 0.438,
+      "alternates": [
+        "code-filled",
+        "code-small"
+      ]
+    }
+  ],
+  "unmatched": [
+    {
+      "fa": [
+        "fa-trash-can",
+        "fa-trash",
+        "fa-trash-alt"
+      ],
+      "phosphor": "trash",
+      "proposed": null,
+      "confidence": 0,
+      "alternates": []
+    },
+    {
+      "fa": [
+        "fa-grip"
+      ],
+      "phosphor": "dots-six",
+      "proposed": null,
+      "confidence": 0.333,
+      "alternates": [
+        "keycap-digit-six-filled",
+        "six-of-bamboos-mahjong"
+      ]
+    },
+    {
+      "fa": [
+        "fa-recycle"
+      ],
+      "phosphor": "recycle",
+      "proposed": null,
+      "confidence": 0,
+      "alternates": []
+    },
+    {
+      "fa": [
+        "fa-exclamation-triangle",
+        "fa-triangle-exclamation"
+      ],
+      "phosphor": "warning",
+      "proposed": null,
+      "confidence": 0.333,
+      "alternates": [
+        "right-black-triangle-filled",
+        "black-left-double-triangle"
+      ]
+    },
+    {
+      "fa": [
+        "fa-comments"
+      ],
+      "phosphor": "chats",
+      "proposed": null,
+      "confidence": 0,
+      "alternates": []
+    },
+    {
+      "fa": [
+        "fa-comment"
+      ],
+      "phosphor": "chat",
+      "proposed": null,
+      "confidence": 0,
+      "alternates": []
+    },
+    {
+      "fa": [
+        "fa-comment-slash"
+      ],
+      "phosphor": "chat-slash",
+      "proposed": null,
+      "confidence": 0,
+      "alternates": []
+    },
+    {
+      "fa": [
+        "fa-image",
+        "fa-image-portrait",
+        "fa-panorama"
+      ],
+      "phosphor": "image",
+      "proposed": null,
+      "confidence": 0,
+      "alternates": []
+    },
+    {
+      "fa": [
+        "fa-table-cells-large"
+      ],
+      "phosphor": "squares-four",
+      "proposed": null,
+      "confidence": 0.233,
+      "alternates": [
+        "four-of-bamboos-mahjong",
+        "four-of-bamboos-mahjong-filled"
+      ]
+    },
+    {
+      "fa": [
+        "fa-power-off"
+      ],
+      "phosphor": "power",
+      "proposed": null,
+      "confidence": 0,
+      "alternates": []
+    },
+    {
+      "fa": [
+        "fa-right-from-bracket"
+      ],
+      "phosphor": "sign-out",
+      "proposed": null,
+      "confidence": 0.313,
+      "alternates": [
+        "zoom-out-filled",
+        "right-arrow-circled"
+      ]
+    },
+    {
+      "fa": [
+        "fa-mobile-screen-button"
+      ],
+      "phosphor": "device-mobile",
+      "proposed": null,
+      "confidence": 0.313,
+      "alternates": [
+        "mobile-phone",
+        "mobile-phone-alt"
+      ]
+    },
+    {
+      "fa": [
+        "fa-upload"
+      ],
+      "phosphor": "upload-simple",
+      "proposed": null,
+      "confidence": 0,
+      "alternates": []
+    },
+    {
+      "fa": [
+        "fa-bolt"
+      ],
+      "phosphor": "lightning",
+      "proposed": null,
+      "confidence": 0,
+      "alternates": []
+    },
+    {
+      "fa": [
+        "fa-passport",
+        "fa-address-card"
+      ],
+      "phosphor": "identification-card",
+      "proposed": null,
+      "confidence": 0.313,
+      "alternates": [
+        "address-book-filled",
+        "address-book-small"
+      ]
+    },
+    {
+      "fa": [
+        "fa-scroll"
+      ],
+      "phosphor": "scroll",
+      "proposed": null,
+      "confidence": 0,
+      "alternates": []
+    },
+    {
+      "fa": [
+        "fa-ellipsis-vertical"
+      ],
+      "phosphor": "dots-three-vertical",
+      "proposed": null,
+      "confidence": 0.271,
+      "alternates": [
+        "double-vertical-bar-filled",
+        "keycap-digit-three"
+      ]
+    },
+    {
+      "fa": [
+        "fa-ellipsis"
+      ],
+      "phosphor": "dots-three",
+      "proposed": null,
+      "confidence": 0.333,
+      "alternates": [
+        "keycap-digit-three-filled",
+        "three-button-mouse"
+      ]
+    },
+    {
+      "fa": [
+        "fa-play"
+      ],
+      "phosphor": "play",
+      "proposed": null,
+      "confidence": 0,
+      "alternates": []
+    },
+    {
+      "fa": [
+        "fa-pause"
+      ],
+      "phosphor": "pause",
+      "proposed": null,
+      "confidence": 0,
+      "alternates": []
+    },
+    {
+      "fa": [
+        "fa-user-secret"
+      ],
+      "phosphor": "user-focus",
+      "proposed": null,
+      "confidence": 0.333,
+      "alternates": [
+        "secret-han-circled",
+        "secret-han-circled-filled"
+      ]
+    },
+    {
+      "fa": [
+        "fa-notes-medical"
+      ],
+      "phosphor": "first-aid",
+      "proposed": null,
+      "confidence": 0.271,
+      "alternates": [
+        "multiple-musical-notes",
+        "face-with-medical-mask"
+      ]
+    },
+    {
+      "fa": [
+        "fa-arrows-rotate",
+        "fa-sync"
+      ],
+      "phosphor": "arrows-clockwise",
+      "proposed": null,
+      "confidence": 0.313,
+      "alternates": [
+        "arrows-minimize",
+        "device-rotate"
+      ]
+    },
+    {
+      "fa": [
+        "fa-minus"
+      ],
+      "phosphor": "minus",
+      "proposed": null,
+      "confidence": 0,
+      "alternates": []
+    },
+    {
+      "fa": [
+        "fa-check-double"
+      ],
+      "phosphor": "checks",
+      "proposed": null,
+      "confidence": 0.333,
+      "alternates": [
+        "double-vertical-bar",
+        "double-vertical-bar-filled"
+      ]
+    },
+    {
+      "fa": [
+        "fa-user-graduate"
+      ],
+      "phosphor": "student",
+      "proposed": null,
+      "confidence": 0.333,
+      "alternates": [
+        "happy-person-raising-one-hand",
+        "person-with-folded-hands"
+      ]
+    },
+    {
+      "fa": [
+        "fa-bullhorn"
+      ],
+      "phosphor": "megaphone",
+      "proposed": null,
+      "confidence": 0,
+      "alternates": []
+    },
+    {
+      "fa": [
+        "fa-square-poll-horizontal"
+      ],
+      "phosphor": "chart-bar-horizontal",
+      "proposed": null,
+      "confidence": 0.233,
+      "alternates": [
+        "black-cross-square-filled",
+        "double-vertical-bar"
+      ]
+    },
+    {
+      "fa": [
+        "fa-bookmark"
+      ],
+      "phosphor": "bookmark",
+      "proposed": null,
+      "confidence": 0,
+      "alternates": []
+    },
+    {
+      "fa": [
+        "fa-paper-plane"
+      ],
+      "phosphor": "paper-plane-right",
+      "proposed": null,
+      "confidence": 0.333,
+      "alternates": [
+        "right-arrow-circled-filled",
+        "right-black-triangle"
+      ]
+    },
+    {
+      "fa": [
+        "fa-pie-chart"
+      ],
+      "phosphor": "chart-pie",
+      "proposed": null,
+      "confidence": 0,
+      "alternates": []
+    },
+    {
+      "fa": [
+        "fa-grip-vertical"
+      ],
+      "phosphor": "dots-six-vertical",
+      "proposed": null,
+      "confidence": 0.271,
+      "alternates": [
+        "double-vertical-bar-filled",
+        "keycap-digit-six"
+      ]
+    },
+    {
+      "fa": [
+        "fa-users"
+      ],
+      "phosphor": "users",
+      "proposed": null,
+      "confidence": 0,
+      "alternates": []
+    },
+    {
+      "fa": [
+        "fa-layer-group"
+      ],
+      "phosphor": "stack",
+      "proposed": null,
+      "confidence": 0,
+      "alternates": []
+    },
+    {
+      "fa": [
+        "fa-network-wired"
+      ],
+      "phosphor": "network",
+      "proposed": null,
+      "confidence": 0,
+      "alternates": []
+    },
+    {
+      "fa": [
+        "fa-brain"
+      ],
+      "phosphor": "brain",
+      "proposed": null,
+      "confidence": 0,
+      "alternates": []
+    },
+    {
+      "fa": [
+        "fa-headphones-simple"
+      ],
+      "phosphor": "headphones",
+      "proposed": null,
+      "confidence": 0,
+      "alternates": []
+    },
+    {
+      "fa": [
+        "fa-people-group"
+      ],
+      "phosphor": "users-four",
+      "proposed": null,
+      "confidence": 0.271,
+      "alternates": [
+        "four-of-bamboos-mahjong",
+        "four-of-bamboos-mahjong-filled"
+      ]
+    }
+  ]
+}

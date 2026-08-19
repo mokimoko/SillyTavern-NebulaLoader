@@ -1,0 +1,969 @@
+{
+  "prefix": "ph",
+  "suffix": "-duotone",
+  "resolved": [
+    {
+      "fa": [
+        "fa-circle-info",
+        "fa-info-circle"
+      ],
+      "icon": "info-duotone"
+    },
+    {
+      "fa": [
+        "fa-circle-question",
+        "fa-question-circle"
+      ],
+      "icon": "question-duotone"
+    },
+    {
+      "fa": [
+        "fa-key"
+      ],
+      "icon": "key-duotone"
+    },
+    {
+      "fa": [
+        "fa-circle-chevron-down"
+      ],
+      "icon": "caret-circle-down-duotone"
+    },
+    {
+      "fa": [
+        "fa-circle-chevron-up"
+      ],
+      "icon": "caret-circle-up-duotone"
+    },
+    {
+      "fa": [
+        "fa-trash-can",
+        "fa-trash",
+        "fa-trash-alt"
+      ],
+      "icon": "trash-duotone"
+    },
+    {
+      "fa": [
+        "fa-maximize"
+      ],
+      "icon": "arrows-out-duotone"
+    },
+    {
+      "fa": [
+        "fa-minimize"
+      ],
+      "icon": "arrows-in-duotone"
+    },
+    {
+      "fa": [
+        "fa-file-import"
+      ],
+      "icon": "file-arrow-down-duotone"
+    },
+    {
+      "fa": [
+        "fa-file-export",
+        "fa-file-arrow-up"
+      ],
+      "icon": "file-arrow-up-duotone"
+    },
+    {
+      "fa": [
+        "fa-pencil"
+      ],
+      "icon": "pencil-simple-duotone"
+    },
+    {
+      "fa": [
+        "fa-pen-to-square",
+        "fa-edit"
+      ],
+      "icon": "note-pencil-duotone"
+    },
+    {
+      "fa": [
+        "fa-user-pen"
+      ],
+      "icon": "user-circle-gear-duotone"
+    },
+    {
+      "fa": [
+        "fa-save"
+      ],
+      "icon": "floppy-disk-duotone"
+    },
+    {
+      "fa": [
+        "fa-clock-rotate-left"
+      ],
+      "icon": "clock-counter-clockwise-duotone"
+    },
+    {
+      "fa": [
+        "fa-grip"
+      ],
+      "icon": "dots-six-duotone"
+    },
+    {
+      "fa": [
+        "fa-file-circle-plus"
+      ],
+      "icon": "file-plus-duotone"
+    },
+    {
+      "fa": [
+        "fa-plus"
+      ],
+      "icon": "plus-duotone"
+    },
+    {
+      "fa": [
+        "fa-circle-xmark"
+      ],
+      "icon": "x-circle-duotone"
+    },
+    {
+      "fa": [
+        "fa-xmark",
+        "fa-times",
+        "fa-close"
+      ],
+      "icon": "x-duotone"
+    },
+    {
+      "fa": [
+        "fa-recycle"
+      ],
+      "icon": "recycle-duotone"
+    },
+    {
+      "fa": [
+        "fa-lock"
+      ],
+      "icon": "lock-duotone"
+    },
+    {
+      "fa": [
+        "fa-unlock",
+        "fa-lock-open"
+      ],
+      "icon": "lock-open-duotone"
+    },
+    {
+      "fa": [
+        "fa-circle-exclamation"
+      ],
+      "icon": "warning-circle-duotone"
+    },
+    {
+      "fa": [
+        "fa-exclamation-triangle",
+        "fa-triangle-exclamation"
+      ],
+      "icon": "warning-duotone"
+    },
+    {
+      "fa": [
+        "fa-chevron-up"
+      ],
+      "icon": "caret-up-duotone"
+    },
+    {
+      "fa": [
+        "fa-chevron-down"
+      ],
+      "icon": "caret-down-duotone"
+    },
+    {
+      "fa": [
+        "fa-chevron-left"
+      ],
+      "icon": "caret-left-duotone"
+    },
+    {
+      "fa": [
+        "fa-chevron-right"
+      ],
+      "icon": "caret-right-duotone"
+    },
+    {
+      "fa": [
+        "fa-comments"
+      ],
+      "icon": "chats-duotone"
+    },
+    {
+      "fa": [
+        "fa-comment"
+      ],
+      "icon": "chat-duotone"
+    },
+    {
+      "fa": [
+        "fa-comment-slash"
+      ],
+      "icon": "chat-slash-duotone"
+    },
+    {
+      "fa": [
+        "fa-link"
+      ],
+      "icon": "link-duotone"
+    },
+    {
+      "fa": [
+        "fa-link-slash"
+      ],
+      "icon": "link-break-duotone"
+    },
+    {
+      "fa": [
+        "fa-image",
+        "fa-image-portrait",
+        "fa-panorama"
+      ],
+      "icon": "image-duotone"
+    },
+    {
+      "fa": [
+        "fa-images",
+        "fa-photo-film"
+      ],
+      "icon": "images-duotone"
+    },
+    {
+      "fa": [
+        "fa-lightbulb"
+      ],
+      "icon": "lightbulb-duotone"
+    },
+    {
+      "fa": [
+        "fa-table-cells-large"
+      ],
+      "icon": "squares-four-duotone"
+    },
+    {
+      "fa": [
+        "fa-globe"
+      ],
+      "icon": "globe-duotone"
+    },
+    {
+      "fa": [
+        "fa-eye"
+      ],
+      "icon": "eye-duotone"
+    },
+    {
+      "fa": [
+        "fa-eye-slash"
+      ],
+      "icon": "eye-slash-duotone"
+    },
+    {
+      "fa": [
+        "fa-star"
+      ],
+      "icon": "star-duotone"
+    },
+    {
+      "fa": [
+        "fa-power-off"
+      ],
+      "icon": "power-duotone"
+    },
+    {
+      "fa": [
+        "fa-flask"
+      ],
+      "icon": "flask-duotone"
+    },
+    {
+      "fa": [
+        "fa-right-from-bracket"
+      ],
+      "icon": "sign-out-duotone"
+    },
+    {
+      "fa": [
+        "fa-desktop"
+      ],
+      "icon": "desktop-duotone"
+    },
+    {
+      "fa": [
+        "fa-mobile-screen-button"
+      ],
+      "icon": "device-mobile-duotone"
+    },
+    {
+      "fa": [
+        "fa-cloud-arrow-down"
+      ],
+      "icon": "cloud-arrow-down-duotone"
+    },
+    {
+      "fa": [
+        "fa-face-smile"
+      ],
+      "icon": "smiley-duotone"
+    },
+    {
+      "fa": [
+        "fa-skull"
+      ],
+      "icon": "skull-duotone"
+    },
+    {
+      "fa": [
+        "fa-left-long",
+        "fa-arrow-left"
+      ],
+      "icon": "arrow-left-duotone"
+    },
+    {
+      "fa": [
+        "fa-check"
+      ],
+      "icon": "check-duotone"
+    },
+    {
+      "fa": [
+        "fa-copy",
+        "fa-clone"
+      ],
+      "icon": "copy-duotone"
+    },
+    {
+      "fa": [
+        "fa-paste"
+      ],
+      "icon": "clipboard-text-duotone"
+    },
+    {
+      "fa": [
+        "fa-magnifying-glass",
+        "fa-search"
+      ],
+      "icon": "magnifying-glass-duotone"
+    },
+    {
+      "fa": [
+        "fa-window-maximize"
+      ],
+      "icon": "browser-duotone"
+    },
+    {
+      "fa": [
+        "fa-window-restore"
+      ],
+      "icon": "browsers-duotone"
+    },
+    {
+      "fa": [
+        "fa-film"
+      ],
+      "icon": "film-strip-duotone"
+    },
+    {
+      "fa": [
+        "fa-music"
+      ],
+      "icon": "music-notes-duotone"
+    },
+    {
+      "fa": [
+        "fa-repeat"
+      ],
+      "icon": "repeat-duotone"
+    },
+    {
+      "fa": [
+        "fa-download"
+      ],
+      "icon": "download-simple-duotone"
+    },
+    {
+      "fa": [
+        "fa-upload"
+      ],
+      "icon": "upload-simple-duotone"
+    },
+    {
+      "fa": [
+        "fa-bolt"
+      ],
+      "icon": "lightning-duotone"
+    },
+    {
+      "fa": [
+        "fa-folder-plus"
+      ],
+      "icon": "folder-plus-duotone"
+    },
+    {
+      "fa": [
+        "fa-folder"
+      ],
+      "icon": "folder-duotone"
+    },
+    {
+      "fa": [
+        "fa-folder-open"
+      ],
+      "icon": "folder-open-duotone"
+    },
+    {
+      "fa": [
+        "fa-folder-minus"
+      ],
+      "icon": "folder-minus-duotone"
+    },
+    {
+      "fa": [
+        "fa-folder-tree"
+      ],
+      "icon": "tree-structure-duotone"
+    },
+    {
+      "fa": [
+        "fa-paintbrush"
+      ],
+      "icon": "paint-brush-duotone"
+    },
+    {
+      "fa": [
+        "fa-palette"
+      ],
+      "icon": "palette-duotone"
+    },
+    {
+      "fa": [
+        "fa-cubes"
+      ],
+      "icon": "cube-duotone"
+    },
+    {
+      "fa": [
+        "fa-ranking-star"
+      ],
+      "icon": "ranking-duotone"
+    },
+    {
+      "fa": [
+        "fa-passport",
+        "fa-address-card"
+      ],
+      "icon": "identification-card-duotone"
+    },
+    {
+      "fa": [
+        "fa-scroll"
+      ],
+      "icon": "scroll-duotone"
+    },
+    {
+      "fa": [
+        "fa-tags",
+        "fa-tag"
+      ],
+      "icon": "tag-duotone"
+    },
+    {
+      "fa": [
+        "fa-ellipsis-vertical"
+      ],
+      "icon": "dots-three-vertical-duotone"
+    },
+    {
+      "fa": [
+        "fa-ellipsis"
+      ],
+      "icon": "dots-three-duotone"
+    },
+    {
+      "fa": [
+        "fa-flag"
+      ],
+      "icon": "flag-duotone"
+    },
+    {
+      "fa": [
+        "fa-flag-checkered"
+      ],
+      "icon": "flag-checkered-duotone"
+    },
+    {
+      "fa": [
+        "fa-file-alt",
+        "fa-file-lines"
+      ],
+      "icon": "file-text-duotone"
+    },
+    {
+      "fa": [
+        "fa-envelope-open-text"
+      ],
+      "icon": "envelope-open-duotone"
+    },
+    {
+      "fa": [
+        "fa-play"
+      ],
+      "icon": "play-duotone"
+    },
+    {
+      "fa": [
+        "fa-pause"
+      ],
+      "icon": "pause-duotone"
+    },
+    {
+      "fa": [
+        "fa-stop"
+      ],
+      "icon": "stop-duotone"
+    },
+    {
+      "fa": [
+        "fa-circle-stop"
+      ],
+      "icon": "stop-circle-duotone"
+    },
+    {
+      "fa": [
+        "fa-user-secret"
+      ],
+      "icon": "user-focus-duotone"
+    },
+    {
+      "fa": [
+        "fa-arrow-right"
+      ],
+      "icon": "arrow-right-duotone"
+    },
+    {
+      "fa": [
+        "fa-arrow-down-9-1"
+      ],
+      "icon": "sort-descending-duotone"
+    },
+    {
+      "fa": [
+        "fa-sliders"
+      ],
+      "icon": "sliders-horizontal-duotone"
+    },
+    {
+      "fa": [
+        "fa-cog",
+        "fa-gear"
+      ],
+      "icon": "gear-six-duotone"
+    },
+    {
+      "fa": [
+        "fa-up-right-from-square"
+      ],
+      "icon": "arrow-square-out-duotone"
+    },
+    {
+      "fa": [
+        "fa-circle-check"
+      ],
+      "icon": "check-circle-duotone"
+    },
+    {
+      "fa": [
+        "fa-plug",
+        "fa-plug-circle-exclamation"
+      ],
+      "icon": "plug-duotone"
+    },
+    {
+      "fa": [
+        "fa-font"
+      ],
+      "icon": "text-aa-duotone"
+    },
+    {
+      "fa": [
+        "fa-book-atlas"
+      ],
+      "icon": "book-open-duotone"
+    },
+    {
+      "fa": [
+        "fa-book"
+      ],
+      "icon": "book-duotone"
+    },
+    {
+      "fa": [
+        "fa-expand"
+      ],
+      "icon": "arrows-out-simple-duotone"
+    },
+    {
+      "fa": [
+        "fa-compress"
+      ],
+      "icon": "arrows-in-simple-duotone"
+    },
+    {
+      "fa": [
+        "fa-notes-medical"
+      ],
+      "icon": "first-aid-duotone"
+    },
+    {
+      "fa": [
+        "fa-arrows-rotate",
+        "fa-sync"
+      ],
+      "icon": "arrows-clockwise-duotone"
+    },
+    {
+      "fa": [
+        "fa-user-cog"
+      ],
+      "icon": "user-gear-duotone"
+    },
+    {
+      "fa": [
+        "fa-user-shield",
+        "fa-person-circle-question"
+      ],
+      "icon": "user-circle-duotone"
+    },
+    {
+      "fa": [
+        "fa-user-tie",
+        "fa-user"
+      ],
+      "icon": "user-duotone"
+    },
+    {
+      "fa": [
+        "fa-markdown"
+      ],
+      "icon": "markdown-logo-duotone"
+    },
+    {
+      "fa": [
+        "fa-wand-magic",
+        "fa-wand-magic-sparkles"
+      ],
+      "icon": "magic-wand-duotone"
+    },
+    {
+      "fa": [
+        "fa-minus"
+      ],
+      "icon": "minus-duotone"
+    },
+    {
+      "fa": [
+        "fa-crown"
+      ],
+      "icon": "crown-duotone"
+    },
+    {
+      "fa": [
+        "fa-list-ul"
+      ],
+      "icon": "list-bullets-duotone"
+    },
+    {
+      "fa": [
+        "fa-user-check"
+      ],
+      "icon": "user-check-duotone"
+    },
+    {
+      "fa": [
+        "fa-user-plus"
+      ],
+      "icon": "user-plus-duotone"
+    },
+    {
+      "fa": [
+        "fa-users-gear"
+      ],
+      "icon": "users-three-duotone"
+    },
+    {
+      "fa": [
+        "fa-check-double"
+      ],
+      "icon": "checks-duotone"
+    },
+    {
+      "fa": [
+        "fa-toggle-on"
+      ],
+      "icon": "toggle-right-duotone"
+    },
+    {
+      "fa": [
+        "fa-right-left"
+      ],
+      "icon": "arrows-left-right-duotone"
+    },
+    {
+      "fa": [
+        "fa-user-graduate"
+      ],
+      "icon": "student-duotone"
+    },
+    {
+      "fa": [
+        "fa-undo"
+      ],
+      "icon": "arrow-counter-clockwise-duotone"
+    },
+    {
+      "fa": [
+        "fa-redo"
+      ],
+      "icon": "arrow-clockwise-duotone"
+    },
+    {
+      "fa": [
+        "fa-ghost"
+      ],
+      "icon": "ghost-duotone"
+    },
+    {
+      "fa": [
+        "fa-language"
+      ],
+      "icon": "translate-duotone"
+    },
+    {
+      "fa": [
+        "fa-bullhorn"
+      ],
+      "icon": "megaphone-duotone"
+    },
+    {
+      "fa": [
+        "fa-square-poll-horizontal"
+      ],
+      "icon": "chart-bar-horizontal-duotone"
+    },
+    {
+      "fa": [
+        "fa-paperclip"
+      ],
+      "icon": "paperclip-duotone"
+    },
+    {
+      "fa": [
+        "fa-bookmark"
+      ],
+      "icon": "bookmark-duotone"
+    },
+    {
+      "fa": [
+        "fa-code-branch"
+      ],
+      "icon": "git-branch-duotone"
+    },
+    {
+      "fa": [
+        "fa-volume-high"
+      ],
+      "icon": "speaker-high-duotone"
+    },
+    {
+      "fa": [
+        "fa-bars"
+      ],
+      "icon": "list-duotone"
+    },
+    {
+      "fa": [
+        "fa-paper-plane"
+      ],
+      "icon": "paper-plane-right-duotone"
+    },
+    {
+      "fa": [
+        "fa-note-sticky"
+      ],
+      "icon": "note-duotone"
+    },
+    {
+      "fa": [
+        "fa-scale-balanced"
+      ],
+      "icon": "scales-duotone"
+    },
+    {
+      "fa": [
+        "fa-pie-chart"
+      ],
+      "icon": "chart-pie-duotone"
+    },
+    {
+      "fa": [
+        "fa-people-arrows"
+      ],
+      "icon": "users-duotone"
+    },
+    {
+      "fa": [
+        "fa-address-book"
+      ],
+      "icon": "address-book-duotone"
+    },
+    {
+      "fa": [
+        "fa-grip-vertical"
+      ],
+      "icon": "dots-six-vertical-duotone"
+    },
+    {
+      "fa": [
+        "fa-pen"
+      ],
+      "icon": "pencil-simple-duotone"
+    },
+    {
+      "fa": [
+        "fa-users"
+      ],
+      "icon": "users-duotone"
+    },
+    {
+      "fa": [
+        "fa-truck-arrow-right"
+      ],
+      "icon": "truck-duotone"
+    },
+    {
+      "fa": [
+        "fa-cut"
+      ],
+      "icon": "scissors-duotone"
+    },
+    {
+      "fa": [
+        "fa-message"
+      ],
+      "icon": "chat-circle-duotone"
+    },
+    {
+      "fa": [
+        "fa-layer-group"
+      ],
+      "icon": "stack-duotone"
+    },
+    {
+      "fa": [
+        "fa-filter-circle-xmark"
+      ],
+      "icon": "funnel-x-duotone"
+    },
+    {
+      "fa": [
+        "fa-scissors",
+        "fa-cut"
+      ],
+      "icon": "scissors-duotone"
+    },
+    {
+      "fa": [
+        "fa-thumbtack"
+      ],
+      "icon": "push-pin-duotone"
+    },
+    {
+      "fa": [
+        "fa-comment-dots"
+      ],
+      "icon": "chat-circle-dots-duotone"
+    },
+    {
+      "fa": [
+        "fa-github"
+      ],
+      "icon": "github-logo-duotone"
+    },
+    {
+      "fa": [
+        "fa-discord"
+      ],
+      "icon": "discord-logo-duotone"
+    },
+    {
+      "fa": [
+        "fa-box-archive"
+      ],
+      "icon": "archive-duotone"
+    },
+    {
+      "fa": [
+        "fa-network-wired"
+      ],
+      "icon": "network-duotone"
+    },
+    {
+      "fa": [
+        "fa-box-open"
+      ],
+      "icon": "package-duotone"
+    },
+    {
+      "fa": [
+        "fa-brain"
+      ],
+      "icon": "brain-duotone"
+    },
+    {
+      "fa": [
+        "fa-wrench"
+      ],
+      "icon": "wrench-duotone"
+    },
+    {
+      "fa": [
+        "fa-book-open"
+      ],
+      "icon": "book-open-text-duotone"
+    },
+    {
+      "fa": [
+        "fa-robot"
+      ],
+      "icon": "robot-duotone"
+    },
+    {
+      "fa": [
+        "fa-headphones-simple"
+      ],
+      "icon": "headphones-duotone"
+    },
+    {
+      "fa": [
+        "fa-toggle-off"
+      ],
+      "icon": "toggle-left-duotone"
+    },
+    {
+      "fa": [
+        "fa-code-compare"
+      ],
+      "icon": "git-diff-duotone"
+    },
+    {
+      "fa": [
+        "fa-people-group"
+      ],
+      "icon": "users-four-duotone"
+    }
+  ],
+  "missing": []
+}

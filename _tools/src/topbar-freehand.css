@@ -1,0 +1,121 @@
+/* ============================================================
+   TOPBAR PRESET — Streamline Freehand          [SOURCE FILE]
+   ------------------------------------------------------------
+   Edit THIS file (live Iconify URLs, hot-reloadable while you
+   pick icons), then ship it with:
+
+     node _tools/build-iconsets.cjs inline \
+       _tools/src/topbar-freehand.css assets/topbar-freehand.css
+
+   TWO CASCADE RULES MATTER HERE:
+
+   1. --bd-icon is set on ::before, NOT on the element. The
+      general icon set sets --bd-icon directly on ::before, and
+      a value applied directly to a pseudo-element always beats
+      one inherited from its originating element — regardless of
+      specificity. Setting it on the element would silently lose
+      to the general set on every shared icon.
+
+   2. Every selector carries an ID or a class+attribute pair, so
+      it out-specifies the general set's `body.X .fa-y::before`
+      (0,2,1). Topbar always wins where the two overlap.
+   ============================================================ */
+
+/* ---- Shared mask rule -------------------------------------- */
+body.bd-topbar-freehand #leftNavDrawerIcon::before,
+body.bd-topbar-freehand #rightNavDrawerIcon::before,
+body.bd-topbar-freehand #WIDrawerIcon::before,
+body.bd-topbar-freehand #API-status-top::before,
+body.bd-topbar-freehand #options_button::before,
+body.bd-topbar-freehand #extensionsMenuButton::before,
+body.bd-topbar-freehand #mes_impersonate::before,
+body.bd-topbar-freehand #mes_continue::before,
+body.bd-topbar-freehand #send_but::before,
+body.bd-topbar-freehand #backgrounds-drawer-toggle .drawer-icon::before,
+body.bd-topbar-freehand .drawer-icon[title="AI Response Formatting"]::before,
+body.bd-topbar-freehand .drawer-icon[title="User Settings"]::before,
+body.bd-topbar-freehand .drawer-icon[title="Extensions"]::before,
+body.bd-topbar-freehand .drawer-icon[title="Persona Management"]::before,
+body.bd-topbar-freehand #stscript_continue i::before,
+body.bd-topbar-freehand #stscript_pause i::before,
+body.bd-topbar-freehand #stscript_stop i::before,
+body.bd-topbar-freehand #mes_stop i::before {
+    content: "";
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    vertical-align: -0.125em;
+    background-color: currentColor;
+    -webkit-mask: var(--bd-icon) no-repeat center / contain;
+    mask: var(--bd-icon) no-repeat center / contain;
+}
+
+/* ---- Clean matches ----------------------------------------- */
+
+body.bd-topbar-freehand #leftNavDrawerIcon::before {
+    --bd-icon: url("https://api.iconify.design/streamline-freehand/controls-sliders-vertical.svg");
+}
+body.bd-topbar-freehand .drawer-icon[title="AI Response Formatting"]::before {
+    --bd-icon: url("https://api.iconify.design/streamline-freehand/menu-navigation-horizontal.svg");
+}
+body.bd-topbar-freehand .drawer-icon[title="User Settings"]::before {
+    --bd-icon: url("https://api.iconify.design/streamline-freehand/settings-cog.svg");
+}
+body.bd-topbar-freehand #backgrounds-drawer-toggle .drawer-icon::before {
+    --bd-icon: url("https://api.iconify.design/streamline-freehand/picture-stack-landscape.svg");
+}
+body.bd-topbar-freehand #WIDrawerIcon::before {
+    --bd-icon: url("https://api.iconify.design/streamline-freehand/worldwide-web-location-pin.svg");
+}
+body.bd-topbar-freehand #options_button::before {
+    --bd-icon: url("https://api.iconify.design/streamline-freehand/menu-navigation-2.svg");
+}
+body.bd-topbar-freehand #send_but::before {
+    --bd-icon: url("https://api.iconify.design/streamline-freehand/send-email-paper-plane-1.svg");
+}
+body.bd-topbar-freehand #mes_continue::before {
+    --bd-icon: url("https://api.iconify.design/streamline-freehand/multimedia-controls-button-next.svg");
+}
+body.bd-topbar-freehand #stscript_stop i::before,
+body.bd-topbar-freehand #mes_stop i::before {
+    --bd-icon: url("https://api.iconify.design/streamline-freehand/remove-delete-sign-bold.svg");
+}
+/* Freehand has a real plugin/puzzle metaphor, which reads truer for
+   Extensions than the pepicons stars did. */
+body.bd-topbar-freehand .drawer-icon[title="Extensions"]::before,
+body.bd-topbar-freehand #extensionsMenuButton::before {
+    --bd-icon: url("https://api.iconify.design/streamline-freehand/plugin-jigsaw-puzzle.svg");
+}
+
+/* ---- Compromises — no clean primitive in the set ------------ */
+
+/* No plain `person`; the only bare humans are contextual
+   (escalator-ascend-person, swimming-pool-person). Reads biometric. */
+body.bd-topbar-freehand .drawer-icon[title="Persona Management"]::before,
+body.bd-topbar-freehand #mes_impersonate::before {
+    --bd-icon: url("https://api.iconify.design/streamline-freehand/face-id-user.svg");
+}
+
+/* No plain `heart` — all four are compounds. Weakest pick here. */
+body.bd-topbar-freehand #rightNavDrawerIcon::before {
+    --bd-icon: url("https://api.iconify.design/streamline-freehand/image-file-favorite-heart.svg");
+}
+
+/* No plain `plug` or `globe`. Closest connection metaphor. */
+body.bd-topbar-freehand #API-status-top::before {
+    --bd-icon: url("https://api.iconify.design/streamline-freehand/network-connector.svg");
+}
+
+/* No plain `play` — this one carries a film-edit frame. */
+body.bd-topbar-freehand #stscript_continue i::before {
+    --bd-icon: url("https://api.iconify.design/streamline-freehand/video-edit-play.svg");
+}
+
+/* ---- Hard gap ---------------------------------------------- */
+
+/* `pause` does not exist in streamline-freehand (zero results).
+   Borrowed from the pencil sibling — both are hand-drawn, so the
+   seam is invisible. Delete this rule to fall back to stock FA. */
+body.bd-topbar-freehand #stscript_pause i::before {
+    --bd-icon: url("https://api.iconify.design/pepicons-pencil/pause.svg");
+}

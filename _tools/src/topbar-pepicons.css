@@ -1,0 +1,92 @@
+/* ============================================================
+   TOPBAR PRESET — Pepicons Print                [SOURCE FILE]
+   ------------------------------------------------------------
+   Chris's hand-picked mapping, lifted from custom CSS into a
+   selectable preset. Ship with:
+
+     node _tools/build-iconsets.cjs inline \
+       _tools/src/topbar-pepicons.css assets/topbar-pepicons.css
+
+   See topbar-freehand.css for why --bd-icon is set on ::before
+   rather than on the element — same two cascade rules apply.
+   ============================================================ */
+
+/* ---- Shared mask rule -------------------------------------- */
+body.bd-topbar-pepicons #leftNavDrawerIcon::before,
+body.bd-topbar-pepicons #rightNavDrawerIcon::before,
+body.bd-topbar-pepicons #WIDrawerIcon::before,
+body.bd-topbar-pepicons #API-status-top::before,
+body.bd-topbar-pepicons #options_button::before,
+body.bd-topbar-pepicons #extensionsMenuButton::before,
+body.bd-topbar-pepicons #mes_impersonate::before,
+body.bd-topbar-pepicons #mes_continue::before,
+body.bd-topbar-pepicons #send_but::before,
+body.bd-topbar-pepicons #backgrounds-drawer-toggle .drawer-icon::before,
+body.bd-topbar-pepicons .drawer-icon[title="AI Response Formatting"]::before,
+body.bd-topbar-pepicons .drawer-icon[title="User Settings"]::before,
+body.bd-topbar-pepicons .drawer-icon[title="Extensions"]::before,
+body.bd-topbar-pepicons .drawer-icon[title="Persona Management"]::before,
+body.bd-topbar-pepicons #stscript_continue i::before,
+body.bd-topbar-pepicons #stscript_pause i::before,
+body.bd-topbar-pepicons #stscript_stop i::before,
+body.bd-topbar-pepicons #mes_stop i::before {
+    content: "";
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    vertical-align: -0.125em;
+    background-color: currentColor;
+    -webkit-mask: var(--bd-icon) no-repeat center / contain;
+    mask: var(--bd-icon) no-repeat center / contain;
+}
+
+/* ---- Icon sources ------------------------------------------ */
+
+body.bd-topbar-pepicons #leftNavDrawerIcon::before {
+    --bd-icon: url("https://api.iconify.design/pepicons-print/sliders.svg");
+}
+body.bd-topbar-pepicons #API-status-top::before {
+    --bd-icon: url("https://api.iconify.design/pepicons-print/contract.svg");
+}
+body.bd-topbar-pepicons .drawer-icon[title="AI Response Formatting"]::before {
+    --bd-icon: url("https://api.iconify.design/pepicons-print/menu.svg");
+}
+body.bd-topbar-pepicons #WIDrawerIcon::before {
+    --bd-icon: url("https://api.iconify.design/pepicons-print/planet.svg");
+}
+body.bd-topbar-pepicons .drawer-icon[title="User Settings"]::before {
+    --bd-icon: url("https://api.iconify.design/pepicons-print/eye-frame.svg");
+}
+body.bd-topbar-pepicons #backgrounds-drawer-toggle .drawer-icon::before {
+    --bd-icon: url("https://api.iconify.design/pepicons-print/photo.svg");
+}
+body.bd-topbar-pepicons .drawer-icon[title="Extensions"]::before,
+body.bd-topbar-pepicons #extensionsMenuButton::before {
+    --bd-icon: url("https://api.iconify.design/pepicons-print/stars.svg");
+}
+body.bd-topbar-pepicons .drawer-icon[title="Persona Management"]::before,
+body.bd-topbar-pepicons #mes_impersonate::before {
+    --bd-icon: url("https://api.iconify.design/pepicons-print/person.svg");
+}
+body.bd-topbar-pepicons #rightNavDrawerIcon::before {
+    --bd-icon: url("https://api.iconify.design/pepicons-print/heart-filled.svg");
+}
+body.bd-topbar-pepicons #options_button::before {
+    --bd-icon: url("https://api.iconify.design/pepicons-print/menu.svg");
+}
+body.bd-topbar-pepicons #mes_continue::before {
+    --bd-icon: url("https://api.iconify.design/pepicons-print/arrow-right.svg");
+}
+body.bd-topbar-pepicons #send_but::before {
+    --bd-icon: url("https://api.iconify.design/pepicons-print/paper-plane.svg");
+}
+body.bd-topbar-pepicons #stscript_continue i::before {
+    --bd-icon: url("https://api.iconify.design/pepicons-print/play.svg");
+}
+body.bd-topbar-pepicons #stscript_pause i::before {
+    --bd-icon: url("https://api.iconify.design/pepicons-print/pause.svg");
+}
+body.bd-topbar-pepicons #stscript_stop i::before,
+body.bd-topbar-pepicons #mes_stop i::before {
+    --bd-icon: url("https://api.iconify.design/pepicons-print/times.svg");
+}

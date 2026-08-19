@@ -1,0 +1,19 @@
+{
+  "_comment": "Pixelarticons topbar (monochrome mask). Chris's picks.",
+  "sliders": "sliders-2",
+  "api": "server",
+  "formatting": "pen-square",
+  "worldinfo": "earth",
+  "settings": "settings-cog",
+  "background": "image",
+  "extensions": "package",
+  "persona": "avatar-circle",
+  "impersonate": "avatar-circle",
+  "characters": "heart",
+  "options": "menu",
+  "continue": "arrow-right",
+  "send": "send",
+  "play": "play",
+  "pause": "pause",
+  "stop": "square"
+}

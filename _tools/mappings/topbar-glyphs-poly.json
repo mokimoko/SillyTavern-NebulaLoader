@@ -1,0 +1,19 @@
+{
+  "_comment": "Glyphs Poly topbar (COLORED, background-image render). Persona and Impersonate diverge here: user-circle vs target-pointer.",
+  "sliders": "sliders",
+  "api": "plug-1",
+  "formatting": "code",
+  "worldinfo": "globe-earth",
+  "settings": "star",
+  "background": "image",
+  "extensions": "puzzle",
+  "persona": "user-circle",
+  "impersonate": "target-pointer",
+  "characters": "heart-sparkles",
+  "options": "bars-offset",
+  "continue": "seek-step",
+  "send": "send",
+  "play": "play-circle",
+  "pause": "pause-circle",
+  "stop": "stop-circle"
+}

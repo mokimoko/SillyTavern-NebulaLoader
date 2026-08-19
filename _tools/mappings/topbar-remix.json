@@ -1,0 +1,19 @@
+{
+  "_comment": "Shared by remix-line and remix-fill. {s} expands to the weight suffix.",
+  "sliders": "equalizer{s}",
+  "api": "plug{s}",
+  "formatting": "font-size-2",
+  "worldinfo": "earth{s}",
+  "settings": "settings-3{s}",
+  "background": "image{s}",
+  "extensions": "puzzle{s}",
+  "persona": "account-circle{s}",
+  "impersonate": "account-circle{s}",
+  "characters": "heart-3{s}",
+  "options": "more{s}",
+  "continue": "arrow-right{s}",
+  "send": "send-plane{s}",
+  "play": "play{s}",
+  "pause": "pause{s}",
+  "stop": "close{s}"
+}

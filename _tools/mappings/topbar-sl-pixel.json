@@ -1,0 +1,19 @@
+{
+  "_comment": "Streamline Pixel topbar (monochrome mask). Verbose thematic names. Note: settings slot uses a star and pause uses film-equipment — Chris's picks, kept as-is.",
+  "sliders": "interface-essential-settings-toggle-horizontal",
+  "api": "computers-devices-electronics-battery-charge",
+  "formatting": "coding-apps-websites-programming-browser",
+  "worldinfo": "interface-essential-global-public",
+  "settings": "social-rewards-rating-star-1",
+  "background": "photography-photo-image",
+  "extensions": "photography-retouch-wand-star",
+  "persona": "user-single-aim",
+  "impersonate": "user-single-aim",
+  "characters": "interface-essential-heart-favorite",
+  "options": "interface-essential-navigation-menu-3",
+  "continue": "interface-essential-navigation-right-circle-2",
+  "send": "interface-essential-send-mail",
+  "play": "video-movies-player",
+  "pause": "video-movies-set-equipment",
+  "stop": "interface-essential-stop-sign-1"
+}

@@ -1,0 +1,19 @@
+{
+  "_comment": "Streamline Cyber topbar (monochrome mask). Cyber has no pause icon, so that one slot borrows pixelarticons via the prefix: syntax.",
+  "sliders": "filter-6",
+  "api": "server",
+  "formatting": "book-pencil",
+  "worldinfo": "globe-1",
+  "settings": "cog",
+  "background": "picture-6",
+  "extensions": "computer-device-connection",
+  "persona": "person-edit",
+  "impersonate": "person-edit",
+  "characters": "heart-protect",
+  "options": "drawer-4",
+  "continue": "control-next",
+  "send": "share-box-forward-2",
+  "play": "control-play",
+  "pause": "pixelarticons:pause",
+  "stop": "remove-hexagon-1"
+}

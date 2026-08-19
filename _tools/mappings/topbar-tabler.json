@@ -1,0 +1,19 @@
+{
+  "_comment": "Tabler topbar. Unlike Freehand, every slot has a clean primitive here — no compromises needed.",
+  "sliders": "adjustments-horizontal",
+  "api": "plug",
+  "formatting": "text-size",
+  "worldinfo": "world",
+  "settings": "settings",
+  "background": "photo",
+  "extensions": "puzzle",
+  "persona": "user-circle",
+  "impersonate": "user-circle",
+  "characters": "heart",
+  "options": "dots",
+  "continue": "arrow-right",
+  "send": "send",
+  "play": "player-play",
+  "pause": "player-pause",
+  "stop": "x"
+}

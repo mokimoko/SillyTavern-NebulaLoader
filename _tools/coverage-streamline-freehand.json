@@ -1,0 +1,1851 @@
+{
+  "prefix": "streamline-freehand",
+  "minScore": 0.34,
+  "matched": [
+    {
+      "fa": [
+        "fa-circle-info",
+        "fa-info-circle"
+      ],
+      "phosphor": "info",
+      "proposed": "lock-circle",
+      "confidence": 0.5,
+      "alternates": [
+        "unlock-circle",
+        "smart-watch-circle"
+      ]
+    },
+    {
+      "fa": [
+        "fa-circle-question",
+        "fa-question-circle"
+      ],
+      "phosphor": "question",
+      "proposed": "help-question-circle",
+      "confidence": 0.917,
+      "alternates": [
+        "lock-circle",
+        "unlock-circle"
+      ]
+    },
+    {
+      "fa": [
+        "fa-key"
+      ],
+      "phosphor": "key",
+      "proposed": "password-approved",
+      "confidence": 0.875,
+      "alternates": [
+        "password-type",
+        "unlock-circle"
+      ]
+    },
+    {
+      "fa": [
+        "fa-circle-chevron-down"
+      ],
+      "phosphor": "caret-circle-down",
+      "proposed": "resize-expand-arrow",
+      "confidence": 0.542,
+      "alternates": [
+        "keyboard-arrow-return",
+        "retract-shrink-arrow"
+      ]
+    },
+    {
+      "fa": [
+        "fa-circle-chevron-up"
+      ],
+      "phosphor": "caret-circle-up",
+      "proposed": "resize-expand-arrow",
+      "confidence": 0.542,
+      "alternates": [
+        "keyboard-arrow-return",
+        "retract-shrink-arrow"
+      ]
+    },
+    {
+      "fa": [
+        "fa-trash-can",
+        "fa-trash",
+        "fa-trash-alt"
+      ],
+      "phosphor": "trash",
+      "proposed": "delete-skull",
+      "confidence": 0.5,
+      "alternates": [
+        "remove-delete-sign-bold",
+        "remove-subtract-sign-bold"
+      ]
+    },
+    {
+      "fa": [
+        "fa-maximize"
+      ],
+      "phosphor": "arrows-out",
+      "proposed": "synchronize-arrows",
+      "confidence": 0.375,
+      "alternates": [
+        "synchronize-arrows-warning",
+        "zoom-out-magnifier-1"
+      ]
+    },
+    {
+      "fa": [
+        "fa-minimize"
+      ],
+      "phosphor": "arrows-in",
+      "proposed": "synchronize-arrows",
+      "confidence": 0.375,
+      "alternates": [
+        "smiley-in-trouble",
+        "gesture-zoom-in"
+      ]
+    },
+    {
+      "fa": [
+        "fa-pencil"
+      ],
+      "phosphor": "pencil-simple",
+      "proposed": "content-write",
+      "confidence": 0.875,
+      "alternates": [
+        "edit-pencil",
+        "server-edit"
+      ]
+    },
+    {
+      "fa": [
+        "fa-pen-to-square",
+        "fa-edit"
+      ],
+      "phosphor": "note-pencil",
+      "proposed": "edit-pencil",
+      "confidence": 0.75,
+      "alternates": [
+        "server-edit",
+        "content-browser-edit"
+      ]
+    },
+    {
+      "fa": [
+        "fa-save"
+      ],
+      "phosphor": "floppy-disk",
+      "proposed": "floppy-disk",
+      "confidence": 0.75,
+      "alternates": []
+    },
+    {
+      "fa": [
+        "fa-clock-rotate-left"
+      ],
+      "phosphor": "clock-counter-clockwise",
+      "proposed": "flip-rotate-clockwise",
+      "confidence": 0.467,
+      "alternates": [
+        "rotate-smartphone",
+        "alert-alarm-clock"
+      ]
+    },
+    {
+      "fa": [
+        "fa-file-circle-plus"
+      ],
+      "phosphor": "file-plus",
+      "proposed": "tag-new-circle",
+      "confidence": 0.667,
+      "alternates": [
+        "file-code-c-plus-plus",
+        "add-sign-bold"
+      ]
+    },
+    {
+      "fa": [
+        "fa-plus"
+      ],
+      "phosphor": "plus",
+      "proposed": "add-sign-bold",
+      "confidence": 1,
+      "alternates": [
+        "notes-add",
+        "vectors-add-anchor"
+      ]
+    },
+    {
+      "fa": [
+        "fa-circle-xmark"
+      ],
+      "phosphor": "x-circle",
+      "proposed": "focus-cross",
+      "confidence": 0.375,
+      "alternates": [
+        "delete-skull",
+        "lock-circle"
+      ]
+    },
+    {
+      "fa": [
+        "fa-xmark",
+        "fa-times",
+        "fa-close"
+      ],
+      "phosphor": "x",
+      "proposed": "shop-close",
+      "confidence": 0.938,
+      "alternates": [
+        "crypto-close-up-group-chat-users-conversation",
+        "focus-cross"
+      ]
+    },
+    {
+      "fa": [
+        "fa-lock"
+      ],
+      "phosphor": "lock",
+      "proposed": "lock-circle",
+      "confidence": 0.875,
+      "alternates": [
+        "lock-network",
+        "server-lock"
+      ]
+    },
+    {
+      "fa": [
+        "fa-unlock",
+        "fa-lock-open"
+      ],
+      "phosphor": "lock-open",
+      "proposed": "shop-open",
+      "confidence": 0.75,
+      "alternates": [
+        "text-formating-open-quote",
+        "wealth-treasure-chest-open"
+      ]
+    },
+    {
+      "fa": [
+        "fa-circle-exclamation"
+      ],
+      "phosphor": "warning-circle",
+      "proposed": "lock-circle",
+      "confidence": 0.375,
+      "alternates": [
+        "unlock-circle",
+        "hard-drive-warning"
+      ]
+    },
+    {
+      "fa": [
+        "fa-exclamation-triangle",
+        "fa-triangle-exclamation"
+      ],
+      "phosphor": "warning",
+      "proposed": "alerts-warning-triangle",
+      "confidence": 0.667,
+      "alternates": [
+        "color-triangle",
+        "hard-drive-warning"
+      ]
+    },
+    {
+      "fa": [
+        "fa-chevron-up"
+      ],
+      "phosphor": "caret-up",
+      "proposed": "resize-expand-arrow",
+      "confidence": 0.667,
+      "alternates": [
+        "keyboard-arrow-return",
+        "retract-shrink-arrow"
+      ]
+    },
+    {
+      "fa": [
+        "fa-chevron-down"
+      ],
+      "phosphor": "caret-down",
+      "proposed": "resize-expand-arrow",
+      "confidence": 0.667,
+      "alternates": [
+        "keyboard-arrow-return",
+        "retract-shrink-arrow"
+      ]
+    },
+    {
+      "fa": [
+        "fa-chevron-left"
+      ],
+      "phosphor": "caret-left",
+      "proposed": "resize-expand-arrow",
+      "confidence": 0.667,
+      "alternates": [
+        "keyboard-arrow-return",
+        "retract-shrink-arrow"
+      ]
+    },
+    {
+      "fa": [
+        "fa-chevron-right"
+      ],
+      "phosphor": "caret-right",
+      "proposed": "resize-expand-arrow",
+      "confidence": 0.667,
+      "alternates": [
+        "keyboard-arrow-return",
+        "retract-shrink-arrow"
+      ]
+    },
+    {
+      "fa": [
+        "fa-comments"
+      ],
+      "phosphor": "chats",
+      "proposed": "conversation-chat",
+      "confidence": 0.5,
+      "alternates": [
+        "messages-bubble-image",
+        "messages-bubble-menu"
+      ]
+    },
+    {
+      "fa": [
+        "fa-comment"
+      ],
+      "phosphor": "chat",
+      "proposed": "conversation-chat",
+      "confidence": 1,
+      "alternates": [
+        "bug-service-chat",
+        "programming-team-chat"
+      ]
+    },
+    {
+      "fa": [
+        "fa-comment-slash"
+      ],
+      "phosphor": "chat-slash",
+      "proposed": "conversation-chat",
+      "confidence": 0.75,
+      "alternates": [
+        "bug-service-chat",
+        "programming-team-chat"
+      ]
+    },
+    {
+      "fa": [
+        "fa-link"
+      ],
+      "phosphor": "link",
+      "proposed": "link-paperclip",
+      "confidence": 0.875,
+      "alternates": [
+        "app-window-link",
+        "security-network-chain"
+      ]
+    },
+    {
+      "fa": [
+        "fa-link-slash"
+      ],
+      "phosphor": "link-break",
+      "proposed": "link-paperclip",
+      "confidence": 0.375,
+      "alternates": [
+        "lock-cancel-slash",
+        "app-window-link"
+      ]
+    },
+    {
+      "fa": [
+        "fa-image",
+        "fa-image-portrait",
+        "fa-panorama"
+      ],
+      "phosphor": "image",
+      "proposed": "crop-image",
+      "confidence": 0.375,
+      "alternates": [
+        "drawer-image",
+        "stamps-portrait"
+      ]
+    },
+    {
+      "fa": [
+        "fa-lightbulb"
+      ],
+      "phosphor": "lightbulb",
+      "proposed": "advertising-money-idea",
+      "confidence": 0.833,
+      "alternates": [
+        "business-cash-idea",
+        "programming-code-idea"
+      ]
+    },
+    {
+      "fa": [
+        "fa-globe"
+      ],
+      "phosphor": "globe",
+      "proposed": "crypto-currency-bitcoin-network-globe",
+      "confidence": 0.8,
+      "alternates": []
+    },
+    {
+      "fa": [
+        "fa-eye"
+      ],
+      "phosphor": "eye",
+      "proposed": "view-binocular",
+      "confidence": 0.875,
+      "alternates": [
+        "business-cash-eye",
+        "seo-eye-network"
+      ]
+    },
+    {
+      "fa": [
+        "fa-eye-slash"
+      ],
+      "phosphor": "eye-slash",
+      "proposed": "view-binocular",
+      "confidence": 0.5,
+      "alternates": [
+        "business-cash-eye",
+        "seo-eye-network"
+      ]
+    },
+    {
+      "fa": [
+        "fa-star"
+      ],
+      "phosphor": "star",
+      "proposed": "book-bookmark",
+      "confidence": 0.875,
+      "alternates": [
+        "loading-spinning-star",
+        "loading-star-1"
+      ]
+    },
+    {
+      "fa": [
+        "fa-power-off"
+      ],
+      "phosphor": "power",
+      "proposed": "layers-off",
+      "confidence": 0.5,
+      "alternates": [
+        "power-button",
+        "microphone-off"
+      ]
+    },
+    {
+      "fa": [
+        "fa-desktop"
+      ],
+      "phosphor": "desktop",
+      "proposed": "desktop-monitor",
+      "confidence": 0.875,
+      "alternates": [
+        "screen-curved",
+        "grid-monitor"
+      ]
+    },
+    {
+      "fa": [
+        "fa-cloud-arrow-down"
+      ],
+      "phosphor": "cloud-arrow-down",
+      "proposed": "drawer-download",
+      "confidence": 0.375,
+      "alternates": [
+        "cloud-check",
+        "cloud-disable"
+      ]
+    },
+    {
+      "fa": [
+        "fa-face-smile"
+      ],
+      "phosphor": "smiley",
+      "proposed": "smiley-smile-2",
+      "confidence": 0.667,
+      "alternates": [
+        "smiley-blessed",
+        "smiley-blush"
+      ]
+    },
+    {
+      "fa": [
+        "fa-skull"
+      ],
+      "phosphor": "skull",
+      "proposed": "delete-skull",
+      "confidence": 0.875,
+      "alternates": []
+    },
+    {
+      "fa": [
+        "fa-check"
+      ],
+      "phosphor": "check",
+      "proposed": "cloud-check",
+      "confidence": 0.875,
+      "alternates": [
+        "check-payment-sign",
+        "database-check"
+      ]
+    },
+    {
+      "fa": [
+        "fa-copy",
+        "fa-clone"
+      ],
+      "phosphor": "copy",
+      "proposed": "copy-paste-clipboard",
+      "confidence": 0.458,
+      "alternates": [
+        "copy-paste-cut-scissors"
+      ]
+    },
+    {
+      "fa": [
+        "fa-paste"
+      ],
+      "phosphor": "clipboard-text",
+      "proposed": "performance-increase-clipboard",
+      "confidence": 0.667,
+      "alternates": [
+        "copy-paste-clipboard",
+        "form-edition-clipboard"
+      ]
+    },
+    {
+      "fa": [
+        "fa-magnifying-glass",
+        "fa-search"
+      ],
+      "phosphor": "magnifying-glass",
+      "proposed": "search-magnifier",
+      "confidence": 1.125,
+      "alternates": [
+        "programming-search",
+        "business-cash-search"
+      ]
+    },
+    {
+      "fa": [
+        "fa-window-maximize"
+      ],
+      "phosphor": "browser",
+      "proposed": "programming-browser",
+      "confidence": 0.375,
+      "alternates": [
+        "advertising-ad-browser",
+        "content-browser-edit"
+      ]
+    },
+    {
+      "fa": [
+        "fa-film"
+      ],
+      "phosphor": "film-strip",
+      "proposed": "video-edit-effects",
+      "confidence": 0.458,
+      "alternates": [
+        "video-edit-play",
+        "video-edit-split"
+      ]
+    },
+    {
+      "fa": [
+        "fa-music"
+      ],
+      "phosphor": "music-notes",
+      "proposed": "notes-hand",
+      "confidence": 0.625,
+      "alternates": [
+        "notes-add",
+        "notes-book"
+      ]
+    },
+    {
+      "fa": [
+        "fa-repeat"
+      ],
+      "phosphor": "repeat",
+      "proposed": "multimedia-controls-loop-arrow",
+      "confidence": 0.813,
+      "alternates": [
+        "multimedia-controls-loop-arrow-1"
+      ]
+    },
+    {
+      "fa": [
+        "fa-download"
+      ],
+      "phosphor": "download-simple",
+      "proposed": "drawer-download",
+      "confidence": 0.875,
+      "alternates": [
+        "download-brackets",
+        "email-action-download"
+      ]
+    },
+    {
+      "fa": [
+        "fa-upload"
+      ],
+      "phosphor": "upload-simple",
+      "proposed": "upload-brackets",
+      "confidence": 0.875,
+      "alternates": [
+        "upload-menu",
+        "send-email-fly"
+      ]
+    },
+    {
+      "fa": [
+        "fa-bolt"
+      ],
+      "phosphor": "lightning",
+      "proposed": "connect-flash",
+      "confidence": 0.5,
+      "alternates": [
+        "power-button",
+        "laptop-action-flash"
+      ]
+    },
+    {
+      "fa": [
+        "fa-folder-plus"
+      ],
+      "phosphor": "folder-plus",
+      "proposed": "add-sign-bold",
+      "confidence": 0.625,
+      "alternates": [
+        "notes-add",
+        "office-folder"
+      ]
+    },
+    {
+      "fa": [
+        "fa-folder"
+      ],
+      "phosphor": "folder",
+      "proposed": "office-folder",
+      "confidence": 0.875,
+      "alternates": [
+        "server-sftp-folder",
+        "coding-files-network-folder"
+      ]
+    },
+    {
+      "fa": [
+        "fa-folder-open"
+      ],
+      "phosphor": "folder-open",
+      "proposed": "shop-open",
+      "confidence": 0.5,
+      "alternates": [
+        "office-folder",
+        "server-sftp-folder"
+      ]
+    },
+    {
+      "fa": [
+        "fa-folder-minus"
+      ],
+      "phosphor": "folder-minus",
+      "proposed": "remove-delete-sign-bold",
+      "confidence": 0.5,
+      "alternates": [
+        "remove-subtract-sign-bold",
+        "office-folder"
+      ]
+    },
+    {
+      "fa": [
+        "fa-folder-tree"
+      ],
+      "phosphor": "tree-structure",
+      "proposed": "office-folder",
+      "confidence": 0.375,
+      "alternates": [
+        "server-sftp-folder",
+        "coding-files-network-folder"
+      ]
+    },
+    {
+      "fa": [
+        "fa-paintbrush"
+      ],
+      "phosphor": "paint-brush",
+      "proposed": "content-brush-pen",
+      "confidence": 0.667,
+      "alternates": [
+        "color-brush-1",
+        "color-brush-2"
+      ]
+    },
+    {
+      "fa": [
+        "fa-palette"
+      ],
+      "phosphor": "palette",
+      "proposed": "color-crayon",
+      "confidence": 0.875,
+      "alternates": [
+        "color-gradient",
+        "color-palette"
+      ]
+    },
+    {
+      "fa": [
+        "fa-cubes"
+      ],
+      "phosphor": "cube",
+      "proposed": "shape-cube",
+      "confidence": 1,
+      "alternates": [
+        "archive-box",
+        "delete-disable-block-1"
+      ]
+    },
+    {
+      "fa": [
+        "fa-ranking-star"
+      ],
+      "phosphor": "ranking",
+      "proposed": "book-bookmark",
+      "confidence": 0.5,
+      "alternates": [
+        "loading-spinning-star",
+        "loading-star-1"
+      ]
+    },
+    {
+      "fa": [
+        "fa-scroll"
+      ],
+      "phosphor": "scroll",
+      "proposed": "bookmarks-document",
+      "confidence": 0.875,
+      "alternates": [
+        "envelope-paper-document",
+        "vide-document-avi"
+      ]
+    },
+    {
+      "fa": [
+        "fa-tags",
+        "fa-tag"
+      ],
+      "phosphor": "tag",
+      "proposed": "tags-double",
+      "confidence": 0.5,
+      "alternates": [
+        "tag-hot-price",
+        "tag-new-circle"
+      ]
+    },
+    {
+      "fa": [
+        "fa-flag"
+      ],
+      "phosphor": "flag",
+      "proposed": "learning-programming-flag",
+      "confidence": 0.833,
+      "alternates": [
+        "party-decoration-banner-1"
+      ]
+    },
+    {
+      "fa": [
+        "fa-flag-checkered"
+      ],
+      "phosphor": "flag-checkered",
+      "proposed": "learning-programming-flag",
+      "confidence": 0.458,
+      "alternates": [
+        "party-decoration-banner-1"
+      ]
+    },
+    {
+      "fa": [
+        "fa-file-alt",
+        "fa-file-lines"
+      ],
+      "phosphor": "file-text",
+      "proposed": "office-file-text",
+      "confidence": 0.667,
+      "alternates": [
+        "office-file-text-graph",
+        "print-text"
+      ]
+    },
+    {
+      "fa": [
+        "fa-envelope-open-text"
+      ],
+      "phosphor": "envelope-open",
+      "proposed": "text-formating-open-quote",
+      "confidence": 0.625,
+      "alternates": [
+        "drawer-envelope",
+        "envelope-pigeon"
+      ]
+    },
+    {
+      "fa": [
+        "fa-play"
+      ],
+      "phosphor": "play",
+      "proposed": "equalizer-stereo-play",
+      "confidence": 0.833,
+      "alternates": [
+        "video-edit-play",
+        "family-child-play-ball-sign"
+      ]
+    },
+    {
+      "fa": [
+        "fa-stop"
+      ],
+      "phosphor": "stop",
+      "proposed": "alerts-stop-sign",
+      "confidence": 0.875,
+      "alternates": []
+    },
+    {
+      "fa": [
+        "fa-circle-stop"
+      ],
+      "phosphor": "stop-circle",
+      "proposed": "alerts-stop-sign",
+      "confidence": 0.5,
+      "alternates": [
+        "lock-circle",
+        "unlock-circle"
+      ]
+    },
+    {
+      "fa": [
+        "fa-user-secret"
+      ],
+      "phosphor": "user-focus",
+      "proposed": "focus-cross",
+      "confidence": 0.375,
+      "alternates": [
+        "focus-motion",
+        "focus-camera-auto"
+      ]
+    },
+    {
+      "fa": [
+        "fa-arrow-right"
+      ],
+      "phosphor": "arrow-right",
+      "proposed": "flip-right",
+      "confidence": 0.5,
+      "alternates": [
+        "transform-right",
+        "layouts-right"
+      ]
+    },
+    {
+      "fa": [
+        "fa-arrow-down-9-1"
+      ],
+      "phosphor": "sort-descending",
+      "proposed": "volume-control-down-1",
+      "confidence": 0.375,
+      "alternates": [
+        "multimedia-controls-loop-arrow-1",
+        "resize-arrow-expand-vertical-1"
+      ]
+    },
+    {
+      "fa": [
+        "fa-sliders"
+      ],
+      "phosphor": "sliders-horizontal",
+      "proposed": "filter",
+      "confidence": 0.625,
+      "alternates": [
+        "lens-horizontal",
+        "composition-paronama-horizontal"
+      ]
+    },
+    {
+      "fa": [
+        "fa-cog",
+        "fa-gear"
+      ],
+      "phosphor": "gear-six",
+      "proposed": "settings-cog",
+      "confidence": 0.75,
+      "alternates": [
+        "settings-hammer",
+        "settings-screwdriver"
+      ]
+    },
+    {
+      "fa": [
+        "fa-up-right-from-square"
+      ],
+      "phosphor": "arrow-square-out",
+      "proposed": "shopping-basket-arrow-out",
+      "confidence": 0.375,
+      "alternates": [
+        "flip-right",
+        "flip-up"
+      ]
+    },
+    {
+      "fa": [
+        "fa-circle-check"
+      ],
+      "phosphor": "check-circle",
+      "proposed": "lock-circle",
+      "confidence": 0.5,
+      "alternates": [
+        "unlock-circle",
+        "cloud-check"
+      ]
+    },
+    {
+      "fa": [
+        "fa-plug",
+        "fa-plug-circle-exclamation"
+      ],
+      "phosphor": "plug",
+      "proposed": "lock-circle",
+      "confidence": 0.375,
+      "alternates": [
+        "unlock-circle",
+        "power-supply-plug"
+      ]
+    },
+    {
+      "fa": [
+        "fa-font"
+      ],
+      "phosphor": "text-aa",
+      "proposed": "text-formating-font-size",
+      "confidence": 0.625,
+      "alternates": [
+        "print-text",
+        "text-formating-hash"
+      ]
+    },
+    {
+      "fa": [
+        "fa-book-atlas"
+      ],
+      "phosphor": "book-open",
+      "proposed": "book-bookmark",
+      "confidence": 0.375,
+      "alternates": [
+        "notes-book",
+        "phone-book"
+      ]
+    },
+    {
+      "fa": [
+        "fa-book"
+      ],
+      "phosphor": "book",
+      "proposed": "book-bookmark",
+      "confidence": 0.875,
+      "alternates": [
+        "notes-book",
+        "phone-book"
+      ]
+    },
+    {
+      "fa": [
+        "fa-expand"
+      ],
+      "phosphor": "arrows-out-simple",
+      "proposed": "crop-expand",
+      "confidence": 0.375,
+      "alternates": [
+        "synchronize-arrows",
+        "expand-smartphone"
+      ]
+    },
+    {
+      "fa": [
+        "fa-compress"
+      ],
+      "phosphor": "arrows-in-simple",
+      "proposed": "synchronize-arrows",
+      "confidence": 0.375,
+      "alternates": [
+        "smiley-in-trouble",
+        "gesture-zoom-in"
+      ]
+    },
+    {
+      "fa": [
+        "fa-notes-medical"
+      ],
+      "phosphor": "first-aid",
+      "proposed": "notes-hand",
+      "confidence": 0.438,
+      "alternates": [
+        "notes-add",
+        "notes-book"
+      ]
+    },
+    {
+      "fa": [
+        "fa-arrows-rotate",
+        "fa-sync"
+      ],
+      "phosphor": "arrows-clockwise",
+      "proposed": "flip-rotate-clockwise",
+      "confidence": 0.542,
+      "alternates": [
+        "synchronize-arrows",
+        "rotate-smartphone"
+      ]
+    },
+    {
+      "fa": [
+        "fa-user-cog"
+      ],
+      "phosphor": "user-gear",
+      "proposed": "settings-cog",
+      "confidence": 0.75,
+      "alternates": [
+        "settings-hammer",
+        "settings-screwdriver"
+      ]
+    },
+    {
+      "fa": [
+        "fa-user-shield",
+        "fa-person-circle-question"
+      ],
+      "phosphor": "user-circle",
+      "proposed": "help-question-circle",
+      "confidence": 0.467,
+      "alternates": [
+        "escalator-ascend-person",
+        "escalator-descend-person"
+      ]
+    },
+    {
+      "fa": [
+        "fa-user-tie",
+        "fa-user"
+      ],
+      "phosphor": "user",
+      "proposed": "face-id-user",
+      "confidence": 0.458,
+      "alternates": [
+        "voice-id-user",
+        "app-window-user"
+      ]
+    },
+    {
+      "fa": [
+        "fa-markdown"
+      ],
+      "phosphor": "markdown-logo",
+      "proposed": "bluetooth-logo",
+      "confidence": 0.5,
+      "alternates": [
+        "android-logo"
+      ]
+    },
+    {
+      "fa": [
+        "fa-wand-magic",
+        "fa-wand-magic-sparkles"
+      ],
+      "phosphor": "magic-wand",
+      "proposed": "retouch-magic-wand",
+      "confidence": 0.667,
+      "alternates": [
+        "design-tool-magic-wand"
+      ]
+    },
+    {
+      "fa": [
+        "fa-minus"
+      ],
+      "phosphor": "minus",
+      "proposed": "remove-delete-sign-bold",
+      "confidence": 0.875,
+      "alternates": [
+        "remove-subtract-sign-bold",
+        "email-action-remove"
+      ]
+    },
+    {
+      "fa": [
+        "fa-crown"
+      ],
+      "phosphor": "crown",
+      "proposed": "human-resources-employee-crown-woman",
+      "confidence": 0.8,
+      "alternates": []
+    },
+    {
+      "fa": [
+        "fa-list-ul"
+      ],
+      "phosphor": "list-bullets",
+      "proposed": "lists-bullets",
+      "confidence": 0.375,
+      "alternates": [
+        "paragraphs-bullets",
+        "ui-webpage-bullets"
+      ]
+    },
+    {
+      "fa": [
+        "fa-user-check"
+      ],
+      "phosphor": "user-check",
+      "proposed": "cloud-check",
+      "confidence": 0.5,
+      "alternates": [
+        "check-payment-sign",
+        "database-check"
+      ]
+    },
+    {
+      "fa": [
+        "fa-user-plus"
+      ],
+      "phosphor": "user-plus",
+      "proposed": "add-sign-bold",
+      "confidence": 0.625,
+      "alternates": [
+        "notes-add",
+        "vectors-add-anchor"
+      ]
+    },
+    {
+      "fa": [
+        "fa-users-gear"
+      ],
+      "phosphor": "users-three",
+      "proposed": "settings-cog",
+      "confidence": 0.375,
+      "alternates": [
+        "settings-hammer",
+        "settings-screwdriver"
+      ]
+    },
+    {
+      "fa": [
+        "fa-check-double"
+      ],
+      "phosphor": "checks",
+      "proposed": "form-validation-check-double",
+      "confidence": 0.625,
+      "alternates": [
+        "camera-double",
+        "tags-double"
+      ]
+    },
+    {
+      "fa": [
+        "fa-toggle-on"
+      ],
+      "phosphor": "toggle-right",
+      "proposed": "controls-slider-toggle-right",
+      "confidence": 0.625,
+      "alternates": [
+        "flip-right",
+        "transform-right"
+      ]
+    },
+    {
+      "fa": [
+        "fa-right-left"
+      ],
+      "phosphor": "arrows-left-right",
+      "proposed": "flip-right",
+      "confidence": 0.375,
+      "alternates": [
+        "transform-right",
+        "layouts-right"
+      ]
+    },
+    {
+      "fa": [
+        "fa-redo"
+      ],
+      "phosphor": "arrow-clockwise",
+      "proposed": "share-forward",
+      "confidence": 0.375,
+      "alternates": [
+        "flip-rotate-clockwise",
+        "resize-expand-arrow"
+      ]
+    },
+    {
+      "fa": [
+        "fa-language"
+      ],
+      "phosphor": "translate",
+      "proposed": "disability-hands-language",
+      "confidence": 0.458,
+      "alternates": [
+        "programming-language-bookmark-javascript",
+        "programming-language-browser-css"
+      ]
+    },
+    {
+      "fa": [
+        "fa-bullhorn"
+      ],
+      "phosphor": "megaphone",
+      "proposed": "share-megaphone",
+      "confidence": 1,
+      "alternates": []
+    },
+    {
+      "fa": [
+        "fa-square-poll-horizontal"
+      ],
+      "phosphor": "chart-bar-horizontal",
+      "proposed": "analytics-graph-bar-horizontal",
+      "confidence": 0.425,
+      "alternates": [
+        "lens-horizontal",
+        "smart-watch-square"
+      ]
+    },
+    {
+      "fa": [
+        "fa-paperclip"
+      ],
+      "phosphor": "paperclip",
+      "proposed": "link-paperclip",
+      "confidence": 0.875,
+      "alternates": [
+        "form-edition-file-attach",
+        "form-edition-image-attach"
+      ]
+    },
+    {
+      "fa": [
+        "fa-bookmark"
+      ],
+      "phosphor": "bookmark",
+      "proposed": "book-bookmark",
+      "confidence": 0.875,
+      "alternates": [
+        "app-window-bookmark",
+        "image-file-favorite-heart"
+      ]
+    },
+    {
+      "fa": [
+        "fa-code-branch"
+      ],
+      "phosphor": "git-branch",
+      "proposed": "file-code",
+      "confidence": 0.375,
+      "alternates": [
+        "code-qr",
+        "file-code-2"
+      ]
+    },
+    {
+      "fa": [
+        "fa-volume-high"
+      ],
+      "phosphor": "speaker-high",
+      "proposed": "speaker",
+      "confidence": 1,
+      "alternates": [
+        "speaker-stand",
+        "digital-player-phone-speaker-1"
+      ]
+    },
+    {
+      "fa": [
+        "fa-bars"
+      ],
+      "phosphor": "list",
+      "proposed": "task-list-pen",
+      "confidence": 0.917,
+      "alternates": [
+        "task-list-clipboard-check",
+        "task-list-clipboard-clock"
+      ]
+    },
+    {
+      "fa": [
+        "fa-paper-plane"
+      ],
+      "phosphor": "paper-plane-right",
+      "proposed": "send-email-paper-plane-1",
+      "confidence": 0.6,
+      "alternates": [
+        "notes-paper",
+        "flip-right"
+      ]
+    },
+    {
+      "fa": [
+        "fa-note-sticky"
+      ],
+      "phosphor": "note",
+      "proposed": "music-note-1",
+      "confidence": 0.458,
+      "alternates": [
+        "music-note-circle-block-1"
+      ]
+    },
+    {
+      "fa": [
+        "fa-pie-chart"
+      ],
+      "phosphor": "chart-pie",
+      "proposed": "analytics-graph-pie",
+      "confidence": 0.458,
+      "alternates": []
+    },
+    {
+      "fa": [
+        "fa-people-arrows"
+      ],
+      "phosphor": "users",
+      "proposed": "messages-people-user-bubble",
+      "confidence": 0.625,
+      "alternates": [
+        "messages-people-woman-heart",
+        "lift-two-people-elevator"
+      ]
+    },
+    {
+      "fa": [
+        "fa-address-book"
+      ],
+      "phosphor": "address-book",
+      "proposed": "book-bookmark",
+      "confidence": 0.5,
+      "alternates": [
+        "notes-book",
+        "phone-book"
+      ]
+    },
+    {
+      "fa": [
+        "fa-pen"
+      ],
+      "phosphor": "pencil-simple",
+      "proposed": "content-write",
+      "confidence": 1,
+      "alternates": [
+        "edit-pencil",
+        "server-edit"
+      ]
+    },
+    {
+      "fa": [
+        "fa-users"
+      ],
+      "phosphor": "users",
+      "proposed": "worldwide-web-users",
+      "confidence": 0.833,
+      "alternates": [
+        "programming-team-chat",
+        "collaboration-team-chat"
+      ]
+    },
+    {
+      "fa": [
+        "fa-truck-arrow-right"
+      ],
+      "phosphor": "truck",
+      "proposed": "flip-right",
+      "confidence": 0.375,
+      "alternates": [
+        "transform-right",
+        "layouts-right"
+      ]
+    },
+    {
+      "fa": [
+        "fa-cut"
+      ],
+      "phosphor": "scissors",
+      "proposed": "coupon-cut",
+      "confidence": 1,
+      "alternates": [
+        "retouch-cut-edit",
+        "copy-paste-cut-scissors"
+      ]
+    },
+    {
+      "fa": [
+        "fa-message"
+      ],
+      "phosphor": "chat-circle",
+      "proposed": "conversation-chat",
+      "confidence": 0.375,
+      "alternates": [
+        "lock-circle",
+        "unlock-circle"
+      ]
+    },
+    {
+      "fa": [
+        "fa-filter-circle-xmark"
+      ],
+      "phosphor": "funnel-x",
+      "proposed": "filter",
+      "confidence": 0.4,
+      "alternates": [
+        "focus-cross",
+        "delete-skull"
+      ]
+    },
+    {
+      "fa": [
+        "fa-scissors",
+        "fa-cut"
+      ],
+      "phosphor": "scissors",
+      "proposed": "coupon-cut",
+      "confidence": 1,
+      "alternates": [
+        "retouch-cut-edit",
+        "copy-paste-cut-scissors"
+      ]
+    },
+    {
+      "fa": [
+        "fa-thumbtack"
+      ],
+      "phosphor": "push-pin",
+      "proposed": "worldwide-web-location-pin",
+      "confidence": 0.625,
+      "alternates": [
+        "task-list-pin-1",
+        "push-notification-2"
+      ]
+    },
+    {
+      "fa": [
+        "fa-comment-dots"
+      ],
+      "phosphor": "chat-circle-dots",
+      "proposed": "conversation-chat",
+      "confidence": 0.625,
+      "alternates": [
+        "bug-service-chat",
+        "programming-team-chat"
+      ]
+    },
+    {
+      "fa": [
+        "fa-github"
+      ],
+      "phosphor": "github-logo",
+      "proposed": "bluetooth-logo",
+      "confidence": 0.5,
+      "alternates": [
+        "android-logo"
+      ]
+    },
+    {
+      "fa": [
+        "fa-discord"
+      ],
+      "phosphor": "discord-logo",
+      "proposed": "bluetooth-logo",
+      "confidence": 0.5,
+      "alternates": [
+        "android-logo"
+      ]
+    },
+    {
+      "fa": [
+        "fa-box-archive"
+      ],
+      "phosphor": "archive",
+      "proposed": "archive-box",
+      "confidence": 1,
+      "alternates": [
+        "donation-charity-donate-box",
+        "archive-drawer-1"
+      ]
+    },
+    {
+      "fa": [
+        "fa-network-wired"
+      ],
+      "phosphor": "network",
+      "proposed": "network",
+      "confidence": 0.625,
+      "alternates": [
+        "lock-network",
+        "network-connector"
+      ]
+    },
+    {
+      "fa": [
+        "fa-box-open"
+      ],
+      "phosphor": "package",
+      "proposed": "archive-box",
+      "confidence": 0.375,
+      "alternates": [
+        "shop-open",
+        "text-formating-open-quote"
+      ]
+    },
+    {
+      "fa": [
+        "fa-wrench"
+      ],
+      "phosphor": "wrench",
+      "proposed": "design-tool-quill",
+      "confidence": 0.833,
+      "alternates": [
+        "design-tool-stamp",
+        "settings-wrench-double"
+      ]
+    },
+    {
+      "fa": [
+        "fa-book-open"
+      ],
+      "phosphor": "book-open-text",
+      "proposed": "text-formating-open-quote",
+      "confidence": 0.625,
+      "alternates": [
+        "book-bookmark",
+        "notes-book"
+      ]
+    },
+    {
+      "fa": [
+        "fa-robot"
+      ],
+      "phosphor": "robot",
+      "proposed": "android-logo",
+      "confidence": 0.875,
+      "alternates": [
+        "android-settings",
+        "cleaning-robot-vacuum"
+      ]
+    },
+    {
+      "fa": [
+        "fa-headphones-simple"
+      ],
+      "phosphor": "headphones",
+      "proposed": "headphones-1",
+      "confidence": 0.875,
+      "alternates": [
+        "headphones-cable",
+        "headphones-human"
+      ]
+    },
+    {
+      "fa": [
+        "fa-toggle-off"
+      ],
+      "phosphor": "toggle-left",
+      "proposed": "controls-slider-toggle-left",
+      "confidence": 0.625,
+      "alternates": [
+        "layers-off",
+        "microphone-off"
+      ]
+    },
+    {
+      "fa": [
+        "fa-people-group"
+      ],
+      "phosphor": "users-four",
+      "proposed": "messages-people-user-bubble",
+      "confidence": 0.5,
+      "alternates": [
+        "messages-people-woman-heart",
+        "lift-two-people-elevator"
+      ]
+    }
+  ],
+  "unmatched": [
+    {
+      "fa": [
+        "fa-file-import"
+      ],
+      "phosphor": "file-arrow-down",
+      "proposed": null,
+      "confidence": 0.313,
+      "alternates": [
+        "resize-expand-arrow",
+        "image-file-dollar"
+      ]
+    },
+    {
+      "fa": [
+        "fa-file-export",
+        "fa-file-arrow-up"
+      ],
+      "phosphor": "file-arrow-up",
+      "proposed": null,
+      "confidence": 0.313,
+      "alternates": [
+        "reorder-up",
+        "file-code"
+      ]
+    },
+    {
+      "fa": [
+        "fa-user-pen"
+      ],
+      "phosphor": "user-circle-gear",
+      "proposed": null,
+      "confidence": 0.313,
+      "alternates": [
+        "edit-pencil",
+        "lock-circle"
+      ]
+    },
+    {
+      "fa": [
+        "fa-grip"
+      ],
+      "phosphor": "dots-six",
+      "proposed": null,
+      "confidence": 0,
+      "alternates": []
+    },
+    {
+      "fa": [
+        "fa-recycle"
+      ],
+      "phosphor": "recycle",
+      "proposed": null,
+      "confidence": 0,
+      "alternates": []
+    },
+    {
+      "fa": [
+        "fa-images",
+        "fa-photo-film"
+      ],
+      "phosphor": "images",
+      "proposed": null,
+      "confidence": 0.333,
+      "alternates": [
+        "photo-frame-hang",
+        "photo-frame-landscape"
+      ]
+    },
+    {
+      "fa": [
+        "fa-table-cells-large"
+      ],
+      "phosphor": "squares-four",
+      "proposed": null,
+      "confidence": 0.233,
+      "alternates": []
+    },
+    {
+      "fa": [
+        "fa-flask"
+      ],
+      "phosphor": "flask",
+      "proposed": null,
+      "confidence": 0,
+      "alternates": []
+    },
+    {
+      "fa": [
+        "fa-right-from-bracket"
+      ],
+      "phosphor": "sign-out",
+      "proposed": null,
+      "confidence": 0.313,
+      "alternates": [
+        "transform-right",
+        "layouts-right"
+      ]
+    },
+    {
+      "fa": [
+        "fa-mobile-screen-button"
+      ],
+      "phosphor": "device-mobile",
+      "proposed": null,
+      "confidence": 0.313,
+      "alternates": [
+        "power-button",
+        "expand-smartphone"
+      ]
+    },
+    {
+      "fa": [
+        "fa-left-long",
+        "fa-arrow-left"
+      ],
+      "phosphor": "arrow-left",
+      "proposed": null,
+      "confidence": 0.333,
+      "alternates": [
+        "keyboard-arrow-return",
+        "move-rectangle-left"
+      ]
+    },
+    {
+      "fa": [
+        "fa-window-restore"
+      ],
+      "phosphor": "browsers",
+      "proposed": null,
+      "confidence": 0.333,
+      "alternates": [
+        "app-window-expand",
+        "app-window-graph"
+      ]
+    },
+    {
+      "fa": [
+        "fa-passport",
+        "fa-address-card"
+      ],
+      "phosphor": "identification-card",
+      "proposed": null,
+      "confidence": 0.313,
+      "alternates": [
+        "sim-card",
+        "memory-sd-card"
+      ]
+    },
+    {
+      "fa": [
+        "fa-ellipsis-vertical"
+      ],
+      "phosphor": "dots-three-vertical",
+      "proposed": null,
+      "confidence": 0.271,
+      "alternates": [
+        "data-transfer-vertical",
+        "scroll-vertical-smartphone"
+      ]
+    },
+    {
+      "fa": [
+        "fa-ellipsis"
+      ],
+      "phosphor": "dots-three",
+      "proposed": null,
+      "confidence": 0.333,
+      "alternates": [
+        "layouts-top-three-columns"
+      ]
+    },
+    {
+      "fa": [
+        "fa-pause"
+      ],
+      "phosphor": "pause",
+      "proposed": null,
+      "confidence": 0,
+      "alternates": []
+    },
+    {
+      "fa": [
+        "fa-user-graduate"
+      ],
+      "phosphor": "student",
+      "proposed": null,
+      "confidence": 0.333,
+      "alternates": [
+        "voice-id-user",
+        "app-window-user"
+      ]
+    },
+    {
+      "fa": [
+        "fa-undo"
+      ],
+      "phosphor": "arrow-counter-clockwise",
+      "proposed": null,
+      "confidence": 0.271,
+      "alternates": [
+        "resize-expand-arrow",
+        "keyboard-arrow-return"
+      ]
+    },
+    {
+      "fa": [
+        "fa-ghost"
+      ],
+      "phosphor": "ghost",
+      "proposed": null,
+      "confidence": 0,
+      "alternates": []
+    },
+    {
+      "fa": [
+        "fa-scale-balanced"
+      ],
+      "phosphor": "scales",
+      "proposed": null,
+      "confidence": 0.313,
+      "alternates": []
+    },
+    {
+      "fa": [
+        "fa-grip-vertical"
+      ],
+      "phosphor": "dots-six-vertical",
+      "proposed": null,
+      "confidence": 0.271,
+      "alternates": [
+        "data-transfer-vertical",
+        "scroll-vertical-smartphone"
+      ]
+    },
+    {
+      "fa": [
+        "fa-layer-group"
+      ],
+      "phosphor": "stack",
+      "proposed": null,
+      "confidence": 0.333,
+      "alternates": [
+        "money-coin-stack",
+        "money-cash-bill-stack"
+      ]
+    },
+    {
+      "fa": [
+        "fa-brain"
+      ],
+      "phosphor": "brain",
+      "proposed": null,
+      "confidence": 0,
+      "alternates": []
+    },
+    {
+      "fa": [
+        "fa-code-compare"
+      ],
+      "phosphor": "git-diff",
+      "proposed": null,
+      "confidence": 0.313,
+      "alternates": [
+        "code-qr",
+        "business-workflow-compare"
+      ]
+    }
+  ]
+}

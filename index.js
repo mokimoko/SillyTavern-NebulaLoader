@@ -28,7 +28,7 @@ const fs = require('fs');
 const path = require('path');
 
 const PLUGIN_ID = 'nebula-loader';
-const PLUGIN_VERSION = '1.3.0';
+const PLUGIN_VERSION = '1.5.0';
 
 // Debug logging. Off by default so a healthy boot stays quiet. Enable by
 // starting ST with NEBULA_DEBUG=1 (or 'true') in the environment. Gates the
@@ -45,10 +45,33 @@ const dlog = DEBUG
 // AUDIO_EXTENSIONS list in src/folderImport.js.
 const AUDIO_UPLOAD_EXTENSIONS = ['.mp3', '.wav', '.ogg', '.flac', '.m4a', '.aac', '.opus'];
 const AUDIO_UPLOAD_MAX_FILES = 200;
+// Cursor auto-discovery (companion feature for UI Bedazzler's Chat Design
+// custom-cursor section). File types a browser can use in `cursor: url(...)`.
+// .ani is included so it shows in the picker, but note Chromium-based clients
+// don't animate .ani — the client is expected to warn/fall back for those.
+const CURSOR_EXTENSIONS = ['.cur', '.ani', '.png', '.svg', '.gif', '.webp'];
+// Where cursor sets live, relative to the user's files/ directory. Each
+// immediate subfolder is one selectable "set"; loose cursor files directly in
+// here are reported separately for the manual/per-type assignment path.
+const CURSORS_SUBDIR = 'cursors';
 // Per-path-segment safe-character rule. Mirrors core's validateAssetFileName
 // charset, but applied segment-by-segment so '/' can separate real subfolders
 // without ever allowing it *inside* a segment. '..' is rejected separately.
 const SAFE_SEGMENT_RE = /^[a-zA-Z0-9_\-.]+$/;
+// Cursor set/file names are more permissive than the strict segment charset:
+// cursor packs routinely use spaces and parentheses ("2D Thick", "upper right.cur",
+// "cursor (1).cur"). We allow those but still forbid path separators, '.'/'..',
+// and hidden dotfiles — and every consumer re-checks containment with
+// path.resolve, so spaces can't enable traversal.
+const SAFE_CURSOR_NAME_RE = /^[a-zA-Z0-9 _.()\-]+$/;
+function isSafeCursorName(name) {
+    return typeof name === 'string'
+        && name.length > 0
+        && name !== '.' && name !== '..'
+        && !name.startsWith('.')
+        && !name.includes('/') && !name.includes('\\')
+        && SAFE_CURSOR_NAME_RE.test(name);
+}
 const ASSISTANT_FILENAME = 'default_Assistant.png';
 const MARK_START = '/* === NEBULA-LOADER SKIN START (auto-managed: edit skin.css, not this) === */';
 const MARK_END = '/* === NEBULA-LOADER SKIN END === */';
@@ -674,6 +697,306 @@ function writeBgmFile(assetsDir, fileName, base64Data) {
 }
 
 // ============================================================
+// Cursor set auto-discovery (UI Bedazzler companion)
+// ============================================================
+//
+// Scans user/files/cursors/ and reports what's there so the client can build a
+// live "set" dropdown without a fixed manifest. Because it reads the real
+// filesystem on every call, a set that the user deletes simply stops appearing
+// — the client can then fall back to default cursors. Read-only: this never
+// writes or deletes anything. All names are filtered to the safe charset and
+// to browser-usable cursor extensions, and traversal is impossible (fixed
+// subpath + no client input reaches the path).
+
+/** True for a bare filename that's safe and carries a cursor extension. */
+function isCursorFile(name) {
+    return isSafeCursorName(name)
+        && CURSOR_EXTENSIONS.includes(path.extname(name).toLowerCase());
+}
+
+/**
+ * Enumerate cursor sets for one user.
+ * @param {string} filesDir Absolute path to the user's files/ directory
+ *   (req.user.directories.files).
+ * @returns {{root: string, sets: Array<{name: string, files: string[]}>, loose: string[]}}
+ *   `root` is the client-relative URL base for building cursor URLs
+ *   (`/user/files/cursors/<set>/<file>`). Empty sets/loose when the folder
+ *   doesn't exist yet — a valid "nothing installed" state, not an error.
+ */
+function listCursorSets(filesDir) {
+    const root = path.resolve(filesDir, CURSORS_SUBDIR);
+    const result = { root: `user/files/${CURSORS_SUBDIR}`, sets: [], loose: [] };
+
+    let entries;
+    try {
+        entries = fs.readdirSync(root, { withFileTypes: true });
+    } catch {
+        return result; // no cursors/ folder yet — nothing installed
+    }
+
+    for (const entry of entries) {
+        if (entry.name.startsWith('.')) continue;
+        if (entry.isDirectory()) {
+            if (!isSafeCursorName(entry.name)) continue;
+            let files = [];
+            try {
+                files = fs.readdirSync(path.join(root, entry.name))
+                    .filter(isCursorFile)
+                    .sort();
+            } catch { /* unreadable subfolder — report it with no files */ }
+            result.sets.push({ name: entry.name, files });
+        } else if (entry.isFile() && isCursorFile(entry.name)) {
+            result.loose.push(entry.name);
+        }
+    }
+
+    result.sets.sort((a, b) => a.name.localeCompare(b.name));
+    result.loose.sort();
+    return result;
+}
+
+/**
+ * Extract the first frame of an animated cursor (.ani) as a standalone icon
+ * image. An .ani is a RIFF/ACON container: a top-level `LIST`/`fram` chunk
+ * holds one or more `icon` subchunks, each of which is a complete .cur/.ico
+ * file. SillyTavern's Chromium engine can't animate .ani in `cursor: url()`,
+ * so the client points animated types at /cursors/frame, which returns this
+ * first frame — a static .cur the browser CAN render. Returns a Buffer (the
+ * frame's raw bytes) or null when the input isn't a valid ACON with a frame.
+ *
+ * Pure byte-walking, no dependencies. All offsets are bounds-checked and every
+ * chunk is word-aligned (odd sizes get a pad byte), per the RIFF spec.
+ */
+function extractFirstAniFrame(buf) {
+    if (!buf || buf.length < 12) return null;
+    if (buf.toString('ascii', 0, 4) !== 'RIFF') return null;
+    if (buf.toString('ascii', 8, 12) !== 'ACON') return null;
+
+    let off = 12;
+    while (off + 8 <= buf.length) {
+        const id = buf.toString('ascii', off, off + 4);
+        const size = buf.readUInt32LE(off + 4);
+        const dataStart = off + 8;
+        if (id === 'LIST' && dataStart + 4 <= buf.length
+            && buf.toString('ascii', dataStart, dataStart + 4) === 'fram') {
+            let so = dataStart + 4;
+            const listEnd = Math.min(dataStart + size, buf.length);
+            while (so + 8 <= listEnd) {
+                const sid = buf.toString('ascii', so, so + 4);
+                const ssize = buf.readUInt32LE(so + 4);
+                const sdata = so + 8;
+                if (sid === 'icon') {
+                    const end = Math.min(sdata + ssize, buf.length);
+                    return end > sdata ? buf.subarray(sdata, end) : null;
+                }
+                so = sdata + ssize + (ssize & 1); // pad odd sizes to even
+            }
+        }
+        off = dataStart + size + (size & 1);
+    }
+    return null;
+}
+
+/**
+ * Cap the rendered size of a .cur/.ico by picking a single sub-image.
+ *
+ * Many cursor packs ship multi-resolution icons (e.g. 32/48/64/96/128 all in
+ * one .cur). Browsers render `cursor: url()` at the image's intrinsic size and
+ * pick the LARGEST available, so a 128px variant shows as a giant cursor. This
+ * rebuilds the file with just one entry — the largest that's ≤ maxPx (or, if
+ * every entry is bigger, the smallest available) — so the browser draws it at a
+ * sane size. No pixel resizing: it selects an existing sub-image, which is why
+ * it's dependency-free. Preserves the .cur type + hotspot bytes.
+ *
+ * Returns the original buffer unchanged when it isn't a multi-image ICO/CUR or
+ * anything looks malformed (fail safe — never corrupts output).
+ */
+function pickCurSubImage(buf, maxPx) {
+    if (!buf || buf.length < 6) return buf;
+    const reserved = buf.readUInt16LE(0);
+    const type = buf.readUInt16LE(2);
+    const count = buf.readUInt16LE(4);
+    if (reserved !== 0 || (type !== 1 && type !== 2) || count < 1) return buf;
+    if (count === 1) return buf; // single image — nothing to pick
+
+    const entries = [];
+    for (let i = 0; i < count; i++) {
+        const o = 6 + i * 16;
+        if (o + 16 > buf.length) return buf; // truncated dir — bail safely
+        const w = buf.readUInt8(o) || 256;
+        const h = buf.readUInt8(o + 1) || 256;
+        const size = buf.readUInt32LE(o + 8);
+        const off = buf.readUInt32LE(o + 12);
+        entries.push({ o, w, h, size, off });
+    }
+
+    // Prefer the largest entry that is ≤ maxPx; otherwise the smallest overall.
+    let chosen = null;
+    for (const e of entries) {
+        if (e.w <= maxPx && (!chosen || e.w > chosen.w)) chosen = e;
+    }
+    if (!chosen) {
+        for (const e of entries) {
+            if (!chosen || e.w < chosen.w) chosen = e;
+        }
+    }
+    if (!chosen || chosen.size <= 0 || chosen.off + chosen.size > buf.length) return buf;
+
+    const entryBytes = buf.subarray(chosen.o, chosen.o + 16);
+    const imgBytes = buf.subarray(chosen.off, chosen.off + chosen.size);
+    const out = Buffer.alloc(6 + 16 + imgBytes.length);
+    out.writeUInt16LE(0, 0);
+    out.writeUInt16LE(type, 2);
+    out.writeUInt16LE(1, 4);          // exactly one image
+    entryBytes.copy(out, 6);
+    out.writeUInt32LE(imgBytes.length, 6 + 8);  // bytesInRes
+    out.writeUInt32LE(6 + 16, 6 + 12);          // imageOffset (right after the single entry)
+    imgBytes.copy(out, 6 + 16);
+    return out;
+}
+
+// ============================================================
+// Audio folder discovery (Dynamic Audio Redux companion)
+// ============================================================
+//
+// Read-only enumeration of the user's audio folders under user/files/, so DAR
+// can offer a "pick a folder" dropdown instead of the browser webkitdirectory
+// picker (which can only see the client's local copy and forces a manual
+// re-select on every update). Because these read the real filesystem per call,
+// they also enable auto-update: DAR can re-list a registered folder and pick up
+// newly added tracks with no user action. Never writes or deletes. Same
+// per-segment charset + containment guards as the audio upload path, plus
+// recursion caps so a huge/deep tree can't hang the request.
+
+const AUDIO_LIST_MAX_DEPTH = 12;
+const AUDIO_LIST_MAX_FILES = 5000;
+
+/** True for a bare filename carrying an accepted audio extension. */
+function isAudioFile(name) {
+    return AUDIO_UPLOAD_EXTENSIONS.includes(path.extname(name).toLowerCase());
+}
+
+/**
+ * Validate a client-supplied RELATIVE directory. Unlike validateAudioRelPath
+ * this permits an empty value (meaning "the files root itself") and doesn't
+ * require an audio extension. Returns { ok, segments } or { ok:false, reason }.
+ */
+function validateRelDir(relPath) {
+    if (relPath === undefined || relPath === null || relPath === '') {
+        return { ok: true, segments: [] };
+    }
+    if (typeof relPath !== 'string') return { ok: false, reason: 'invalid path' };
+    if (relPath.includes('\\')) return { ok: false, reason: 'backslashes not allowed' };
+    if (relPath.startsWith('/')) return { ok: false, reason: 'absolute paths not allowed' };
+    const segments = relPath.split('/').filter(s => s !== '');
+    for (const seg of segments) {
+        if (seg === '.' || seg === '..') return { ok: false, reason: `illegal path segment: "${seg}"` };
+        if (!SAFE_SEGMENT_RE.test(seg)) return { ok: false, reason: `illegal characters in "${seg}"` };
+    }
+    return { ok: true, segments };
+}
+
+/**
+ * Resolve validated segments against filesDir and re-check containment.
+ * Returns the absolute path, or null if it would escape the files directory.
+ */
+function resolveInFiles(filesDir, segments) {
+    const root = path.resolve(filesDir);
+    const target = segments.length ? path.resolve(root, ...segments) : root;
+    if (target !== root && !target.startsWith(root + path.sep)) return null;
+    return target;
+}
+
+/**
+ * Recursively collect audio files under absDir. Each entry carries:
+ *   name         — bare filename
+ *   relativePath — path from the files root (ready for /user/files/<relativePath>)
+ *   subpath      — path from absDir (ready to derive DAR's per-track subfolder)
+ * Depth- and count-capped. Hidden entries and unsafe folder names are skipped.
+ */
+function walkAudioFiles(absDir, filesRoot, out = [], depth = 0) {
+    if (depth > AUDIO_LIST_MAX_DEPTH || out.length >= AUDIO_LIST_MAX_FILES) return out;
+    let entries;
+    try {
+        entries = fs.readdirSync(absDir, { withFileTypes: true });
+    } catch {
+        return out;
+    }
+    for (const e of entries) {
+        if (out.length >= AUDIO_LIST_MAX_FILES) break;
+        if (e.name.startsWith('.')) continue;
+        if (e.isFile() && isAudioFile(e.name)) {
+            const abs = path.join(absDir, e.name);
+            out.push({
+                name: e.name,
+                relativePath: path.relative(filesRoot, abs).split(path.sep).join('/'),
+                subpath: path.relative(absDir, abs).split(path.sep).join('/'),
+            });
+        }
+    }
+    for (const e of entries) {
+        if (out.length >= AUDIO_LIST_MAX_FILES) break;
+        if (e.isDirectory() && !e.name.startsWith('.') && SAFE_SEGMENT_RE.test(e.name)) {
+            walkAudioFiles(path.join(absDir, e.name), filesRoot, out, depth + 1);
+        }
+    }
+    return out;
+}
+
+/**
+ * List immediate subfolders of user/files/<root> that contain audio (searched
+ * recursively), each with a track count. `root` may be '' (the files dir), or
+ * e.g. 'soundtracks' for a dedicated parent. Returns
+ *   { ok, root, base, folders:[{ name, path, trackCount }] }
+ * where `path` is relative to the files root — feed it straight to /audio/tracks.
+ */
+function listAudioFolders(filesDir, root) {
+    const v = validateRelDir(root);
+    if (!v.ok) return { ok: false, reason: v.reason };
+    const abs = resolveInFiles(filesDir, v.segments);
+    if (!abs) return { ok: false, reason: 'path escapes files directory' };
+
+    const relRoot = v.segments.join('/');
+    const filesRoot = path.resolve(filesDir);
+    const result = { ok: true, root: relRoot, base: 'user/files', folders: [] };
+
+    let entries;
+    try {
+        entries = fs.readdirSync(abs, { withFileTypes: true });
+    } catch {
+        return result; // folder absent yet — empty list, not an error
+    }
+    for (const e of entries) {
+        if (!e.isDirectory() || e.name.startsWith('.') || !SAFE_SEGMENT_RE.test(e.name)) continue;
+        const tracks = walkAudioFiles(path.join(abs, e.name), filesRoot);
+        if (tracks.length === 0) continue;
+        result.folders.push({
+            name: e.name,
+            path: relRoot ? `${relRoot}/${e.name}` : e.name,
+            trackCount: tracks.length,
+        });
+    }
+    result.folders.sort((a, b) => a.name.localeCompare(b.name));
+    return result;
+}
+
+/**
+ * List every audio track under user/files/<dir> (recursive). Returns
+ *   { ok, dir, base, tracks:[{ name, relativePath, subpath }] }
+ */
+function listAudioTracks(filesDir, dir) {
+    const v = validateRelDir(dir);
+    if (!v.ok) return { ok: false, reason: v.reason };
+    if (v.segments.length === 0) return { ok: false, reason: 'no directory specified' };
+    const abs = resolveInFiles(filesDir, v.segments);
+    if (!abs) return { ok: false, reason: 'path escapes files directory' };
+
+    const tracks = walkAudioFiles(abs, path.resolve(filesDir));
+    tracks.sort((a, b) => a.relativePath.localeCompare(b.relativePath));
+    return { ok: true, dir: v.segments.join('/'), base: 'user/files', tracks };
+}
+
+// ============================================================
 // Plugin entry point
 // ============================================================
 
@@ -695,8 +1018,110 @@ async function init(router) {
                 assistantSwap: hasReplacementAsset(),
                 audioUpload: true,
                 bgmUpload: true,
+                cursorSets: true,
+                cursorFrames: true,
+                folderList: true,
             },
         });
+    });
+
+    // Cursor set auto-discovery for UI Bedazzler's custom-cursor UI. Read-only
+    // scan of user/files/cursors/ — returns { ok, root, sets:[{name,files}],
+    // loose:[...] }. Scoped to req.user.directories.files so each user sees
+    // only their own sets. Empty result (not an error) when the folder is
+    // absent, so the client can cleanly show "no sets" and fall back to
+    // default cursors.
+    router.get('/cursors/list', (req, res) => {
+        const userDir = req.user?.directories;
+        if (!userDir) return res.status(401).json({ error: 'no authenticated user' });
+        try {
+            // `frames: true` advertises the /cursors/img endpoint below, so the
+            // client can route .ani (static first frame) and multi-res .cur/.ico
+            // (size-capped) through it instead of emitting files the browser
+            // can't render or renders too large.
+            res.json({ ok: true, frames: true, ...listCursorSets(userDir.files) });
+        } catch (err) {
+            res.status(500).json({ error: err.message });
+        }
+    });
+
+    // Cursor image processor. GET /cursors/img?set=&file=&max=32 reads
+    // user/files/cursors/<set>/<file> and returns a browser-friendly static
+    // cursor as image/x-icon:
+    //   • .ani  → first frame extracted (Chromium can't animate .ani), then
+    //   • .cur/.ico → capped to a single sub-image ≤ max px (kills giant
+    //                 128px multi-res cursors).
+    // Read-only, scoped to req.user.directories.files, with permissive cursor
+    // name validation (spaces allowed) plus a path.resolve containment check.
+    router.get('/cursors/img', (req, res) => {
+        const userDir = req.user?.directories;
+        if (!userDir) return res.status(401).json({ error: 'no authenticated user' });
+
+        const set = String(req.query?.set ?? '');
+        const file = String(req.query?.file ?? '');
+        if (!isSafeCursorName(set) || !isSafeCursorName(file)) {
+            return res.status(400).send('bad name');
+        }
+        const ext = path.extname(file).toLowerCase();
+        if (!['.ani', '.cur', '.ico'].includes(ext)) {
+            return res.status(400).send('unsupported type');
+        }
+        const max = Math.min(256, Math.max(8, parseInt(req.query?.max, 10) || 32));
+
+        const root = path.resolve(userDir.files, CURSORS_SUBDIR);
+        const target = path.resolve(root, set, file);
+        if (!target.startsWith(root + path.sep)) {
+            return res.status(400).send('escapes cursors directory');
+        }
+
+        let buf;
+        try {
+            buf = fs.readFileSync(target);
+        } catch {
+            return res.status(404).send('not found');
+        }
+
+        if (ext === '.ani') {
+            const frame = extractFirstAniFrame(buf);
+            if (!frame) return res.status(422).send('no extractable frame');
+            buf = frame;
+        }
+        const out = pickCurSubImage(buf, max);
+
+        res.setHeader('Content-Type', 'image/x-icon');
+        res.setHeader('Cache-Control', 'public, max-age=3600');
+        res.end(out);
+    });
+
+    // Audio folder discovery for Dynamic Audio Redux. Read-only scans of
+    // user/files/, so DAR can offer a folder dropdown (and auto-update) instead
+    // of the webkitdirectory picker. Both scoped to req.user.directories.files.
+    //
+    //   GET /audio/folders?root=<relpath?>  → { ok, root, base, folders:[{name,path,trackCount}] }
+    //     Lists immediate subfolders (of the files root, or of <root> like
+    //     'soundtracks') that contain audio. `path` feeds straight into ↓.
+    //   GET /audio/tracks?dir=<relpath>     → { ok, dir, base, tracks:[{name,relativePath,subpath}] }
+    //     Recursively lists audio files under <dir> for registration.
+    router.get('/audio/folders', (req, res) => {
+        const userDir = req.user?.directories;
+        if (!userDir) return res.status(401).json({ error: 'no authenticated user' });
+        try {
+            const out = listAudioFolders(userDir.files, req.query?.root ?? '');
+            return out.ok ? res.json(out) : res.status(400).json(out);
+        } catch (err) {
+            res.status(500).json({ error: err.message });
+        }
+    });
+
+    router.get('/audio/tracks', (req, res) => {
+        const userDir = req.user?.directories;
+        if (!userDir) return res.status(401).json({ error: 'no authenticated user' });
+        try {
+            const out = listAudioTracks(userDir.files, req.query?.dir ?? '');
+            return out.ok ? res.json(out) : res.status(400).json(out);
+        } catch (err) {
+            res.status(500).json({ error: err.message });
+        }
     });
 
     // Serve images/css from this plugin's assets/ folder.

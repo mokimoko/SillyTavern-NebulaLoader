@@ -1,0 +1,1822 @@
+{
+  "prefix": "pepicons-print",
+  "minScore": 0.34,
+  "matched": [
+    {
+      "fa": [
+        "fa-circle-info",
+        "fa-info-circle"
+      ],
+      "phosphor": "info",
+      "proposed": "info-circle",
+      "confidence": 1,
+      "alternates": [
+        "info-circle-filled",
+        "info-circle-off"
+      ]
+    },
+    {
+      "fa": [
+        "fa-circle-question",
+        "fa-question-circle"
+      ],
+      "phosphor": "question",
+      "proposed": "question-circle",
+      "confidence": 1,
+      "alternates": [
+        "question-circle-filled",
+        "question-circle-off"
+      ]
+    },
+    {
+      "fa": [
+        "fa-key"
+      ],
+      "phosphor": "key",
+      "proposed": "key",
+      "confidence": 1,
+      "alternates": [
+        "key-circle",
+        "key-circle-filled"
+      ]
+    },
+    {
+      "fa": [
+        "fa-circle-chevron-down"
+      ],
+      "phosphor": "caret-circle-down",
+      "proposed": "arrow-down-circle",
+      "confidence": 1.083,
+      "alternates": [
+        "arrow-down-circle-filled",
+        "arrow-down-circle-off"
+      ]
+    },
+    {
+      "fa": [
+        "fa-circle-chevron-up"
+      ],
+      "phosphor": "caret-circle-up",
+      "proposed": "arrow-up-circle",
+      "confidence": 1.083,
+      "alternates": [
+        "arrow-up-circle-filled",
+        "arrow-up-circle-off"
+      ]
+    },
+    {
+      "fa": [
+        "fa-trash-can",
+        "fa-trash",
+        "fa-trash-alt"
+      ],
+      "phosphor": "trash",
+      "proposed": "can",
+      "confidence": 0.625,
+      "alternates": [
+        "trash",
+        "can-circle"
+      ]
+    },
+    {
+      "fa": [
+        "fa-maximize"
+      ],
+      "phosphor": "arrows-out",
+      "proposed": "arrows-spin",
+      "confidence": 0.375,
+      "alternates": [
+        "arrows-spin-circle",
+        "arrows-spin-circle-filled"
+      ]
+    },
+    {
+      "fa": [
+        "fa-minimize"
+      ],
+      "phosphor": "arrows-in",
+      "proposed": "arrows-spin",
+      "confidence": 0.375,
+      "alternates": [
+        "arrows-spin-circle",
+        "arrows-spin-circle-filled"
+      ]
+    },
+    {
+      "fa": [
+        "fa-file-import"
+      ],
+      "phosphor": "file-arrow-down",
+      "proposed": "arrow-down",
+      "confidence": 0.625,
+      "alternates": [
+        "arrow-down-circle",
+        "arrow-down-circle-filled"
+      ]
+    },
+    {
+      "fa": [
+        "fa-file-export",
+        "fa-file-arrow-up"
+      ],
+      "phosphor": "file-arrow-up",
+      "proposed": "arrow-up",
+      "confidence": 0.625,
+      "alternates": [
+        "arrow-up-circle",
+        "arrow-up-circle-filled"
+      ]
+    },
+    {
+      "fa": [
+        "fa-pencil"
+      ],
+      "phosphor": "pencil-simple",
+      "proposed": "pen",
+      "confidence": 1,
+      "alternates": [
+        "pen-circle",
+        "pen-circle-filled"
+      ]
+    },
+    {
+      "fa": [
+        "fa-pen-to-square",
+        "fa-edit"
+      ],
+      "phosphor": "note-pencil",
+      "proposed": "pen",
+      "confidence": 0.75,
+      "alternates": [
+        "pen-circle",
+        "pen-circle-filled"
+      ]
+    },
+    {
+      "fa": [
+        "fa-user-pen"
+      ],
+      "phosphor": "user-circle-gear",
+      "proposed": "gear-circle",
+      "confidence": 0.625,
+      "alternates": [
+        "gear-circle-filled",
+        "pen-circle"
+      ]
+    },
+    {
+      "fa": [
+        "fa-save"
+      ],
+      "phosphor": "floppy-disk",
+      "proposed": "floppy-disk",
+      "confidence": 0.75,
+      "alternates": [
+        "floppy-disk-circle",
+        "floppy-disk-circle-filled"
+      ]
+    },
+    {
+      "fa": [
+        "fa-clock-rotate-left"
+      ],
+      "phosphor": "clock-counter-clockwise",
+      "proposed": "clock",
+      "confidence": 0.4,
+      "alternates": [
+        "angle-left",
+        "arrow-left"
+      ]
+    },
+    {
+      "fa": [
+        "fa-grip"
+      ],
+      "phosphor": "dots-six",
+      "proposed": "dots-x",
+      "confidence": 0.375,
+      "alternates": [
+        "dots-y",
+        "dots-x-circle"
+      ]
+    },
+    {
+      "fa": [
+        "fa-file-circle-plus"
+      ],
+      "phosphor": "file-plus",
+      "proposed": "file-circle",
+      "confidence": 0.75,
+      "alternates": [
+        "file-circle-filled",
+        "plus-circle"
+      ]
+    },
+    {
+      "fa": [
+        "fa-plus"
+      ],
+      "phosphor": "plus",
+      "proposed": "plus",
+      "confidence": 1,
+      "alternates": [
+        "loop-plus",
+        "person-plus"
+      ]
+    },
+    {
+      "fa": [
+        "fa-circle-xmark"
+      ],
+      "phosphor": "x-circle",
+      "proposed": "line-x-circle",
+      "confidence": 0.75,
+      "alternates": [
+        "line-x-circle-filled",
+        "dots-x-circle"
+      ]
+    },
+    {
+      "fa": [
+        "fa-xmark",
+        "fa-times",
+        "fa-close"
+      ],
+      "phosphor": "x",
+      "proposed": "line-x",
+      "confidence": 0.438,
+      "alternates": [
+        "times",
+        "dots-x"
+      ]
+    },
+    {
+      "fa": [
+        "fa-lock"
+      ],
+      "phosphor": "lock",
+      "proposed": "lock-closed",
+      "confidence": 0.875,
+      "alternates": [
+        "lock-open",
+        "lock-closed-circle"
+      ]
+    },
+    {
+      "fa": [
+        "fa-unlock",
+        "fa-lock-open"
+      ],
+      "phosphor": "lock-open",
+      "proposed": "lock-open",
+      "confidence": 1.125,
+      "alternates": [
+        "hand-open",
+        "lock-open-circle"
+      ]
+    },
+    {
+      "fa": [
+        "fa-circle-exclamation"
+      ],
+      "phosphor": "warning-circle",
+      "proposed": "exclamation-circle",
+      "confidence": 0.75,
+      "alternates": [
+        "exclamation-circle-filled",
+        "exclamation-circle-off"
+      ]
+    },
+    {
+      "fa": [
+        "fa-exclamation-triangle",
+        "fa-triangle-exclamation"
+      ],
+      "phosphor": "warning",
+      "proposed": "exclamation",
+      "confidence": 0.5,
+      "alternates": [
+        "exclamation-circle",
+        "exclamation-circle-filled"
+      ]
+    },
+    {
+      "fa": [
+        "fa-chevron-up"
+      ],
+      "phosphor": "caret-up",
+      "proposed": "arrow-up",
+      "confidence": 1.125,
+      "alternates": [
+        "arrow-up-circle",
+        "arrow-up-circle-filled"
+      ]
+    },
+    {
+      "fa": [
+        "fa-chevron-down"
+      ],
+      "phosphor": "caret-down",
+      "proposed": "arrow-down",
+      "confidence": 1.125,
+      "alternates": [
+        "arrow-down-circle",
+        "arrow-down-circle-filled"
+      ]
+    },
+    {
+      "fa": [
+        "fa-chevron-left"
+      ],
+      "phosphor": "caret-left",
+      "proposed": "arrow-left",
+      "confidence": 1.125,
+      "alternates": [
+        "arrow-down-left",
+        "arrow-left-circle"
+      ]
+    },
+    {
+      "fa": [
+        "fa-chevron-right"
+      ],
+      "phosphor": "caret-right",
+      "proposed": "arrow-right",
+      "confidence": 1.125,
+      "alternates": [
+        "arrow-down-right",
+        "arrow-right-circle"
+      ]
+    },
+    {
+      "fa": [
+        "fa-comment"
+      ],
+      "phosphor": "chat",
+      "proposed": "text-bubble",
+      "confidence": 0.5,
+      "alternates": [
+        "text-bubble-circle",
+        "text-bubble-circle-filled"
+      ]
+    },
+    {
+      "fa": [
+        "fa-comment-slash"
+      ],
+      "phosphor": "chat-slash",
+      "proposed": "text-bubble",
+      "confidence": 0.375,
+      "alternates": [
+        "text-bubble-circle",
+        "text-bubble-circle-filled"
+      ]
+    },
+    {
+      "fa": [
+        "fa-link"
+      ],
+      "phosphor": "link",
+      "proposed": "chain",
+      "confidence": 1,
+      "alternates": [
+        "chain-circle",
+        "chain-circle-filled"
+      ]
+    },
+    {
+      "fa": [
+        "fa-link-slash"
+      ],
+      "phosphor": "link-break",
+      "proposed": "chain",
+      "confidence": 0.5,
+      "alternates": [
+        "chain-circle",
+        "chain-circle-filled"
+      ]
+    },
+    {
+      "fa": [
+        "fa-image",
+        "fa-image-portrait",
+        "fa-panorama"
+      ],
+      "phosphor": "image",
+      "proposed": "photo",
+      "confidence": 0.5,
+      "alternates": [
+        "photo-camera",
+        "photo-circle"
+      ]
+    },
+    {
+      "fa": [
+        "fa-images",
+        "fa-photo-film"
+      ],
+      "phosphor": "images",
+      "proposed": "photo",
+      "confidence": 0.5,
+      "alternates": [
+        "film-frame",
+        "photo-camera"
+      ]
+    },
+    {
+      "fa": [
+        "fa-globe"
+      ],
+      "phosphor": "globe",
+      "proposed": "internet",
+      "confidence": 1,
+      "alternates": [
+        "planet",
+        "earth-americas"
+      ]
+    },
+    {
+      "fa": [
+        "fa-eye"
+      ],
+      "phosphor": "eye",
+      "proposed": "eye",
+      "confidence": 1,
+      "alternates": [
+        "cellphone-eye",
+        "eye-circle"
+      ]
+    },
+    {
+      "fa": [
+        "fa-eye-slash"
+      ],
+      "phosphor": "eye-slash",
+      "proposed": "eye",
+      "confidence": 0.625,
+      "alternates": [
+        "cellphone-eye",
+        "eye-circle"
+      ]
+    },
+    {
+      "fa": [
+        "fa-star"
+      ],
+      "phosphor": "star",
+      "proposed": "bookmark",
+      "confidence": 1,
+      "alternates": [
+        "bookmark-filled",
+        "star"
+      ]
+    },
+    {
+      "fa": [
+        "fa-power-off"
+      ],
+      "phosphor": "power",
+      "proposed": "power-off",
+      "confidence": 1,
+      "alternates": [
+        "power-circle-off",
+        "power"
+      ]
+    },
+    {
+      "fa": [
+        "fa-desktop"
+      ],
+      "phosphor": "desktop",
+      "proposed": "monitor",
+      "confidence": 1,
+      "alternates": [
+        "monitor-circle",
+        "monitor-circle-filled"
+      ]
+    },
+    {
+      "fa": [
+        "fa-mobile-screen-button"
+      ],
+      "phosphor": "device-mobile",
+      "proposed": "smartphone-home-button",
+      "confidence": 0.542,
+      "alternates": [
+        "smartphone-home-button-circle",
+        "smartphone-home-button-circle-filled"
+      ]
+    },
+    {
+      "fa": [
+        "fa-cloud-arrow-down"
+      ],
+      "phosphor": "cloud-arrow-down",
+      "proposed": "arrow-down",
+      "confidence": 0.75,
+      "alternates": [
+        "cloud-down",
+        "arrow-down-circle"
+      ]
+    },
+    {
+      "fa": [
+        "fa-face-smile"
+      ],
+      "phosphor": "smiley",
+      "proposed": "face-frowning",
+      "confidence": 0.375,
+      "alternates": [
+        "face-grinning",
+        "face-smiling"
+      ]
+    },
+    {
+      "fa": [
+        "fa-left-long",
+        "fa-arrow-left"
+      ],
+      "phosphor": "arrow-left",
+      "proposed": "arrow-left",
+      "confidence": 0.75,
+      "alternates": [
+        "arrow-down-left",
+        "arrow-left-circle"
+      ]
+    },
+    {
+      "fa": [
+        "fa-check"
+      ],
+      "phosphor": "check",
+      "proposed": "clipboard-check",
+      "confidence": 0.875,
+      "alternates": [
+        "shield-check",
+        "clipboard-check-circle"
+      ]
+    },
+    {
+      "fa": [
+        "fa-copy",
+        "fa-clone"
+      ],
+      "phosphor": "copy",
+      "proposed": "duplicate",
+      "confidence": 0.625,
+      "alternates": [
+        "duplicate-circle",
+        "duplicate-circle-filled"
+      ]
+    },
+    {
+      "fa": [
+        "fa-paste"
+      ],
+      "phosphor": "clipboard-text",
+      "proposed": "clipboard",
+      "confidence": 1,
+      "alternates": [
+        "clipboard-check",
+        "clipboard-circle"
+      ]
+    },
+    {
+      "fa": [
+        "fa-film"
+      ],
+      "phosphor": "film-strip",
+      "proposed": "film-frame",
+      "confidence": 0.5,
+      "alternates": [
+        "film-frame-circle",
+        "film-frame-circle-filled"
+      ]
+    },
+    {
+      "fa": [
+        "fa-music"
+      ],
+      "phosphor": "music-notes",
+      "proposed": "money-note",
+      "confidence": 0.5,
+      "alternates": [
+        "money-note-circle",
+        "money-note-circle-filled"
+      ]
+    },
+    {
+      "fa": [
+        "fa-repeat"
+      ],
+      "phosphor": "repeat",
+      "proposed": "loop",
+      "confidence": 1,
+      "alternates": [
+        "repeat",
+        "refresh"
+      ]
+    },
+    {
+      "fa": [
+        "fa-upload"
+      ],
+      "phosphor": "upload-simple",
+      "proposed": "send",
+      "confidence": 1,
+      "alternates": []
+    },
+    {
+      "fa": [
+        "fa-bolt"
+      ],
+      "phosphor": "lightning",
+      "proposed": "power",
+      "confidence": 0.625,
+      "alternates": [
+        "power-circle",
+        "power-circle-filled"
+      ]
+    },
+    {
+      "fa": [
+        "fa-folder-plus"
+      ],
+      "phosphor": "folder-plus",
+      "proposed": "folder",
+      "confidence": 0.625,
+      "alternates": [
+        "plus",
+        "folder-circle"
+      ]
+    },
+    {
+      "fa": [
+        "fa-folder"
+      ],
+      "phosphor": "folder",
+      "proposed": "folder",
+      "confidence": 1,
+      "alternates": [
+        "folder-circle",
+        "folder-circle-filled"
+      ]
+    },
+    {
+      "fa": [
+        "fa-folder-open"
+      ],
+      "phosphor": "folder-open",
+      "proposed": "folder",
+      "confidence": 0.625,
+      "alternates": [
+        "hand-open",
+        "open"
+      ]
+    },
+    {
+      "fa": [
+        "fa-folder-minus"
+      ],
+      "phosphor": "folder-minus",
+      "proposed": "folder",
+      "confidence": 0.625,
+      "alternates": [
+        "minus",
+        "folder-circle"
+      ]
+    },
+    {
+      "fa": [
+        "fa-folder-tree"
+      ],
+      "phosphor": "tree-structure",
+      "proposed": "folder",
+      "confidence": 0.5,
+      "alternates": [
+        "tree",
+        "folder-circle"
+      ]
+    },
+    {
+      "fa": [
+        "fa-paintbrush"
+      ],
+      "phosphor": "paint-brush",
+      "proposed": "paint-pallet",
+      "confidence": 0.75,
+      "alternates": [
+        "paint-pallet-circle",
+        "paint-pallet-circle-filled"
+      ]
+    },
+    {
+      "fa": [
+        "fa-palette"
+      ],
+      "phosphor": "palette",
+      "proposed": "color-picker",
+      "confidence": 0.875,
+      "alternates": [
+        "paint-pallet",
+        "color-picker-circle"
+      ]
+    },
+    {
+      "fa": [
+        "fa-ranking-star"
+      ],
+      "phosphor": "ranking",
+      "proposed": "bookmark",
+      "confidence": 0.625,
+      "alternates": [
+        "bookmark-filled",
+        "star"
+      ]
+    },
+    {
+      "fa": [
+        "fa-passport",
+        "fa-address-card"
+      ],
+      "phosphor": "identification-card",
+      "proposed": "identification",
+      "confidence": 0.438,
+      "alternates": [
+        "credit-card",
+        "identification-circle"
+      ]
+    },
+    {
+      "fa": [
+        "fa-tags",
+        "fa-tag"
+      ],
+      "phosphor": "tag",
+      "proposed": "label",
+      "confidence": 0.625,
+      "alternates": [
+        "label-circle",
+        "label-circle-filled"
+      ]
+    },
+    {
+      "fa": [
+        "fa-ellipsis-vertical"
+      ],
+      "phosphor": "dots-three-vertical",
+      "proposed": "dots-x",
+      "confidence": 0.625,
+      "alternates": [
+        "dots-y",
+        "dots-x-circle"
+      ]
+    },
+    {
+      "fa": [
+        "fa-ellipsis"
+      ],
+      "phosphor": "dots-three",
+      "proposed": "dots-x",
+      "confidence": 0.75,
+      "alternates": [
+        "dots-y",
+        "dots-x-circle"
+      ]
+    },
+    {
+      "fa": [
+        "fa-flag"
+      ],
+      "phosphor": "flag",
+      "proposed": "flag",
+      "confidence": 1,
+      "alternates": [
+        "flag-circle",
+        "flag-circle-filled"
+      ]
+    },
+    {
+      "fa": [
+        "fa-flag-checkered"
+      ],
+      "phosphor": "flag-checkered",
+      "proposed": "flag",
+      "confidence": 0.625,
+      "alternates": [
+        "flag-circle",
+        "flag-circle-filled"
+      ]
+    },
+    {
+      "fa": [
+        "fa-file-alt",
+        "fa-file-lines"
+      ],
+      "phosphor": "file-text",
+      "proposed": "file",
+      "confidence": 0.5,
+      "alternates": [
+        "file-circle",
+        "file-circle-filled"
+      ]
+    },
+    {
+      "fa": [
+        "fa-envelope-open-text"
+      ],
+      "phosphor": "envelope-open",
+      "proposed": "hand-open",
+      "confidence": 0.5,
+      "alternates": [
+        "open",
+        "hand-open-circle"
+      ]
+    },
+    {
+      "fa": [
+        "fa-play"
+      ],
+      "phosphor": "play",
+      "proposed": "play",
+      "confidence": 1,
+      "alternates": [
+        "play-circle",
+        "play-circle-filled"
+      ]
+    },
+    {
+      "fa": [
+        "fa-pause"
+      ],
+      "phosphor": "pause",
+      "proposed": "pause",
+      "confidence": 1,
+      "alternates": [
+        "pause-circle",
+        "pause-circle-filled"
+      ]
+    },
+    {
+      "fa": [
+        "fa-circle-stop"
+      ],
+      "phosphor": "stop-circle",
+      "proposed": "circle",
+      "confidence": 0.625,
+      "alternates": [
+        "circle-circle",
+        "circle-circle-filled"
+      ]
+    },
+    {
+      "fa": [
+        "fa-user-secret"
+      ],
+      "phosphor": "user-focus",
+      "proposed": "person",
+      "confidence": 0.5,
+      "alternates": [
+        "person-checkmark",
+        "person-circle"
+      ]
+    },
+    {
+      "fa": [
+        "fa-arrow-right"
+      ],
+      "phosphor": "arrow-right",
+      "proposed": "arrow-right",
+      "confidence": 1,
+      "alternates": [
+        "arrow-down-right",
+        "arrow-right-circle"
+      ]
+    },
+    {
+      "fa": [
+        "fa-arrow-down-9-1"
+      ],
+      "phosphor": "sort-descending",
+      "proposed": "arrow-down",
+      "confidence": 0.5,
+      "alternates": [
+        "arrow-down-circle",
+        "arrow-down-circle-filled"
+      ]
+    },
+    {
+      "fa": [
+        "fa-sliders"
+      ],
+      "phosphor": "sliders-horizontal",
+      "proposed": "sliders",
+      "confidence": 0.625,
+      "alternates": [
+        "sliders-circle",
+        "sliders-circle-filled"
+      ]
+    },
+    {
+      "fa": [
+        "fa-cog",
+        "fa-gear"
+      ],
+      "phosphor": "gear-six",
+      "proposed": "gear",
+      "confidence": 1,
+      "alternates": [
+        "gear-circle",
+        "gear-circle-filled"
+      ]
+    },
+    {
+      "fa": [
+        "fa-up-right-from-square"
+      ],
+      "phosphor": "arrow-square-out",
+      "proposed": "arrow-up-right",
+      "confidence": 0.625,
+      "alternates": [
+        "arrow-up-right-circle",
+        "arrow-up-right-circle-filled"
+      ]
+    },
+    {
+      "fa": [
+        "fa-circle-check"
+      ],
+      "phosphor": "check-circle",
+      "proposed": "clipboard-check-circle",
+      "confidence": 0.917,
+      "alternates": [
+        "clipboard-check-circle-filled",
+        "shield-check-circle"
+      ]
+    },
+    {
+      "fa": [
+        "fa-plug",
+        "fa-plug-circle-exclamation"
+      ],
+      "phosphor": "plug",
+      "proposed": "exclamation-circle",
+      "confidence": 0.75,
+      "alternates": [
+        "exclamation-circle-filled",
+        "exclamation-circle-off"
+      ]
+    },
+    {
+      "fa": [
+        "fa-font"
+      ],
+      "phosphor": "text-aa",
+      "proposed": "text-bubble",
+      "confidence": 0.375,
+      "alternates": [
+        "text-bubbles",
+        "text-bubble-circle"
+      ]
+    },
+    {
+      "fa": [
+        "fa-book-atlas"
+      ],
+      "phosphor": "book-open",
+      "proposed": "book",
+      "confidence": 0.5,
+      "alternates": [
+        "hand-open",
+        "open"
+      ]
+    },
+    {
+      "fa": [
+        "fa-book"
+      ],
+      "phosphor": "book",
+      "proposed": "book",
+      "confidence": 1,
+      "alternates": [
+        "book-circle",
+        "book-circle-filled"
+      ]
+    },
+    {
+      "fa": [
+        "fa-expand"
+      ],
+      "phosphor": "arrows-out-simple",
+      "proposed": "expand",
+      "confidence": 0.5,
+      "alternates": [
+        "arrows-spin",
+        "expand-circle"
+      ]
+    },
+    {
+      "fa": [
+        "fa-compress"
+      ],
+      "phosphor": "arrows-in-simple",
+      "proposed": "arrows-spin",
+      "confidence": 0.375,
+      "alternates": [
+        "arrows-spin-circle",
+        "arrows-spin-circle-filled"
+      ]
+    },
+    {
+      "fa": [
+        "fa-user-cog"
+      ],
+      "phosphor": "user-gear",
+      "proposed": "gear",
+      "confidence": 1,
+      "alternates": [
+        "gear-circle",
+        "gear-circle-filled"
+      ]
+    },
+    {
+      "fa": [
+        "fa-user-shield",
+        "fa-person-circle-question"
+      ],
+      "phosphor": "user-circle",
+      "proposed": "person-circle",
+      "confidence": 0.825,
+      "alternates": [
+        "person-circle-filled",
+        "person"
+      ]
+    },
+    {
+      "fa": [
+        "fa-user-tie",
+        "fa-user"
+      ],
+      "phosphor": "user",
+      "proposed": "person",
+      "confidence": 0.625,
+      "alternates": [
+        "person-checkmark",
+        "person-circle"
+      ]
+    },
+    {
+      "fa": [
+        "fa-minus"
+      ],
+      "phosphor": "minus",
+      "proposed": "minus",
+      "confidence": 1,
+      "alternates": [
+        "loop-minus",
+        "minus-circle"
+      ]
+    },
+    {
+      "fa": [
+        "fa-crown"
+      ],
+      "phosphor": "crown",
+      "proposed": "crown",
+      "confidence": 1,
+      "alternates": [
+        "crown-circle",
+        "crown-circle-filled"
+      ]
+    },
+    {
+      "fa": [
+        "fa-list-ul"
+      ],
+      "phosphor": "list-bullets",
+      "proposed": "list",
+      "confidence": 0.5,
+      "alternates": [
+        "list-circle",
+        "list-circle-filled"
+      ]
+    },
+    {
+      "fa": [
+        "fa-user-check"
+      ],
+      "phosphor": "user-check",
+      "proposed": "person",
+      "confidence": 0.625,
+      "alternates": [
+        "clipboard-check",
+        "person-checkmark"
+      ]
+    },
+    {
+      "fa": [
+        "fa-user-plus"
+      ],
+      "phosphor": "user-plus",
+      "proposed": "person-plus",
+      "confidence": 1,
+      "alternates": [
+        "person-plus-circle",
+        "person-plus-circle-filled"
+      ]
+    },
+    {
+      "fa": [
+        "fa-users-gear"
+      ],
+      "phosphor": "users-three",
+      "proposed": "gear",
+      "confidence": 0.5,
+      "alternates": [
+        "people",
+        "gear-circle"
+      ]
+    },
+    {
+      "fa": [
+        "fa-check-double"
+      ],
+      "phosphor": "checks",
+      "proposed": "clipboard-check",
+      "confidence": 0.375,
+      "alternates": [
+        "shield-check",
+        "clipboard-check-circle"
+      ]
+    },
+    {
+      "fa": [
+        "fa-toggle-on"
+      ],
+      "phosphor": "toggle-right",
+      "proposed": "angle-right",
+      "confidence": 0.375,
+      "alternates": [
+        "arrow-right",
+        "triangle-right"
+      ]
+    },
+    {
+      "fa": [
+        "fa-right-left"
+      ],
+      "phosphor": "arrows-left-right",
+      "proposed": "angle-left",
+      "confidence": 0.375,
+      "alternates": [
+        "angle-right",
+        "arrow-left"
+      ]
+    },
+    {
+      "fa": [
+        "fa-user-graduate"
+      ],
+      "phosphor": "student",
+      "proposed": "person",
+      "confidence": 0.5,
+      "alternates": [
+        "person-checkmark",
+        "person-circle"
+      ]
+    },
+    {
+      "fa": [
+        "fa-redo"
+      ],
+      "phosphor": "arrow-clockwise",
+      "proposed": "arrow-down",
+      "confidence": 0.375,
+      "alternates": [
+        "arrow-left",
+        "arrow-right"
+      ]
+    },
+    {
+      "fa": [
+        "fa-bullhorn"
+      ],
+      "phosphor": "megaphone",
+      "proposed": "megaphone",
+      "confidence": 1.25,
+      "alternates": [
+        "megaphone-circle",
+        "megaphone-circle-filled"
+      ]
+    },
+    {
+      "fa": [
+        "fa-square-poll-horizontal"
+      ],
+      "phosphor": "chart-bar-horizontal",
+      "proposed": "square",
+      "confidence": 0.4,
+      "alternates": [
+        "square-filled",
+        "square-circle"
+      ]
+    },
+    {
+      "fa": [
+        "fa-paperclip"
+      ],
+      "phosphor": "paperclip",
+      "proposed": "paperclip",
+      "confidence": 1,
+      "alternates": [
+        "paperclip-circle",
+        "paperclip-circle-filled"
+      ]
+    },
+    {
+      "fa": [
+        "fa-bookmark"
+      ],
+      "phosphor": "bookmark",
+      "proposed": "bookmark",
+      "confidence": 1,
+      "alternates": [
+        "bookmark-filled",
+        "bookmark-circle"
+      ]
+    },
+    {
+      "fa": [
+        "fa-code-branch"
+      ],
+      "phosphor": "git-branch",
+      "proposed": "code",
+      "confidence": 0.5,
+      "alternates": [
+        "code-circle",
+        "code-circle-filled"
+      ]
+    },
+    {
+      "fa": [
+        "fa-volume-high"
+      ],
+      "phosphor": "speaker-high",
+      "proposed": "speaker-high",
+      "confidence": 1.125,
+      "alternates": [
+        "speaker-high-circle",
+        "speaker-high-circle-filled"
+      ]
+    },
+    {
+      "fa": [
+        "fa-bars"
+      ],
+      "phosphor": "list",
+      "proposed": "list",
+      "confidence": 1.25,
+      "alternates": [
+        "list-circle",
+        "list-circle-filled"
+      ]
+    },
+    {
+      "fa": [
+        "fa-paper-plane"
+      ],
+      "phosphor": "paper-plane-right",
+      "proposed": "paper-plane",
+      "confidence": 0.75,
+      "alternates": [
+        "paper-plane-circle",
+        "paper-plane-circle-filled"
+      ]
+    },
+    {
+      "fa": [
+        "fa-note-sticky"
+      ],
+      "phosphor": "note",
+      "proposed": "money-note",
+      "confidence": 0.5,
+      "alternates": [
+        "money-note-circle",
+        "money-note-circle-filled"
+      ]
+    },
+    {
+      "fa": [
+        "fa-people-arrows"
+      ],
+      "phosphor": "users",
+      "proposed": "people",
+      "confidence": 1,
+      "alternates": [
+        "people-circle",
+        "people-circle-filled"
+      ]
+    },
+    {
+      "fa": [
+        "fa-address-book"
+      ],
+      "phosphor": "address-book",
+      "proposed": "book",
+      "confidence": 0.625,
+      "alternates": [
+        "book-circle",
+        "book-circle-filled"
+      ]
+    },
+    {
+      "fa": [
+        "fa-pen"
+      ],
+      "phosphor": "pencil-simple",
+      "proposed": "pen",
+      "confidence": 1.25,
+      "alternates": [
+        "pen-circle",
+        "pen-circle-filled"
+      ]
+    },
+    {
+      "fa": [
+        "fa-users"
+      ],
+      "phosphor": "users",
+      "proposed": "people",
+      "confidence": 1,
+      "alternates": [
+        "people-circle",
+        "people-circle-filled"
+      ]
+    },
+    {
+      "fa": [
+        "fa-truck-arrow-right"
+      ],
+      "phosphor": "truck",
+      "proposed": "arrow-right",
+      "confidence": 0.75,
+      "alternates": [
+        "arrow-down-right",
+        "arrow-right-circle"
+      ]
+    },
+    {
+      "fa": [
+        "fa-cut"
+      ],
+      "phosphor": "scissors",
+      "proposed": "scissors",
+      "confidence": 0.625,
+      "alternates": [
+        "scissors-circle",
+        "scissors-circle-filled"
+      ]
+    },
+    {
+      "fa": [
+        "fa-message"
+      ],
+      "phosphor": "chat-circle",
+      "proposed": "circle",
+      "confidence": 0.5,
+      "alternates": [
+        "circle-circle",
+        "circle-circle-filled"
+      ]
+    },
+    {
+      "fa": [
+        "fa-filter-circle-xmark"
+      ],
+      "phosphor": "funnel-x",
+      "proposed": "line-x-circle",
+      "confidence": 0.55,
+      "alternates": [
+        "line-x-circle-filled",
+        "dots-x-circle"
+      ]
+    },
+    {
+      "fa": [
+        "fa-scissors",
+        "fa-cut"
+      ],
+      "phosphor": "scissors",
+      "proposed": "scissors",
+      "confidence": 0.625,
+      "alternates": [
+        "scissors-circle",
+        "scissors-circle-filled"
+      ]
+    },
+    {
+      "fa": [
+        "fa-thumbtack"
+      ],
+      "phosphor": "push-pin",
+      "proposed": "pin",
+      "confidence": 1,
+      "alternates": [
+        "pin-circle",
+        "pin-circle-filled"
+      ]
+    },
+    {
+      "fa": [
+        "fa-comment-dots"
+      ],
+      "phosphor": "chat-circle-dots",
+      "proposed": "dots-x-circle",
+      "confidence": 0.542,
+      "alternates": [
+        "dots-x-circle-filled",
+        "dots-y-circle"
+      ]
+    },
+    {
+      "fa": [
+        "fa-box-open"
+      ],
+      "phosphor": "package",
+      "proposed": "hand-open",
+      "confidence": 0.5,
+      "alternates": [
+        "open",
+        "hand-open-circle"
+      ]
+    },
+    {
+      "fa": [
+        "fa-wrench"
+      ],
+      "phosphor": "wrench",
+      "proposed": "wrench",
+      "confidence": 1,
+      "alternates": [
+        "tool",
+        "wrench-circle"
+      ]
+    },
+    {
+      "fa": [
+        "fa-book-open"
+      ],
+      "phosphor": "book-open-text",
+      "proposed": "book",
+      "confidence": 0.5,
+      "alternates": [
+        "hand-open",
+        "open"
+      ]
+    },
+    {
+      "fa": [
+        "fa-robot"
+      ],
+      "phosphor": "robot",
+      "proposed": "share-android",
+      "confidence": 0.875,
+      "alternates": [
+        "share-android-circle",
+        "share-android-circle-filled"
+      ]
+    },
+    {
+      "fa": [
+        "fa-toggle-off"
+      ],
+      "phosphor": "toggle-left",
+      "proposed": "angle-left-off",
+      "confidence": 0.667,
+      "alternates": [
+        "arrow-left-off",
+        "down-left-off"
+      ]
+    },
+    {
+      "fa": [
+        "fa-code-compare"
+      ],
+      "phosphor": "git-diff",
+      "proposed": "code",
+      "confidence": 0.438,
+      "alternates": [
+        "code-circle",
+        "code-circle-filled"
+      ]
+    },
+    {
+      "fa": [
+        "fa-people-group"
+      ],
+      "phosphor": "users-four",
+      "proposed": "people",
+      "confidence": 0.875,
+      "alternates": [
+        "people-circle",
+        "people-circle-filled"
+      ]
+    }
+  ],
+  "unmatched": [
+    {
+      "fa": [
+        "fa-recycle"
+      ],
+      "phosphor": "recycle",
+      "proposed": null,
+      "confidence": 0,
+      "alternates": []
+    },
+    {
+      "fa": [
+        "fa-comments"
+      ],
+      "phosphor": "chats",
+      "proposed": null,
+      "confidence": 0,
+      "alternates": []
+    },
+    {
+      "fa": [
+        "fa-lightbulb"
+      ],
+      "phosphor": "lightbulb",
+      "proposed": null,
+      "confidence": 0,
+      "alternates": []
+    },
+    {
+      "fa": [
+        "fa-table-cells-large"
+      ],
+      "phosphor": "squares-four",
+      "proposed": null,
+      "confidence": 0,
+      "alternates": []
+    },
+    {
+      "fa": [
+        "fa-flask"
+      ],
+      "phosphor": "flask",
+      "proposed": null,
+      "confidence": 0,
+      "alternates": []
+    },
+    {
+      "fa": [
+        "fa-right-from-bracket"
+      ],
+      "phosphor": "sign-out",
+      "proposed": null,
+      "confidence": 0.313,
+      "alternates": [
+        "arrow-right",
+        "triangle-right"
+      ]
+    },
+    {
+      "fa": [
+        "fa-skull"
+      ],
+      "phosphor": "skull",
+      "proposed": null,
+      "confidence": 0,
+      "alternates": []
+    },
+    {
+      "fa": [
+        "fa-magnifying-glass",
+        "fa-search"
+      ],
+      "phosphor": "magnifying-glass",
+      "proposed": null,
+      "confidence": 0,
+      "alternates": []
+    },
+    {
+      "fa": [
+        "fa-window-maximize"
+      ],
+      "phosphor": "browser",
+      "proposed": null,
+      "confidence": 0,
+      "alternates": []
+    },
+    {
+      "fa": [
+        "fa-window-restore"
+      ],
+      "phosphor": "browsers",
+      "proposed": null,
+      "confidence": 0,
+      "alternates": []
+    },
+    {
+      "fa": [
+        "fa-download"
+      ],
+      "phosphor": "download-simple",
+      "proposed": null,
+      "confidence": 0,
+      "alternates": []
+    },
+    {
+      "fa": [
+        "fa-cubes"
+      ],
+      "phosphor": "cube",
+      "proposed": null,
+      "confidence": 0,
+      "alternates": []
+    },
+    {
+      "fa": [
+        "fa-scroll"
+      ],
+      "phosphor": "scroll",
+      "proposed": null,
+      "confidence": 0,
+      "alternates": []
+    },
+    {
+      "fa": [
+        "fa-stop"
+      ],
+      "phosphor": "stop",
+      "proposed": null,
+      "confidence": 0,
+      "alternates": []
+    },
+    {
+      "fa": [
+        "fa-notes-medical"
+      ],
+      "phosphor": "first-aid",
+      "proposed": null,
+      "confidence": 0,
+      "alternates": []
+    },
+    {
+      "fa": [
+        "fa-arrows-rotate",
+        "fa-sync"
+      ],
+      "phosphor": "arrows-clockwise",
+      "proposed": null,
+      "confidence": 0.313,
+      "alternates": [
+        "arrows-spin-circle",
+        "arrows-spin-circle-filled"
+      ]
+    },
+    {
+      "fa": [
+        "fa-markdown"
+      ],
+      "phosphor": "markdown-logo",
+      "proposed": null,
+      "confidence": 0,
+      "alternates": []
+    },
+    {
+      "fa": [
+        "fa-wand-magic",
+        "fa-wand-magic-sparkles"
+      ],
+      "phosphor": "magic-wand",
+      "proposed": null,
+      "confidence": 0,
+      "alternates": []
+    },
+    {
+      "fa": [
+        "fa-undo"
+      ],
+      "phosphor": "arrow-counter-clockwise",
+      "proposed": null,
+      "confidence": 0.313,
+      "alternates": [
+        "arrow-left",
+        "arrow-right"
+      ]
+    },
+    {
+      "fa": [
+        "fa-ghost"
+      ],
+      "phosphor": "ghost",
+      "proposed": null,
+      "confidence": 0,
+      "alternates": []
+    },
+    {
+      "fa": [
+        "fa-language"
+      ],
+      "phosphor": "translate",
+      "proposed": null,
+      "confidence": 0,
+      "alternates": []
+    },
+    {
+      "fa": [
+        "fa-scale-balanced"
+      ],
+      "phosphor": "scales",
+      "proposed": null,
+      "confidence": 0,
+      "alternates": []
+    },
+    {
+      "fa": [
+        "fa-pie-chart"
+      ],
+      "phosphor": "chart-pie",
+      "proposed": null,
+      "confidence": 0,
+      "alternates": []
+    },
+    {
+      "fa": [
+        "fa-grip-vertical"
+      ],
+      "phosphor": "dots-six-vertical",
+      "proposed": null,
+      "confidence": 0.313,
+      "alternates": [
+        "dots-y",
+        "dots-x-circle"
+      ]
+    },
+    {
+      "fa": [
+        "fa-layer-group"
+      ],
+      "phosphor": "stack",
+      "proposed": null,
+      "confidence": 0,
+      "alternates": []
+    },
+    {
+      "fa": [
+        "fa-github"
+      ],
+      "phosphor": "github-logo",
+      "proposed": null,
+      "confidence": 0,
+      "alternates": []
+    },
+    {
+      "fa": [
+        "fa-discord"
+      ],
+      "phosphor": "discord-logo",
+      "proposed": null,
+      "confidence": 0,
+      "alternates": []
+    },
+    {
+      "fa": [
+        "fa-box-archive"
+      ],
+      "phosphor": "archive",
+      "proposed": null,
+      "confidence": 0,
+      "alternates": []
+    },
+    {
+      "fa": [
+        "fa-network-wired"
+      ],
+      "phosphor": "network",
+      "proposed": null,
+      "confidence": 0,
+      "alternates": []
+    },
+    {
+      "fa": [
+        "fa-brain"
+      ],
+      "phosphor": "brain",
+      "proposed": null,
+      "confidence": 0,
+      "alternates": []
+    },
+    {
+      "fa": [
+        "fa-headphones-simple"
+      ],
+      "phosphor": "headphones",
+      "proposed": null,
+      "confidence": 0,
+      "alternates": []
+    }
+  ]
+}

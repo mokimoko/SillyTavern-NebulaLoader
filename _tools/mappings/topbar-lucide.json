@@ -1,0 +1,19 @@
+{
+  "_comment": "Lucide topbar. Lucide dropped brand icons but every topbar concept is a core primitive, so all 15 slots fill cleanly.",
+  "sliders": "sliders-horizontal",
+  "api": "plug",
+  "formatting": "type",
+  "worldinfo": "globe",
+  "settings": "settings",
+  "background": "image",
+  "extensions": "puzzle",
+  "persona": "circle-user",
+  "impersonate": "circle-user",
+  "characters": "heart",
+  "options": "ellipsis",
+  "continue": "arrow-right",
+  "send": "send",
+  "play": "play",
+  "pause": "pause",
+  "stop": "x"
+}

@@ -1,0 +1,19 @@
+{
+  "_comment": "Streamline Stickies Color topbar (COLORED, background-image render). Playful thematic picks — options is a chemistry lab, continue is a rocket, pause is a clock.",
+  "sliders": "control",
+  "api": "server-network",
+  "formatting": "programming",
+  "worldinfo": "globe-1",
+  "settings": "wrench",
+  "background": "picture",
+  "extensions": "wand",
+  "persona": "face-id-1",
+  "impersonate": "face-id-1",
+  "characters": "love",
+  "options": "dangerous-chemical-lab",
+  "continue": "keyboard-direction",
+  "send": "sent-from-computer",
+  "play": "rocket-launch-chart",
+  "pause": "time",
+  "stop": "cancel-2"
+}
